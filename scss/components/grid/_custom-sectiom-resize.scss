@@ -1,0 +1,25 @@
+.custom-width-pages {
+	.first-width {
+		@media (max-width: 1024px) and (min-width: 900px) {
+			width: 50% !important;
+			max-width: 50% !important;
+		}
+	}
+}
+
+
+@include media-breakpoint-down(xs) {
+	.custom-mobile-breakpoint {
+		svg {
+			max-width: 100%;
+		}
+	}
+}
+
+.single-plugins-column-resize {
+	.elementor-column-wrap > .elementor-widget-wrap {
+		@media (min-width: 1025px) {
+			justify-content: start!important;
+		}
+	}
+}

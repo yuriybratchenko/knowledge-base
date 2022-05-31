@@ -1,0 +1,21 @@
+// Modal all plugins
+.modal-all-plugins {
+	background-color: rgba( $gray-900, .5 );
+	backdrop-filter: blur(5px);
+}
+
+@include media-breakpoint-up(lg) {
+	.modal-all-plugins {
+		.modal-dialog {
+			max-width: 850px;
+		}
+	}
+}
+
+@include media-breakpoint-up(xl) {
+	.modal-all-plugins {
+		.modal-dialog {
+			max-width: 1430px;
+		}
+	}
+}

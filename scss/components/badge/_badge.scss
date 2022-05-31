@@ -1,0 +1,49 @@
+// Variables
+$badge-padding: 4px 9px;
+$badge-font-weight: $font-weight-medium;
+$badge-font-size: 12px;
+$badge-line-height: 1;
+
+$badge-border-radius: $border-radius-sm;
+
+
+// Base
+.badge {
+	display: inline-block;
+	text-align: center;
+	border-radius: $badge-border-radius;
+	padding: $badge-padding;
+	font-weight: $badge-font-weight;
+	font-size: $badge-font-size;
+	line-height: $badge-line-height;
+	white-space: nowrap;
+	color: color-yiq( $primary );
+	background-color: $primary;
+}
+
+.badge-text {
+	font-weight: $badge-font-weight;
+	font-size: $badge-font-size;
+	line-height: $badge-line-height;
+	white-space: nowrap;
+}
+
+
+// Theming
+@each $color, $value in $colors {
+	.badge-#{$color} {
+		color: color-yiq($value);
+		border-color: $value;
+		background-color: $value;
+	}
+}
+
+.badge-400 {
+	color: $white;
+	border-color: $gray-400;
+	background-color: $gray-400;
+}
+
+
+// Badge variants
+@import "badge-modern";

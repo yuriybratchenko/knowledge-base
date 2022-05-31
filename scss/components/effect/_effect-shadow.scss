@@ -1,0 +1,18 @@
+.effect-shadow {
+  transition: $transition-base;
+  .btn-dark.btn-without-fill .btn-icon {
+    transition: $transition-base;
+  }
+
+}
+
+@each $color, $value in $colors {
+  .effect-shadow-#{$color} {
+    &:hover {
+      box-shadow: 0 10px 40px rgba(22, 43, 64, 0.1);
+      .btn-dark.btn-without-fill.btn-custom, .btn-dark.btn-without-fill .btn-icon {
+        color: $value;
+      }
+    }
+  }
+}

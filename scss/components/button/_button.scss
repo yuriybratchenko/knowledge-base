@@ -1,0 +1,471 @@
+// Base
+.btn {
+	&.elementor-widget-button {
+		font-size: 0;
+		line-height: 0;
+	}
+
+	&.btn-custom,
+	a.elementor-button {
+		display: inline-flex;
+		justify-content: center;
+		border: $btn-border-width solid $primary;
+		font-family: $btn-font-family;
+		font-weight: $btn-font-weight;
+		text-decoration: none;
+		white-space: nowrap;
+		color: color-yiq($primary);
+		background-color: $primary;
+		background-clip: border-box;
+		box-shadow: $btn-shadow;
+		transition: $btn-transition;
+		cursor: pointer;
+
+		&:hover {
+			color: color-yiq( $btn-hover-color );
+			background-color: $btn-hover-color;
+			border-color: $btn-hover-color;
+			box-shadow: none;
+		}
+	}
+
+	&.btn-custom {
+		border-radius: $btn-border-radius;
+		padding: $btn-padding-y $btn-padding-x;
+		font-size: $btn-font-size;
+		line-height: $btn-line-height;
+	}
+
+	a.elementor-button {
+		&.elementor-size-sm {
+			border-radius: $btn-border-radius-sm;
+			padding: $btn-padding-y-sm $btn-padding-x-sm;
+			font-size: $btn-font-size-sm;
+			line-height: $btn-line-height-sm;
+
+			.elementor-button-icon {
+				svg	{
+					width: $btn-line-height-sm * 1em;
+					height: $btn-line-height-sm * 1em;
+				}
+			}
+		}
+
+		&.elementor-size-md {
+			border-radius: $btn-border-radius;
+			padding: $btn-padding-y $btn-padding-x;
+			font-size: $btn-font-size;
+			line-height: $btn-line-height;
+
+			.elementor-button-icon {
+				svg	{
+					width: $btn-line-height * 1em;
+					height: $btn-line-height * 1em;
+				}
+			}
+		}
+	}
+
+	.elementor-button-content-wrapper {
+		display: flex;
+		align-items: center;
+	}
+
+	.elementor-button-icon {
+		display: inline-flex;
+		color: currentColor;
+		transition: $btn-transition transform;
+
+		path {
+			fill: currentColor;
+		}
+
+		+ .elementor-button-text {
+			margin: 0 0.4em;
+		}
+	}
+
+	.elementor-button {
+		.elementor-button-icon {
+			margin: 0;
+		}
+	}
+}
+
+.btn-icon {
+	display: inline-flex;
+	width: $btn-line-height * 1em;
+	height: $btn-line-height * 1em;
+	color: currentColor;
+	transition: $btn-transition transform;
+
+	path {
+		fill: currentColor;
+	}
+}
+
+.btn-text {
+	margin: 0 0.4em;
+}
+
+
+// Modifying
+.btn.btn-custom.btn-sm {
+	border-radius: $btn-border-radius-sm;
+	padding: $btn-padding-y-sm $btn-padding-x-sm;
+	font-size: $btn-font-size-sm;
+	line-height: $btn-line-height-sm;
+}
+
+.btn-sm {
+	.btn-icon {
+		width: $btn-line-height-sm * 1em;
+		height: $btn-line-height-sm * 1em;
+	}
+}
+
+.btn.btn-custom.btn-rect {
+	border-radius: 0;
+}
+
+.btn-outline {
+	&.btn-custom,
+	a.elementor-button {
+		color: $primary;
+		background-color: transparent;
+		box-shadow: none;
+
+		&:hover {
+			color: $gray-900;
+			background-color: transparent;
+		}
+	}
+}
+
+.btn-without-fill {
+	&.btn-custom,
+	a.elementor-button {
+		border: none;
+		color: $gray-900;
+
+		&,
+		&:hover {
+			background-color: transparent;
+			box-shadow: none;
+		}
+
+		&:hover {
+			color: $primary;
+		}
+	}
+
+	a.elementor-button {
+		.elementor-button-icon {
+			color: $primary;
+		}
+
+		&.elementor-size-sm,
+		&.elementor-size-md {
+			padding: 0;
+			border-radius: 0;
+		}
+	}
+
+	.elementor-align-icon-right + .elementor-button-text {
+		margin-left: 0;
+	}
+
+	.elementor-align-icon-left + .elementor-button-text {
+		margin-right: 0;
+	}
+
+	&.btn.btn-custom {
+		padding: 0;
+		border-radius: 0;
+	}
+
+	.btn-icon {
+		color: $primary;
+	}
+
+	.btn-text {
+		&:first-child {
+			margin-left: 0;
+		}
+
+		&:last-child {
+			margin-right: 0;
+		}
+	}
+
+	&.btn-color-inverse {
+		&.btn-custom,
+		a.elementor-button {
+			color: $primary;
+
+			&:hover {
+				color: $gray-900;
+			}
+		}
+	}
+}
+
+
+// Modifying
+.btn-effect-1 {
+	&.btn-custom,
+	a.elementor-button {
+		&:hover {
+			color: color-yiq( $primary );
+			background-color: $primary;
+			border-color: $primary;
+		}
+	}
+
+	&.btn-custom:hover .btn-icon,
+	a.elementor-button:hover .elementor-button-icon {
+		transform: translateX( 0.178em );
+	}
+
+	&.btn.btn-outline {
+		&.btn-custom,
+		a.elementor-button {
+			&:hover {
+				color: $primary;
+				background-color: transparent;
+			}
+		}
+	}
+
+	&.btn-without-fill {
+		&.btn-custom,
+		a.elementor-button {
+			&:hover {
+				color: $gray-900;
+				background: transparent;
+			}
+		}
+
+		&.btn.btn-color-inverse {
+			&.btn-custom,
+			a.elementor-button {
+				&:hover {
+					color: $primary;
+				}
+			}
+		}
+	}
+}
+
+.btn-effect-2 {
+	justify-content: center;
+
+	&:hover {
+		.btn-text-visible {
+			transform: translateY( 15px );
+			visibility: hidden;
+			opacity: 0;
+		}
+
+		.btn-text-hidden {
+			transform: none;
+			visibility: visible;
+			opacity: 1;
+		}
+	}
+
+	.btn-text-visible {
+		transition: $btn-transition;
+	}
+
+	.btn-text-hidden {
+		position: absolute;
+		transform: translateY( -15px );
+		transition: $btn-transition;
+		visibility: hidden;
+		opacity: 0;
+	}
+}
+
+.btn-text-dark {
+	a.elementor-button {
+		&, &:hover {
+			color: $gray-900;
+		}
+	}
+
+	&.btn.btn-custom {
+		&, &:hover {
+			color: $gray-900;
+		}
+	}
+}
+
+
+// Theming
+@each $color, $value, $hover in $btn-colors {
+	.btn-#{$color} {
+		&.btn-custom,
+		a.elementor-button {
+			color: color-yiq($value);
+			background-color: $value;
+			border-color: $value;
+			box-shadow: 0 0.23em 1.67em rgba($value, 0.5);
+
+			&:hover {
+				color: color-yiq($hover);
+				background-color: $hover;
+				border-color: $hover;
+			}
+		}
+
+		&.btn-outline {
+			&.btn-custom,
+			a.elementor-button {
+				color: $value;
+				background-color: transparent;
+				box-shadow: none;
+
+				&:hover {
+					color: $gray-900;
+				}
+			}
+		}
+
+		&.btn-without-fill {
+			// increase specificity css for contexts
+			&.btn {
+				&.btn-custom,
+				a.elementor-button {
+					&:hover {
+						color: $value;
+					}
+				}
+			}
+
+			&.btn-custom,
+			a.elementor-button {
+				color: $gray-900;
+
+				&,
+				&:hover {
+					background-color: transparent;
+					box-shadow: none;
+				}
+			}
+
+			a.elementor-button {
+				.elementor-button-icon {
+					color: $value;
+				}
+			}
+
+			.btn-icon {
+				color: $value;
+			}
+
+			&.btn-color-inverse {
+				// increase specificity css for contexts
+				&.btn {
+					&.btn-custom,
+					a.elementor-button {
+						color: $value;
+					}
+				}
+
+				&.btn-custom,
+				a.elementor-button {
+					&:hover {
+						color: $gray-900;
+					}
+				}
+			}
+		}
+
+		&.btn-effect-1 {
+			&.btn-custom,
+			a.elementor-button {
+				&:hover {
+					color: color-yiq($value);
+					background-color: $value;
+					border-color: $value;
+				}
+			}
+
+			&.btn-outline {
+				&.btn-custom,
+				a.elementor-button {
+					&:hover {
+						color: $value;
+						background-color: transparent;
+					}
+				}
+			}
+
+			&.btn-without-fill {
+				&.btn-custom,
+				a.elementor-button {
+					&:hover {
+						color: $gray-900;
+						background: transparent;
+					}
+				}
+
+				&.btn-color-inverse {
+					&.btn-custom,
+					a.elementor-button {
+						&:hover {
+							color: $value;
+						}
+					}
+				}
+			}
+		}
+	}
+}
+
+
+// Contexts
+.context-dark {
+	.btn-outline {
+		&.btn-custom,
+		a.elementor-button {
+			&:hover {
+				color: $white;
+			}
+		}
+	}
+
+	.btn-without-fill {
+		&.btn-custom,
+		a.elementor-button {
+			color: $white;
+
+			&:hover {
+				color: $primary;
+			}
+		}
+
+		&.btn-color-inverse {
+			&.btn-custom,
+			a.elementor-button {
+				color: $primary;
+
+				&:hover {
+					color: $white;
+				}
+			}
+		}
+	}
+
+	.btn-effect-1 {
+		&.btn-without-fill {
+			&.btn-custom,
+			a.elementor-button {
+				&:hover {
+					color: $white;
+				}
+			}
+		}
+	}
+}

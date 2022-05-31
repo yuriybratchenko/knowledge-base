@@ -1,0 +1,139 @@
+// Slick
+.slick-slider {
+	> .slick-arrow {
+		position: absolute;
+		top: 50%;
+		transform: translateY(-50%);
+		z-index: 1;
+	}
+
+	> .slick-prev {
+		left: 0;
+	}
+
+	> .slick-next {
+		right: 0;
+	}
+}
+
+.slick-vertical {
+	.slick-slide {
+		border: none;
+	}
+}
+
+.slick-slider,
+.slick-custom-dots {
+	> .slick-dots {
+		list-style-type: none;
+		font-size: 0;
+		line-height: 0;
+
+		li {
+			display: inline-block;
+			margin: 0 8px;
+		}
+
+		button {
+			display: inline-flex;
+			align-items: center;
+			justify-content: center;
+			width: 16px;
+			height: 16px;
+			border-radius: 0;
+			padding: 0;
+			font-size: 0;
+			line-height: 0;
+			color: inherit;
+			background-color: transparent;
+			transition: $transition-base;
+			cursor: pointer;
+
+			&::before {
+				display: inline-block;
+				content: '';
+				width: 8px;
+				height: 8px;
+				border-radius: 50%;
+				border: 1px solid;
+				transition: inherit;
+			}
+
+			&:hover {
+				&::before {
+					background-color: currentColor;
+				}
+			}
+		}
+
+		.slick-active button::before {
+			background-color: currentColor;
+		}
+	}
+}
+
+.slick-arrow {
+	border: $icon-border-width solid $white;
+	border-radius: 50%;
+	padding: $icon-padding;
+	font-size: 32px;
+	line-height: 0;
+	color: $gray-900;
+	background-color: $white;
+	box-shadow: 0 0.125em 0.875em rgba( $white, 0.5 );
+	transition: $transition-base;
+	cursor: pointer;
+
+	&:hover {
+	  box-shadow: none;
+	}
+
+	&.slick-disabled {
+		opacity: .5;
+		pointer-events: none;
+	}
+
+	svg {
+		width: 1em;
+		height: 1em;
+		color: currentColor;
+
+		path {
+			fill: currentColor;
+		}
+	}
+}
+
+.slick-arrows-sm {
+	.slick-arrow {
+		font-size: 24px;
+	}
+}
+
+.slick-arrows-600 {
+	.slick-arrow {
+		color: $white;
+		border-color: $gray-600;
+		background-color: $gray-600;
+		box-shadow: none;
+	}
+}
+
+.slick-dot {
+	border: none;
+	padding: 0;
+	background-color: transparent;
+	cursor: pointer;
+}
+
+.slick-ov {
+	.slick-list {
+		overflow: visible;
+	}
+}
+
+
+// Layouts
+@import 'slick-all-plugins';
+@import 'slick-vertical-all-plugins';
+@import 'slick-variants';

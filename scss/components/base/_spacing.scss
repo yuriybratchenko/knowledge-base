@@ -1,0 +1,113 @@
+// Elements spacing
+@each $breakpoint in map-keys($grid-breakpoints) {
+	@include media-breakpoint-up($breakpoint) {
+		$infix: breakpoint-infix($breakpoint, $grid-breakpoints);
+
+		@each $size, $spacer in $spacers {
+			.m#{$infix}-#{$size} { margin: $spacer !important; }
+			.my#{$infix}-#{$size},
+			.mt#{$infix}-#{$size} { margin-top: $spacer !important; }
+			.mx#{$infix}-#{$size},
+			.mr#{$infix}-#{$size} { margin-right: $spacer !important; }
+			.my#{$infix}-#{$size},
+			.mb#{$infix}-#{$size} { margin-bottom: $spacer !important; }
+			.mx#{$infix}-#{$size},
+			.ml#{$infix}-#{$size} { margin-left: $spacer !important; }
+
+			.p#{$infix}-#{$size} { padding: $spacer !important; }
+			.py#{$infix}-#{$size},
+			.pt#{$infix}-#{$size} { padding-top: $spacer !important; }
+			.px#{$infix}-#{$size},
+			.pr#{$infix}-#{$size} { padding-right: $spacer !important; }
+			.py#{$infix}-#{$size},
+			.pb#{$infix}-#{$size} { padding-bottom: $spacer !important; }
+			.px#{$infix}-#{$size},
+			.pl#{$infix}-#{$size} { padding-left: $spacer !important; }
+		}
+	}
+}
+
+
+// Spacing for widget
+@each $breakpoint in map-keys($grid-breakpoints) {
+	@include media-breakpoint-up($breakpoint) {
+		$infix: breakpoint-infix($breakpoint, $grid-breakpoints);
+
+		@each $size, $spacer in $spacers {
+			.m#{$infix}-#{$size} {
+				&.elementor-widget { margin: 0 !important; }
+				> .elementor-widget-container { margin: $spacer; }
+			}
+			.my#{$infix}-#{$size},
+			.mt#{$infix}-#{$size} {
+				&.elementor-widget { margin-top: 0 !important; }
+				> .elementor-widget-container { margin-top: $spacer; }
+			}
+			.mx#{$infix}-#{$size},
+			.mr#{$infix}-#{$size} {
+				&.elementor-widget { margin-right: 0 !important; }
+				> .elementor-widget-container { margin-right: $spacer; }
+			}
+			.my#{$infix}-#{$size},
+			.mb#{$infix}-#{$size} {
+				&.elementor-widget { margin-bottom: 0 !important; }
+				> .elementor-widget-container { margin-bottom: $spacer; }
+			}
+			.mx#{$infix}-#{$size},
+			.ml#{$infix}-#{$size} {
+				&.elementor-widget { margin-left: 0 !important; }
+				> .elementor-widget-container { margin-left: $spacer; }
+			}
+
+			.p#{$infix}-#{$size} {
+				&.elementor-widget { padding: 0 !important; }
+				> .elementor-widget-container { padding: $spacer; }
+			}
+			.py#{$infix}-#{$size},
+			.pt#{$infix}-#{$size} {
+				&.elementor-widget { padding-top: 0 !important; }
+				> .elementor-widget-container { padding-top: $spacer; }
+			}
+			.px#{$infix}-#{$size},
+			.pr#{$infix}-#{$size} {
+				&.elementor-widget { padding-right: 0 !important; }
+				> .elementor-widget-container { padding-right: $spacer; }
+			}
+			.py#{$infix}-#{$size},
+			.pb#{$infix}-#{$size} {
+				&.elementor-widget { padding-bottom: 0 !important; }
+				> .elementor-widget-container { padding-bottom: $spacer; }
+			}
+			.px#{$infix}-#{$size},
+			.pl#{$infix}-#{$size} {
+				&.elementor-widget { padding-left: 0 !important; }
+				> .elementor-widget-container { padding-left: $spacer; }
+			}
+		}
+	}
+}
+
+
+// Group spacing
+[class*='group-'] {
+	&:empty {
+		margin-bottom: 0;
+		margin-left: 0;
+	}
+
+	> * {
+		margin-top: 0;
+	}
+}
+
+@each $breakpoint in map-keys($grid-breakpoints) {
+	@include media-breakpoint-up($breakpoint) {
+		$infix: breakpoint-infix($breakpoint, $grid-breakpoints);
+
+		@each $size, $spacer in $spacers {
+			.group#{$infix}-#{$size} {
+				@include group( $spacer );
+			}
+		}
+	}
+}

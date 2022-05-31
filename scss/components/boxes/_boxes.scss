@@ -1,0 +1,63 @@
+// Modifying
+.box-center {
+	margin-right: auto;
+	margin-left: auto;
+}
+
+.box-right {
+	margin-right: 0;
+	margin-left: auto;
+}
+
+// Sizes
+@each $size, $value in $box-sizes {
+	.box-#{$size} {
+		max-width: $value;
+	}
+}
+
+
+.box-classic {
+	.elementor-widget-wrap {
+		&::before {
+			position: absolute;
+			content: '';
+			top: 0;
+			right: 0;
+			bottom: 0;
+			left: 0;
+			border-radius: 10px;
+			transform: scale( .8 );
+			background: radial-gradient(85.71% 85.71% at 8.57% -6.57%, #334155 0%, $gray-900 100%);
+			opacity: 0;
+			transition: .3s;
+			pointer-events: none;
+		}
+
+		&:hover::before {
+			transform: none;
+			opacity: 1;
+		}
+	}
+}
+
+
+// Media
+@media(max-width: 767px) {
+	.box-classic .elementor-widget-wrap {
+		max-width: 350px;
+		margin-right: auto;
+		margin-left: auto;
+	}
+}
+
+@media (min-width: 1025px) {
+	.box-lg-100 {
+		max-width: 100%;
+	}
+}
+
+// Layouts
+@import 'box-flip';
+@import 'box-gradient';
+@import 'box-navy';

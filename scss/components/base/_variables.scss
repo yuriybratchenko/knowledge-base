@@ -1,0 +1,362 @@
+// Variables
+//
+// Color system
+
+$white: #fff;
+$gray-500: #64748B;
+$gray-50:  adjust-color( $gray-500, $hue: -5deg, $saturation: 24%, $lightness: 51% ); // #F8FAFC
+$gray-100: adjust-color( $gray-500, $hue: -5deg, $saturation: 24%, $lightness: 49% ); // #F1F5F9
+$gray-200: adjust-color( $gray-500, $hue: -1deg, $saturation: 16%, $lightness: 44% ); // #E2E8F0
+$gray-300: adjust-color( $gray-500, $hue: -2deg, $saturation: 11%, $lightness: 37% ); // #CBD5E1
+$gray-400: adjust-color( $gray-500, $hue: 0deg, $saturation: 4%, $lightness: 18% );   // #94A3B8
+$gray-600: adjust-color( $gray-500, $hue: 0deg, $saturation: 3%, $lightness: -12% );  // #475569
+$gray-700: adjust-color( $gray-500, $hue: 0deg, $saturation: 9%, $lightness: -20% );  // #334155
+$gray-800: adjust-color( $gray-500, $hue: 2deg, $saturation: 17%, $lightness: -30% ); // #1E293B
+$gray-900: adjust-color( $gray-500, $hue: 7deg, $saturation: 31%, $lightness: -36% ); // #0F172A
+$black:    #000;
+
+$grays:
+'white' $white,
+'50' $gray-50,
+'100' $gray-100,
+'200' $gray-200,
+'300' $gray-300,
+'400' $gray-400,
+'500' $gray-500,
+'600' $gray-600,
+'700' $gray-700,
+'800' $gray-800,
+'900' $gray-900;
+
+$primary: #0DC167;
+$primary-hover: adjust-color( $primary, $hue: 5deg, $saturation: 0%, $lightness: -5% ); // hover #0CA64B
+
+$jetsmartfilters:    #FA5450; // tomato     hover #F23434
+$jetblocks:          #F66A21; // mango      hover #EB4716
+$jetreviews:         #EE7B16; // chocolate  hover #DF560E
+$jetthemecore:       #F2D23C; // orange     hover #EAB413
+$jetstylemanager:    #A2AE08; // olive      hover #798B05
+$jetmenu:            #6AAC1E; // grassgreen hover #4A8912
+$jetgridbuilder:     #1ABC48; // limegreen  hover #14A031
+$jetproductgallery:  #0CB6B3; // turquoise  hover #0A9996
+$jettricks:          #0EAEC9; // pacific    hover #0C8FAF
+$jetappointment:     #10A9D6; // cerulean   hover #0D88BF
+$jettabs:            #159EE4; // steel      hover #107CD2
+$jetcomparewishlist: #2588F3; // denim      hover #1A64E9
+$jetpopup:           #4272F9; // royalblue  hover #2E4FF4
+$jetbooking:         #506EF8; // indigo     hover #394CF3
+$jetengine:          #9D64ED; // orchid     hover #8044E2
+$jetwoobuilder:      #D652EB; // violet     hover #BD34DF
+$jetelements:        #F648BF; // hotpink    hover #EA2CA0
+$jetsearch:          #F94D84; // blush      hover #F02E5D
+$jetblog:            #FA4C6A; // maroon     hover #F32E48
+
+$colors:
+	'primary' $primary $primary-hover,
+	'jetsmartfilters' $jetsmartfilters adjust-color($jetsmartfilters, $hue: -1deg, $saturation: -6%, $lightness: -7%),
+	'jetblocks' $jetblocks adjust-color($jetblocks, $hue: -7deg, $saturation: -8%, $lightness: -5%),
+	'jetreviews' $jetreviews adjust-color($jetreviews, $hue: -7deg, $saturation: 2%, $lightness: -5%),
+	'jetthemecore' $jetthemecore adjust-color($jetthemecore, $hue: -4deg, $saturation: -3%, $lightness: -9%),
+	'jetstylemanager' $jetstylemanager adjust-color($jetstylemanager, $hue: 4deg, $saturation: 2%, $lightness: -8%),
+	'jetmenu' $jetmenu adjust-color($jetmenu, $hue: 4deg, $saturation: 7%, $lightness: -10%),
+	'jetgridbuilder' $jetgridbuilder adjust-color($jetgridbuilder, $hue: -5deg, $saturation: 2%, $lightness: -7%),
+	'jetproductgallery' $jetproductgallery adjust-color($jetproductgallery, $hue: 0deg, $saturation: 0%, $lightness: -6%),
+	'jettricks' $jettricks adjust-color($jettricks, $hue: 3deg, $saturation: 0%, $lightness: -5%),
+	'jetappointment' $jetappointment adjust-color($jetappointment, $hue: 5deg, $saturation: 1%, $lightness: -5%),
+	'jettabs' $jettabs adjust-color($jettabs, $hue: 7deg, $saturation: 3%, $lightness: -5%),
+	'jetcomparewishlist' $jetcomparewishlist adjust-color($jetcomparewishlist, $hue: 8deg, $saturation: -8%, $lightness: -4%),
+	'jetpopup' $jetpopup adjust-color($jetpopup, $hue: 6deg, $saturation: -4%, $lightness: -5%),
+	'jetbooking' $jetbooking adjust-color($jetbooking, $hue: 5deg, $saturation: -3%, $lightness: -5%),
+	'jetengine' $jetengine adjust-color($jetengine, $hue: -2deg, $saturation: -36%, $lightness: -8%),
+	'jetwoobuilder' $jetwoobuilder adjust-color($jetwoobuilder, $hue: -4deg, $saturation: -6%, $lightness: -8%),
+	'jetelements' $jetelements adjust-color($jetelements, $hue: 4deg, $saturation: -9%, $lightness: -7%),
+	'jetsearch' $jetsearch adjust-color($jetsearch, $hue: 4deg, $saturation: -6%, $lightness: -8%),
+	'jetblog' $jetblog adjust-color($jetblog, $hue: 2deg, $saturation: -6%, $lightness: -7%);
+
+$gradients:
+	'primary-jetcomparewishlist' $primary $jetcomparewishlist,
+	'jettricks-jetbooking' $jettricks $jetbooking,
+	'jetappointment-jetwoobuilder' $jetappointment $jetwoobuilder,
+	'jetengine-jetpopup' $jetengine $jetpopup,
+	'jetelements-jetengine' $jetelements $jetengine,
+	'jettricks-transparent' $jettricks transparent,
+	'jetelements-transparent' $jetelements transparent,
+	'jetblog-jetengine' $jetblog $jetengine,
+	'jetbooking-jetthemecore' $jetbooking $jetthemecore;
+
+// The yiq lightness value
+$yiq-contrasted-threshold:  155;
+
+$yiq-text-dark:  $gray-900;
+$yiq-text-light: $white;
+
+
+// Spacing
+$spacers:
+	'0' 0px,
+	'4' 4px,
+	'8' 8px,
+	'12' 12px,
+	'16' 16px,
+	'20' 20px,
+	'24' 24px,
+	'28' 28px,
+	'32' 32px,
+	'36' 36px,
+	'40' 40px,
+	'44' 44px,
+	'48' 48px,
+	'52' 52px,
+	'56' 56px,
+	'60' 60px,
+	'64' 64px,
+	'68' 68px,
+	'72' 72px,
+	'76' 76px,
+	'80' 80px,
+	'84' 84px,
+	'88' 88px,
+	'92' 92px,
+	'100' 100px,
+	'104' 104px,
+	'112' 112px,
+	'120' 120px,
+	'140' 140px,
+	'160' 160px,
+	'180' 180px,
+	'196' 196px;
+
+$row-spacers:
+	'0' 0px,
+	'12' 12px,
+	'20' 20px,
+	'32' 32px,
+	'40' 40px,
+	'52' 52px,
+	'60' 60px,
+	'80' 80px;
+
+$sizes:
+	'25' 25%,
+	'50' 50%,
+	'75' 75%,
+	'100' 100%,
+	'auto' auto;
+
+
+// Options
+$enable-grid-classes: true;
+
+
+// Body
+$body-color: $gray-500;
+$body-bg:    $white;
+
+
+// Links
+$link-color:            #4A72F8;
+$link-decoration:       underline;
+$link-hover-color:      darken($link-color, 10%);
+$link-hover-decoration: none;
+$link-transition:       .25s ease;
+
+
+// Grid breakpoints
+$grid-breakpoints: (
+	xs: 0,
+	sm: 576px,
+	md: 768px,
+	lg: 1025px,
+	xl: 1200px
+);
+
+
+// Grid containers
+$container-max-widths: (
+	sm: 540px,
+	md: 720px,
+	lg: 990px,
+	xl: 1200px
+);
+
+
+// Grid columns
+$grid-columns:      12;
+$grid-gutter-width: 40px;
+
+
+// Components
+$border-width:     1px;
+$border-color:     $gray-300;
+$border-radius:    10px;
+$border-radius-lg: 20px;
+$border-radius-sm: 4px;
+
+
+$box-shadow-sm:    0 .125rem .25rem rgba($black, .075);
+$box-shadow:       0 16px 28px rgba($gray-900, .1);
+$box-shadow-lg:    0 1rem 3rem rgba($black, .175);
+
+$transition-base:  .2s ease-in-out;
+
+
+$embed-responsive-aspect-ratios: ();
+// stylelint-disable-next-line scss/dollar-variable-default
+$embed-responsive-aspect-ratios: join(
+	(
+		(21 9),
+		(16 9),
+		(4 3),
+		(1 1),
+	),
+	$embed-responsive-aspect-ratios
+);
+
+
+// Typography
+$font-family-base: 'Roboto', sans-serif;
+$font-family-sec:  'Cabin', sans-serif;
+
+$font-size-sm:   14px;
+$font-size-base: 16px;
+$font-size-lg:   20px;
+
+$line-height-sm:   1.429;
+$line-height-base: 1.5;
+$line-height-lg:   1.4;
+
+$font-weight-normal: 400;
+$font-weight-medium: 500;
+$font-weight-bold:   700;
+
+$headings-font-family: $font-family-sec;
+$headings-line-height: 1.25;
+$headings-color:       $gray-900;
+
+$h1-font-size: 64px;
+$h2-font-size: 48px;
+$h3-font-size: 32px;
+$h4-font-size: 24px;
+$h5-font-size: 20px;
+$h6-font-size: 18px;
+
+$headings-font-weight: $font-weight-bold;
+
+
+// Icon
+$icon-font-size:  24px;
+$icon-frame-size: 40px;
+
+$icon-sizes:
+	'16' 16px 28px,
+	'24' 24px 48px,
+	'32' 32px 56px,
+	'48' 48px 72px,
+	'64' 64px 80px,
+	'80' 80px 96px,
+	'96' 96px 120px;
+
+$icon-border-width:    2px;
+$icon-padding:         ( $icon-frame-size - $icon-font-size ) / 2 - $icon-border-width;
+$icon-stacked-padding: ( $icon-frame-size - $icon-font-size ) / 2;
+$icon-framed-padding:  $icon-padding;
+
+
+// Button
+$add-btn-colors: 'dark' $gray-900 $gray-500, 'light' $white $gray-100;
+$btn-colors: join($colors, $add-btn-colors, $separator: auto);
+
+$btn-border-width: 2px;
+
+$btn-padding-y: 10px;
+$btn-padding-x: 21px;
+$btn-font-family: $font-family-sec;
+$btn-font-size: 20px;
+$btn-line-height: 1.6;
+$btn-border-radius: ($btn-padding-y + $btn-border-width) * 2 + $btn-font-size * $btn-line-height;
+
+$btn-padding-y-sm: 6px;
+$btn-padding-x-sm: 16px;
+$btn-font-size-sm: 16px;
+$btn-line-height-sm: 1.5;
+$btn-border-radius-sm: ($btn-padding-y-sm + $btn-border-width) * 2 + $btn-font-size-sm * $btn-line-height-sm;
+
+$btn-font-weight: $font-weight-bold;
+$btn-shadow: 0 0.23em 1.67em rgba( $primary, 0.5 );
+
+$btn-hover-color: $primary-hover;
+
+$btn-transition: .25s ease;
+
+
+// Forms
+
+//$label-margin-bottom:                   .5rem;
+
+$input-padding-y:                       13px;
+$input-padding-x:                       15px;
+$input-font-family:                     $font-family-base;
+$input-font-size:                       $font-size-lg;
+$input-font-weight:                     $font-weight-normal;
+$input-line-height:                     $line-height-lg;
+
+$input-padding-y-sm:                    13px;
+$input-padding-x-sm:                    24px;
+$input-font-size-sm:                    $font-size-base;
+$input-line-height-sm:                  $line-height-base;
+
+$input-bg:                              $white;
+
+$input-color:                           $gray-700;
+$input-border-color:                    $gray-200;
+$input-border-width:                    $border-width;
+
+$input-border-radius:                   $border-radius;
+$input-border-radius-sm:                $border-radius;
+//
+$input-focus-bg:                        $input-bg;
+$input-focus-border-color:              $gray-300;
+$input-focus-box-shadow:                none;
+//$input-focus-color:                     $input-color;
+//$input-focus-width:                     $input-btn-focus-width;
+//
+$input-placeholder-color:               $gray-400;
+
+$input-transition:                      $transition-base;
+
+
+// Z-index master list
+//$zindex-sticky: 1020;
+$zindex-sticky: 10;
+$zindex-fixed: 1030;
+
+
+// Utilities
+$displays: none, inline, inline-block, block, flex, inline-flex;
+$overflows: auto, hidden;
+$cursors: pointer, help;
+$positions: static, relative, absolute, fixed, sticky;
+
+
+
+// Boxes
+$box-sizes:
+	'160' 160px,
+	'220' 220px,
+	'260' 260px,
+	'340' 340px,
+	'360' 360px,
+	'460' 460px,
+	'560' 560px,
+	'660' 660px,
+	'760' 760px;
+
+
+$position-spacers:
+	'0' 0px,
+	'4' 4px,
+	'8' 8px,
+	'12' 12px,
+	'16' 16px,
+	'20' 20px,
+	'60' 60px;

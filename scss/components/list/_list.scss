@@ -1,0 +1,125 @@
+// Base
+.list {
+	list-style-type: none;
+}
+
+
+// List marked
+.list-marked {
+	> .list-item {
+		position: relative;
+		padding-left: 2em;
+
+		/*h4, h5 {
+			font-family: inherit;
+			font-weight: inherit;
+			line-height: inherit;
+			font-size: inherit;
+			color: inherit;
+		}*/
+
+		&::before {
+			position: absolute;
+			left: 0;
+			content: '';
+			width: 1.5em;
+			height: 1.5em;
+			margin-right: 0.5em;
+			background-image: str-replace(url("data:image/svg+xml,%3Csvg width='24' height='24' viewBox='0 0 24 24' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M9.00003 16.17L4.83003 12L3.41003 13.41L9.00003 19L21 7L19.59 5.59L9.00003 16.17Z' fill='#{$body-color}'/%3E%3C/svg%3E"), "#", "%23");
+			background-size: cover;
+		}
+
+		+ .list-item {
+			margin-top: 0.5em;
+		}
+	}
+
+	.list-marked {
+		margin-left: 3em;
+	}
+}
+
+
+.list-marked {
+	&.elementor-widget-icon-list {
+		padding-left: 0;
+		line-height: inherit;
+	}
+
+	.elementor-icon-list-item + .elementor-icon-list-item {
+		margin-top: 0.5em;
+	}
+
+	&.list {
+		.elementor-icon-list-icon {
+			svg	{
+				width: $line-height-base * 1em;
+				height: $line-height-base * 1em;
+			}
+
+			+ .elementor-icon-list-text {
+				padding-left: 0.5em;
+			}
+		}
+	}
+
+	.elementor-icon-list-icon {
+		line-height: 0;
+
+		svg path {
+			fill: currentColor;
+		}
+	}
+}
+
+
+// List columns
+.list-2-column {
+	columns: 2;
+	break-inside: avoid;
+	-moz-column-gap: 20px;
+	-webkit-column-gap: 20px;
+}
+
+.list-3-column {
+	columns: 3;
+	break-inside: avoid;
+	-moz-column-gap: 20px;
+	-webkit-column-gap: 20px;
+}
+
+
+// Theming
+@each $color, $value in $colors {
+	.list.list-#{$color} {
+		&.list-marked {
+			.elementor-icon-list-icon {
+				svg path {
+					fill: $value;
+				}
+			}
+
+			> .list-item {
+				&::before {
+					background-image: str-replace(url("data:image/svg+xml,%3Csvg width='24' height='24' viewBox='0 0 24 24' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M9.00003 16.17L4.83003 12L3.41003 13.41L9.00003 19L21 7L19.59 5.59L9.00003 16.17Z' fill='#{$value}'/%3E%3C/svg%3E"), "#", "%23");
+				}
+			}
+		}
+	}
+}
+
+
+// Contexts
+.context-dark {
+	.list-marked {
+		> .list-item {
+			&::before {
+				background-image: str-replace(url("data:image/svg+xml,%3Csvg width='24' height='24' viewBox='0 0 24 24' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M9.00003 16.17L4.83003 12L3.41003 13.41L9.00003 19L21 7L19.59 5.59L9.00003 16.17Z' fill='#{$gray-400}'/%3E%3C/svg%3E"), "#", "%23");
+			}
+		}
+	}
+}
+
+
+// Layouts
+@import "list-creative-custom";

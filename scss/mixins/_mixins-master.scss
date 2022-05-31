@@ -1,0 +1,207 @@
+// Rem output with px fallback
+@mixin font-size($sizeValue: 1) {
+	font-size: ($sizeValue * 16) * 1px;
+	font-size: $sizeValue * 1rem;
+}
+
+// Center block
+@mixin center-block {
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+// Clearfix
+@mixin clearfix() {
+	content: "";
+	display: table;
+	table-layout: fixed;
+}
+
+// Clear after (not all clearfix need this also)
+@mixin clearfix-after() {
+	clear: both;
+}
+
+// Column width with margin
+@mixin column-width($numberColumns: 3) {
+	width: map-get( $columns, $numberColumns ) - ( ( $columns__margin * ( $numberColumns - 1 ) ) / $numberColumns );
+}
+
+// single post
+
+$gutter: $grid-gutter-width;
+
+@mixin single-container {
+	margin-left: auto;
+	margin-right: auto;
+	padding-left:  ($gutter / 2);
+	padding-right: ($gutter / 2);
+	
+	@media (min-width: 940px) {
+		max-width: 800px;
+	}
+	
+	@include media-breakpoint-down(xs){
+		padding-left:  ($gutter / 4);
+		padding-right: ($gutter / 4);
+	}
+	
+}
+
+@mixin sub-heading() {
+	color: $color__heading;
+	font-size: 18px;
+	line-height: 27px;
+	font-weight: 500;
+}
+
+// Mixin buttons
+@mixin btn {
+	background-color: $color__accent;
+	background-clip: padding-box;
+	letter-spacing: 0;
+	font-size: 16px;
+	line-height: 26px;
+	//line-height: 1.65em;
+	font-weight: 700;
+	text-align: center;
+	text-transform: inherit;
+	border-radius: $border__radius;
+	border: none;
+	cursor: pointer;
+	display: inline-block;
+	padding: $button__indents-sm;
+	color: $color__invert;
+	transition: $animation-transition;
+	text-decoration: none;
+	box-shadow: 0 10px 10px rgba(22, 43, 64, 0.12);
+	&:hover {
+		//transition: $animation-transition-hover;
+		background-color: $btn_hover-color;
+		box-shadow: none;
+	}
+	//&:visited, &:focus, &:active {
+	//	color: $color__invert;
+	//}
+}
+
+// Clear list
+@mixin reset-list {
+	padding: 0;
+	margin: 0;
+	list-style: none;
+}
+
+// Typography h1
+@mixin h1-style {
+	font-size: 60px;
+	line-height: 70px;
+	letter-spacing: -1px;
+}
+
+// Typography h2
+@mixin h2-style {
+	font-size: 50px;
+	line-height: 59px;
+	letter-spacing: -1px;
+}
+
+// Typography h3
+@mixin h3-style {
+	font-size:40px;
+	line-height: 47px;
+	letter-spacing: -1px;
+}
+
+// Typography h4
+@mixin h4-style {
+	font-size: 34px;
+	line-height: 48px;
+	margin-bottom: 10px;
+	letter-spacing: 0;
+}
+
+// Typography h5
+@mixin h5-style {
+	font-size: 30px;
+	line-height: 42px;
+	font-weight: 700;
+	letter-spacing: 0;
+}
+
+// Typography h6
+@mixin h6-style {
+	font-size: 24px;
+	line-height: 37px;
+	font-weight: 700;
+	letter-spacing: 0;
+}
+
+// Typography h6-style-1
+@mixin h6-style-1 {
+	font-size: 20px;
+	line-height: 28px;
+	font-weight: 700;
+	letter-spacing: 0;
+}
+
+// Typography h6-style-2
+@mixin h6-style-2 {
+	font-size: 20px;
+	line-height: 35px;
+	font-weight: 500;
+	letter-spacing: 0;
+	color: $color__accent;
+}
+
+// Typography h6-style-3
+@mixin h6-style-3 {
+	font-size: 18px;
+	line-height: 27px;
+	font-weight: 500;
+	letter-spacing: 0;
+}
+// Typography p-style-2
+@mixin p-style-2 {
+	font-size: 16px;
+	line-height: 27px;
+}
+
+// Custom link
+@mixin croco-link {
+	display: unset!important;
+	color: inherit;
+	position: relative;
+	text-decoration: none;
+}
+
+@mixin croco-link-element {
+	content: '';
+	background-color: $color__accent2;
+	opacity: 0.4;
+	display: block;
+	height: 1px;
+	left: 0;
+	position: absolute;
+	top: 100%;
+	transition: all .2s ease;
+	width: 100%;
+}
+@mixin croco-link-element-static {
+	content: '';
+	opacity: 1;
+	display: block;
+	height: 1px;
+	left: 0;
+	position: absolute;
+	top: 100%;
+	transition: all .2s ease;
+	width: 0;
+	background-color: $color__accent2;
+}
+
+@mixin croco-link-element-hover {
+	transition: all .2s ease-in;
+	width: 100%;
+}

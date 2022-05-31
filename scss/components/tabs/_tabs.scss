@@ -1,0 +1,158 @@
+// Variables
+$tabs-padding-y: 10px;
+$tabs-padding-x: 21px;
+$tabs-font-weight: $font-weight-normal;
+$tabs-font-size: $font-size-base;
+$tabs-line-height: $line-height-base;
+
+$tabs-control-spacing: 8px;
+
+$tabs-border-width: 0;
+$tabs-border-radius: $tabs-padding-y + $tabs-border-width + ($tabs-font-size * $tabs-line-height)/2;
+
+
+$tabs-transition: $transition-base;
+
+
+// Base
+.jet-tabs-modern {
+	.jet-tabs-position-top {
+		.jet-tabs__control-wrapper {
+			flex-wrap: nowrap;
+			align-self: center;
+			border: 2px solid transparent;
+		}
+	}
+
+	.jet-tabs__control-wrapper {
+		border-radius: $tabs-border-radius + 2px;
+		background-color: $gray-100;
+	}
+
+	.jet-tabs__control {
+		padding-right: $tabs-control-spacing;
+		padding-left: $tabs-control-spacing;
+
+		&:first-child {
+			padding-left: 0;
+		}
+
+		&:last-child {
+			padding-right: 0;
+		}
+	}
+
+	.jet-tabs__control-inner {
+		position: relative;
+		padding: $tabs-padding-y $tabs-padding-x;
+		border-radius: $tabs-border-radius;
+		font-weight: $tabs-font-weight;
+		line-height: $tabs-line-height;
+		font-size: $tabs-font-size;
+		white-space: nowrap;
+		color: $gray-900;
+		transition: $tabs-transition;
+
+		&::before {
+		  content: '';
+		  position: absolute;
+			bottom: 0;
+			left: 50%;
+			transform: translateX(-50%);
+			width: 0.5em;
+			height: 0.5em;
+			border-radius: 50%;
+			background: $primary;
+			transition: $tabs-transition;
+			opacity: 0;
+		}
+		
+		&:hover {
+		  &::before {
+				bottom: 0.125em;
+				opacity: 1;
+		  }
+		}
+	}
+
+	.active-tab {
+		.jet-tabs__control-inner {
+			background-color: $primary;
+			color: $white;
+
+			&::before {
+				bottom: 0;
+				opacity: 0;
+			}
+		}
+
+		.jet-tabs__label-text {
+			color: inherit;
+		}
+	}
+
+	.jet-tabs__content {
+		padding: 80px 0 0;
+	}
+
+	.jet-tabs__content-wrapper {
+		overflow: visible;
+		background-color: transparent;
+	}
+}
+
+
+// Theming
+@each $color, $value in $colors {
+	.jet-tabs-modern.jet-tabs-#{$color} {
+		.jet-tabs__control-inner {
+			&::before {
+				background-color: $value;
+			}
+		}
+
+		.active-tab {
+			.jet-tabs__control-inner {
+				background-color: $value;
+			}
+		}
+	}
+}
+
+
+// Responsive
+.jet-tabs-modern-responsive {
+	@each $breakpoint in map-keys($grid-breakpoints) {
+		$next: breakpoint-next($breakpoint, $grid-breakpoints);
+		$infix: breakpoint-infix($next, $grid-breakpoints);
+
+		&#{$infix} {
+			.jet-tabs__control-wrapper {
+				@include media-breakpoint-down($breakpoint) {
+					display: flex;
+					width: 100%;
+					overflow-x: auto;
+					-webkit-overflow-scrolling: touch;
+				}
+			}
+		}
+	}
+}
+
+
+// Contexts
+.context-dark {
+	.jet-tabs-modern {
+		.jet-tabs__control-wrapper {
+			background-color: rgba($white, .1);
+		}
+
+		.jet-tabs__control-inner {
+			color: $white;
+		}
+	}
+}
+
+
+// Layouts
+@import "tab-switcher";

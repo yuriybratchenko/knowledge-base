@@ -1,0 +1,64 @@
+// stylelint-disable declaration-no-important
+
+// Common values
+@each $position in $positions {
+  .position-#{$position} { position: $position !important; }
+}
+
+@each $breakpoint in map-keys($grid-breakpoints) {
+  @include media-breakpoint-up($breakpoint) {
+    $infix: breakpoint-infix($breakpoint, $grid-breakpoints);
+
+    @each $size, $spacer in $position-spacers {
+      .t#{$infix}-#{$size} { top: $spacer !important; }
+      .r#{$infix}-#{$size} { right: $spacer !important; }
+      .b#{$infix}-#{$size} { bottom: $spacer !important; }
+      .l#{$infix}-#{$size} { left: $spacer !important; }
+    }
+  }
+}
+
+// Shorthand
+
+.fixed-top {
+  position: fixed;
+  top: 0;
+  right: 0;
+  left: 0;
+  z-index: $zindex-fixed;
+}
+
+.fixed-bottom {
+  position: fixed;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: $zindex-fixed;
+}
+
+.sticky-top {
+  @supports (position: sticky) {
+    position: sticky;
+    top: 0;
+    z-index: $zindex-sticky;
+  }
+}
+
+.sticky-fixed {
+  .site {
+    overflow-x: visible;
+  }
+}
+
+
+// Index
+.i-1 {
+  z-index: 1;
+}
+
+
+// TODO add new component
+#panel-anchor {
+  width: 1px;
+  height: 1px;
+}

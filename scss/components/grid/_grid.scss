@@ -1,0 +1,192 @@
+@import "../bootstrap/scss/functions";
+@import "../base/variables";
+@import "../bootstrap/scss/mixins/breakpoints";
+@import "../bootstrap/scss/mixins/grid-framework";
+@import "../bootstrap/scss/mixins/grid";
+@import "../bootstrap/scss/grid";
+
+
+// Mixins
+// Grid-dedicated columns spacing
+@mixin grid-spacing( $offset ) {
+	margin-bottom: -$offset;
+
+	> * {
+		margin-bottom: $offset;
+	}
+}
+
+
+// Elementor grid
+
+.page,
+.crocoblock-dynamic-widget {
+	.elementor-section.elementor-section-boxed > .elementor-container {
+		@include make-container-max-widths();
+	}
+
+	.elementor-column-gap-default > .elementor-column > .elementor-element-populated {
+		padding: 20px;
+	}
+}
+
+
+
+// Base
+[class*='row-'] {
+	&:empty {
+		margin-bottom: 0;
+	}
+}
+
+@each $breakpoint in map-keys($grid-breakpoints) {
+	@include media-breakpoint-up($breakpoint) {
+		$infix: breakpoint-infix($breakpoint, $grid-breakpoints);
+
+		@each $size, $length in $row-spacers {
+			.row#{$infix}-#{$size} {
+				@include grid-spacing( $length );
+			}
+		}
+	}
+}
+
+
+// Gutters
+.gutters-12 {
+	margin-left: -6px;
+	margin-right: -6px;
+
+	> [ class*='col-' ] {
+		padding-left: 6px;
+		padding-right: 6px;
+	}
+}
+
+.gutters-20 {
+	margin-left: -10px;
+	margin-right: -10px;
+
+	> [ class*='col-' ] {
+		padding-left: 10px;
+		padding-right: 10px;
+	}
+}
+
+.gutters-32 {
+	margin-left: -16px;
+	margin-right: -16px;
+
+	> [ class*='col-' ] {
+		padding-left: 16px;
+		padding-right: 16px;
+	}
+}
+
+@include media-breakpoint-up(md) {
+	.gutters-md-20 {
+		margin-left: -10px;
+		margin-right: -10px;
+
+		> [ class*='col-' ] {
+			padding-left: 10px;
+			padding-right: 10px;
+		}
+	}
+}
+
+
+// Columns
+// Media
+@include media-breakpoint-up(xl) {
+  .col-xl-20p {
+		max-width: 20%;
+		flex-basis: 20%;
+	}
+}
+
+
+
+
+// TODO Delete
+@import "custom-sectiom-resize";
+
+// TODO delete
+// Alignment for every column in row
+@each $breakpoint in map-keys($grid-breakpoints) {
+	@include media-breakpoint-up($breakpoint) {
+		.row-#{$breakpoint}-top    { align-items: flex-start; }
+		.row-#{$breakpoint}-center { align-items: center; }
+		.row-#{$breakpoint}-bottom { align-items: flex-end; }
+	}
+}
+
+// Alignment per column
+@each $breakpoint in map-keys($grid-breakpoints) {
+	@include media-breakpoint-up($breakpoint) {
+		.col-#{$breakpoint}-top    { align-self: flex-start; }
+		.col-#{$breakpoint}-center { align-self: center; }
+		.col-#{$breakpoint}-bottom { align-self: flex-end; }
+	}
+}
+
+@mixin col-20 {
+	flex: 0 0 20%;
+	max-width: 20%;
+	padding-left: ($grid-gutter-width / 2);
+	padding-right: ($grid-gutter-width / 2);
+}
+
+@mixin col-25 {
+	flex: 0 0 25%;
+	max-width: 25%;
+	padding-left: ($grid-gutter-width / 2);
+	padding-right: ($grid-gutter-width / 2);
+}
+
+@mixin col-33 {
+	flex: 0 0 33.333%;
+	max-width: 33.333%;
+	padding-left: ($grid-gutter-width / 2);
+	padding-right: ($grid-gutter-width / 2);
+}
+
+@mixin col-50 {
+	flex: 0 50%;
+	max-width: 50%;
+	padding-left: ($grid-gutter-width / 2);
+	padding-right: ($grid-gutter-width / 2);
+}
+
+@mixin col-75 {
+	flex: 0 75%;
+	max-width: 75%;
+	padding-left: ($grid-gutter-width / 2);
+	padding-right: ($grid-gutter-width / 2);
+}
+
+@mixin col-100 {
+	flex: 0 100%;
+	max-width: 100%;
+	padding-left: ($grid-gutter-width / 2);
+	padding-right: ($grid-gutter-width / 2);
+}
+
+.col-20 {
+	@include col-20;
+}
+.col-25 {
+	@include col-25;
+}
+.col-33 {
+	@include col-33;
+}
+.col-50 {
+	@include col-50;
+}
+.col-75 {
+	@include col-75;
+}
+.col-100 {
+	@include col-100;
+}

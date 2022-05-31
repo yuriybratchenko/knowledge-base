@@ -1,0 +1,53 @@
+// Variables
+$badge-modern-padding: 6px 12px 6px 0;
+$badge-modern-font-weight: $font-weight-normal;
+$badge-modern-font-size: $font-size-base;
+
+$badge-modern-border-width: $border-width;
+$badge-modern-border-radius: $border-radius-sm;
+
+
+// Badge modern
+.badge-modern {
+	position: relative;
+	display: inline-block;
+	vertical-align: middle;
+	text-align: center;
+	border-radius: 0 $badge-modern-border-radius $badge-modern-border-radius 0;
+	border-width: $border-width $border-width $border-width 0;
+	border-style: solid;
+	border-color: rgba($primary, .4);
+	margin-left: 16px;
+	padding: $badge-modern-padding;
+	font-weight: $badge-modern-font-weight;
+	line-height: 1;
+	font-size: $badge-modern-font-size;
+	color: $white;
+	white-space: nowrap;
+
+	&::before {
+		content: '';
+	  position: absolute;
+		top: -1px;
+		right: 100%;
+		height: 30px;
+		width: 15px;
+		background-image: str-replace(url("data:image/svg+xml,%3Csvg width='15' height='30' viewBox='0 0 15 30' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cg clip-path='url(%23clip0)'%3E%3Cpath d='M14.1236 0.483887H17.0112C19.4903 0.483887 21.5 2.42874 21.5 4.82784V25.1721C21.5 27.5713 19.4903 29.5161 17.0112 29.5161H13.9422C12.5706 29.5161 11.2744 28.9094 10.423 27.8688L2.70091 18.4307C1.46835 16.9243 1.40494 14.8131 2.545 13.24L10.4486 2.33364C11.2888 1.1742 12.6603 0.483887 14.1236 0.483887Z' stroke='#{rgba($primary, .4)}'/%3E%3C/g%3E%3Cdefs%3E%3CclipPath id='clip0'%3E%3Crect width='15' height='30' fill='white'/%3E%3C/clipPath%3E%3C/defs%3E%3C/svg%3E%0A"), "#", "%23");
+		background-repeat: no-repeat;
+		background-size: cover;
+	}
+}
+
+
+// Theming
+@each $color, $value in $colors {
+	.badge-modern.badge-#{$color} {
+		color: $value;
+		background-color: transparent;
+		border-color: rgba($value, .4);
+		
+		&::before {
+			background-image: str-replace(url("data:image/svg+xml,%3Csvg width='15' height='30' viewBox='0 0 15 30' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cg clip-path='url(%23clip0)'%3E%3Cpath d='M14.1236 0.483887H17.0112C19.4903 0.483887 21.5 2.42874 21.5 4.82784V25.1721C21.5 27.5713 19.4903 29.5161 17.0112 29.5161H13.9422C12.5706 29.5161 11.2744 28.9094 10.423 27.8688L2.70091 18.4307C1.46835 16.9243 1.40494 14.8131 2.545 13.24L10.4486 2.33364C11.2888 1.1742 12.6603 0.483887 14.1236 0.483887Z' stroke='#{rgba($value, .4)}'/%3E%3C/g%3E%3Cdefs%3E%3CclipPath id='clip0'%3E%3Crect width='15' height='30' fill='white'/%3E%3C/clipPath%3E%3C/defs%3E%3C/svg%3E%0A"), "#", "%23");
+		}
+	}
+}

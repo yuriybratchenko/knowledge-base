@@ -1,0 +1,408 @@
+// Theming
+@each $color, $value in $grays {
+	.bg-#{$color} {
+		background-color: $value;
+	}
+}
+
+@each $color, $value in $colors {
+	.bg-#{$color} {
+		background-color: $value;
+	}
+}
+
+
+// Background image
+.bg-image {
+	background-size: cover;
+	background-repeat: no-repeat;
+	background-position: 50%;
+}
+
+
+// Background gradient
+// Old gradient
+//radial-gradient(430px at calc(50% - 550px) -100px, $color1 0%, transparent 100%),
+//radial-gradient(430px at calc(50% + 550px) calc(100% + 100px), $color2 0%, transparent 100%);
+@each $name, $color1, $color2 in $gradients {
+	.bg-rg-#{$name} {
+		background-image:
+			radial-gradient(29% 58% at 17% -12%, $color1 0%, transparent 100%),
+			radial-gradient(56% 90% at 88% 126%, $color2 0%, transparent 100%);
+	}
+}
+
+.bg-gradient-light {
+	background: radial-gradient(77.54% 78.49% at 100% 2.14%, #FFFFFF 0%, #F1F5F9 100%);
+}
+
+.bg-gradient-jetengine-section-01 {
+	background: radial-gradient(29.03% 57.89% at 17.15% -12.05%, #8044E2 0%, rgba(15, 23, 42, 0) 100%), radial-gradient(55.56% 89.89% at 88.06% 126.04%, #2E4FF4 0%, rgba(15, 23, 42, 0) 100%), #0F172A;
+}
+
+.bg-gradient-jetengine-section-02 {
+	background: radial-gradient(64.17% 103.82% at 0% 50%, #8044E2 0%, rgba(15, 23, 42, 0) 100%), radial-gradient(44.51% 72.02% at 84.44% 112.25%, #2E4FF4 0%, rgba(15, 23, 42, 0) 100%), #0F172A;
+}
+
+.bg-gradient-jetengine-section-03 {
+	background: radial-gradient(36.19% 101.06% at 7.01% -17.5%, #8044E2 0%, rgba(15, 23, 42, 0) 100%), radial-gradient(29.9% 88.65% at 22.08% -5.19%, #2E4FF4 0%, rgba(15, 23, 42, 0) 100%), radial-gradient(31.58% 104.9% at 94.2% 111.63%, #2E4FF4 0%, rgba(15, 23, 42, 0) 100%), #0F172A;
+}
+
+.bg-gradient-jetengine-section-04 {
+	background: radial-gradient(67.47% 99.61% at -8.27% 7.87%, #8044E2 0%, rgba(15, 23, 42, 0) 100%), radial-gradient(61.33% 90.55% at 105.6% 100%, #2E4FF4 0%, rgba(15, 23, 42, 0) 100%), #0F172A;
+	@include media-breakpoint-up(md) {
+		background: radial-gradient(28.63% 126.92% at 21.6% -14.53%, #8044E2 0%, rgba(15, 23, 42, 0) 100%), radial-gradient(40.47% 129.91% at 69.72% 120.51%, #394CF3 0%, rgba(15, 23, 42, 0) 100%), #0F172A;
+	}
+}
+
+
+// Background layer
+[class*='bg-layer-'] {
+	position: relative;
+
+	&::before {
+		position: absolute;
+		z-index: -1;
+		content: '';
+		transform: translate3d(-50%, -50%, 0);
+		background-repeat: no-repeat;
+		background-size: cover;
+		pointer-events: none;
+	}
+
+	.elementor-container {
+		z-index: 1;
+	}
+}
+
+.bg-layer-01,
+.bg-layer-03,
+.bg-layer-04,
+.bg-layer-06{
+	&::before {
+		width: 414px;
+		height: 662px;
+	}
+}
+
+.bg-layer-02 {
+	&::before {
+		width: 646px;
+		height: 660px;
+	}
+}
+
+.bg-layer-05 {
+	&::before {
+		width: 650px;
+		height: 663px;
+	}
+}
+
+.bg-layer-01::before {
+	background-image: url('https://crocoblock.com/wp-content/uploads/2021/01/decor-2.svg');
+}
+
+.bg-layer-02::before {
+	background-image: url('https://crocoblock.com/wp-content/uploads/2021/01/decor-1.svg');
+}
+
+.bg-layer-03::before {
+	background-image: url('https://crocoblock.com/wp-content/uploads/2021/01/decor-3.svg');
+}
+
+.bg-layer-04::before {
+	background-image: url('https://crocoblock.com/wp-content/uploads/2021/07/decor-04.svg');
+}
+
+.bg-layer-05::before {
+	background-image: url('https://crocoblock.com/wp-content/uploads/2021/07/decor-05.svg');
+}
+
+.bg-layer-06::before {
+	background-image: url('https://crocoblock.com/wp-content/uploads/2021/09/decor-06.svg');
+}
+
+.bg-layer-07::after {
+	background-image: url("https://crocoblock.com/wp-content/uploads/2021/09/decor-07.svg");
+}
+
+//Plugin background layer gradient
+.bg-layer-jetengine-01::before {
+	background: radial-gradient(85.68% 85.68% at 65.31% -10.24%, #8044E2 0%, rgba(15, 23, 42, 0) 100%), radial-gradient(58.21% 58.21% at 28.06% 96.39%, #2E4FF4 0%, rgba(15, 23, 42, 0) 100%), #0F172A;
+}
+
+.bg-gradient-gutenberg-light::before {
+	background: linear-gradient(180deg, #F1F5F9 0%, rgba(255, 255, 255, 0) 77.65%);
+}
+
+.bg-banner-jetengine {
+	background: radial-gradient(85.96% 85.96% at 4.62% -12.87%, #2E4FF4 0%, rgba(15, 23, 42, 0) 100%), radial-gradient(102.92% 102.92% at 93.85% 105.85%, #8044E2 0%, rgba(15, 23, 42, 0) 100%), #0F172A;
+}
+
+//Plugin background layer
+.bg-gutenberg-dark::before {
+	background: $gray-900;
+}
+
+// Media
+@media(min-width: 1025px) {
+	.bg-layer-01,
+	.bg-layer-03,
+	.bg-layer-04,
+	.bg-layer-06 {
+		&::before {
+			width: 765px;
+			height: 1224px;
+		}
+	}
+
+	.bg-layer-02 {
+		&::before {
+			width: 973px;
+			height: 995px;
+		}
+	}
+
+	.bg-layer-05 {
+		&::before {
+			width: 989px;
+			height: 887px;
+		}
+	}
+	[class*=radial-gradient].bg-layer-07 {
+		&::after {
+			width: 765px;
+			height: 1224px;
+		}
+	}
+}
+
+
+// Background layer position
+.bg-layer-position-01::before {
+	top: 0;
+	left: 67%;
+}
+
+.bg-layer-position-02::before {
+	top: 32%;
+	left: calc(50% - 65px);
+}
+
+.bg-layer-position-03::before {
+	top: 86%;
+	left: 72%;
+}
+
+.bg-layer-position-04::before {
+	top: 50%;
+	left: 60%;
+}
+
+.bg-layer-position-05::before {
+	z-index: auto;
+	top: 70%;
+	left: 48%;
+}
+
+.bg-layer-position-06::before {
+	top: 90%;
+	left: 49%;
+}
+
+.bg-layer-position-07::before {
+	top: 50%;
+	left: 50%;
+}
+
+.bg-layer-position-08::before {
+	top: 65%;
+ 	left: 46%;
+}
+
+.bg-layer-position-09::after {
+	top: 10%;
+	right: -5%;
+}
+
+
+// Media
+@include media-breakpoint-up(md) {
+	.bg-layer-position-01::before {
+		top: 26%;
+		left: 47%;
+	}
+
+	.bg-layer-position-02::before {
+		top: 54%;
+		left: 59%;
+	}
+
+	.bg-layer-position-03::before {
+		top: 71%;
+		left: 63%;
+	}
+}
+
+@include media-breakpoint-up(lg) {
+	.bg-layer-position-06::before {
+		top: 141%;
+	}
+}
+
+@include media-breakpoint-up(xl) {
+	.bg-layer-position-05::before {
+		top: 100%;
+	}
+}
+
+
+// Background circle layer
+.bg-layer-circle {
+	display: inline-flex;
+	position: relative;
+
+	&:before {
+		display: block;
+		width: 122%;
+		padding-bottom: 122%;
+		border-radius: 50%;
+	}
+}
+
+.bg-layer-circle-top::before {
+	top: 70%;
+	left: 50%;
+}
+
+.bg-layer-circle-right::before {
+	top: 50%;
+	left: 83%;
+}
+
+.bg-layer-circle-left::before {
+	top: 50%;
+	left: 15%;
+}
+
+
+// Background layer gradient
+[class*='radial-gradient'] {
+	position: relative;
+
+	&::before,
+	&::after {
+		position: absolute;
+		content: '';
+		width: 970px;
+		height: 970px;
+		transform: translate3d(-50%, -50%, 0);
+		background-repeat: no-repeat;
+		background-size: cover;
+		pointer-events: none;
+	}
+
+	.elementor-container {
+		z-index: 1;
+	}
+}
+
+.radial-gradient-lg {
+	&::before,
+	&::after {
+		width: 1271px;
+		height: 1271px;
+	}
+}
+
+.radial-gradient-primary {
+	&::before {
+		background-image: url('https://crocoblock.com/wp-content/uploads/2021/07/radial-gradient-primary.svg');
+	}
+}
+
+.radial-gradient-jetwoobuilder {
+	&::before {
+		background-image: url('https://crocoblock.com/wp-content/uploads/2021/04/radial-gradient-jetwoobuilder.svg');
+	}
+}
+
+.radial-gradient-jetbooking {
+	&::after {
+		background-image: url('https://crocoblock.com/wp-content/uploads/2021/04/radial-gradient-jetbooking.svg');
+	}
+}
+
+.radial-gradient-jetblocks {
+	&::before {
+		background-image: url('https://crocoblock.com/wp-content/uploads/2021/07/radial-gradient-jetblocks.svg');
+	}
+}
+
+.radial-gradient-jetpopup {
+	&::before {
+		background-image: url('https://crocoblock.com/wp-content/uploads/2021/07/radial-gradient-jetpopup.svg');
+	}
+}
+
+.radial-gradient-position-01 {
+	&::before {
+		top: 0;
+		left: calc(50% - 200px);
+	}
+}
+
+.radial-gradient-position-02 {
+	&::after {
+		top: 100%;
+		left: calc(50% + 200px);
+	}
+}
+
+
+// Media
+@include media-breakpoint-up(xl) {
+	.radial-gradient-position-01 {
+		&::before {
+			left: 20%;
+		}
+	}
+
+	.radial-gradient-position-02 {
+		&::after {
+			left: 80%;
+		}
+	}
+}
+
+@media (max-width: 1399px) {
+	.radial-gradient-position-03::before,
+	.radial-gradient-position-04::before,
+	.radial-gradient-position-05::before {
+		display: none;
+	}
+}
+
+@media (min-width: 1400px) {
+	.radial-gradient-position-03 {
+		&::before {
+			top: 30%;
+			left: calc(100% + 200px);
+		}
+	}
+
+	.radial-gradient-position-04 {
+		&::before {
+			top: 15%;
+			left: -200px;
+		}
+	}
+
+	.radial-gradient-position-05 {
+		&::before {
+			top: 30%;
+			left: calc(100% + 200px);
+		}
+	}
+}

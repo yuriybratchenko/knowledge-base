@@ -1,0 +1,130 @@
+// Variables
+$image-tooltip-size: 40px;
+$image-tooltip-content-height: $image-tooltip-size + 4px;
+$image-tooltip-padding-x: 24px;
+
+
+// Base
+.image-tooltip {
+	position: absolute;
+	transform: translate3d(-50%, -50%, 0);
+	display: flex;
+	align-items: center;
+	border-radius: 50%;
+	animation: tooltipPulse 1s infinite;
+	cursor: pointer;
+
+	&:hover {
+		animation: none;
+
+		.image-tooltip-content {
+			visibility: visible;
+			opacity: 1;
+		}
+
+		.image-tooltip-text {
+			transition-delay: .1s;
+			transform: none;
+		}
+	}
+}
+
+.image-tooltip-right {
+	.image-tooltip-content {
+		left: -($image-tooltip-content-height - $image-tooltip-size)/2;
+		padding-left: $image-tooltip-size + 16px;
+		
+		&::before {
+			right: 30px;
+			left: 0;
+		}
+	}
+
+	.image-tooltip-text {
+		transform: translateX(-30px);
+	}
+
+	&:hover {
+		.image-tooltip-content::before {
+			right: 0;
+		}
+	}
+}
+
+.image-tooltip-left {
+	.image-tooltip-content {
+		right: -($image-tooltip-content-height - $image-tooltip-size)/2;
+		padding-right: $image-tooltip-size + 16px;
+
+		&::before {
+			right: 0;
+			left: 30px;
+		}
+	}
+
+	.image-tooltip-text {
+		transform: translateX(30px);
+	}
+
+	&:hover {
+		.image-tooltip-content::before {
+			left: 0;
+		}
+	}
+}
+
+.image-tooltip-icon {
+	position: relative;
+	width: $image-tooltip-size;
+	height: $image-tooltip-size;
+	border-radius: 50%;
+	background-color: $jetpopup;
+	background-image: url("data:image/svg+xml,%3Csvg width='24' height='24' viewBox='0 0 24 24' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath fill-rule='evenodd' clip-rule='evenodd' d='M4 12C4 7.58457 7.58457 4 12 4C16.4154 4 20 7.58457 20 12C20 16.4154 16.4154 20 12 20C7.58457 20 4 16.4154 4 12ZM12 2C6.48 2 2 6.48 2 12C2 17.52 6.48 22 12 22C17.52 22 22 17.52 22 12C22 6.48 17.52 2 12 2ZM11 11V17H13V11H11ZM11 7.00001V9.00001H13V7.00001H11Z' fill='white'/%3E%3C/svg%3E%0A");
+	background-repeat: no-repeat;
+	background-position: 50%;
+}
+
+.image-tooltip-content {
+	position: absolute;
+	display: flex;
+	align-items: center;
+	height: $image-tooltip-content-height;
+	padding: 0 $image-tooltip-padding-x;
+	white-space: nowrap;
+	color: $white;
+	transition: .2s ease-in-out;
+	visibility: hidden;
+	opacity: 0;
+
+	&::before {
+		position: absolute;
+		content: '';
+		top: 0;
+		bottom: 0;
+		border-radius: $image-tooltip-content-height/2;
+		background-color: rgba($jetpopup, .6);
+		backdrop-filter: blur(4px);
+	  transition: .2s ease-out;
+	}
+}
+
+.image-tooltip-text {
+	position: relative;
+	transition: .2s ease-out;
+}
+
+.image-tooltip-title {
+	font-weight: $font-weight-bold;
+	font-family: $font-family-sec;
+}
+
+
+// Keyframes
+@keyframes tooltipPulse {
+	0% {
+		box-shadow: 0 0 0 0 rgba($jetpopup, .3);
+	}
+	100% {
+		box-shadow: 0 0 0 20px transparent;
+	}
+}

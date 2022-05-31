@@ -1,0 +1,82 @@
+// Base
+footer.site-footer {
+	.widget_text {
+		white-space: nowrap;
+		a {
+			text-decoration: none;
+			@include p-style-2();
+		}
+	}
+	.crocoblock_copyright a {
+		color: inherit!important;
+	}
+}
+
+.footer-none .site-footer {
+	display: none;
+}
+
+// Contexts
+.context-dark {
+	.site-footer {
+		border-top: none;
+		color: $gray-500;
+		background: transparent;
+
+		.footer-widget-area {
+			.widget-title {
+				margin-bottom: 12px;
+				font-family: "Cabin", sans-serif;
+				color: $white;
+				line-height: inherit;
+			}
+
+			.sub-nav-list {
+				margin-bottom: -5px;
+
+				li {
+					margin-bottom: 5px;
+				}
+
+				a {
+					font-size: inherit;
+					color: inherit;
+					transition: .25s ease-in-out;
+
+					&::after {
+						width: 100%;
+						background-color: $primary;
+						opacity: 1;
+						transform: scaleX( 0 );
+						transform-origin: 0 50%;
+						transition: .25s ease;
+					}
+
+					&:hover {
+						color: $primary;
+
+						&::after {
+							transform: scaleX( 1 );
+						}
+					}
+				}
+			}
+		}
+
+		.site-info {
+			font-size: 12px;
+			font-weight: $font-weight-normal;
+			color: inherit;
+		}
+
+		.crocoblock-social-list__item {
+			svg path {
+				transition: .25s ease-in-out;
+			}
+
+			a:hover svg path {
+				fill: $white;
+			}
+		}
+	}
+}

@@ -1,0 +1,44 @@
+// Base
+.effect-fade {
+	position: relative;
+
+	&:hover {
+		.effect-fade-in {
+			opacity: 1;
+			visibility: visible;
+		}
+
+		.effect-fade-out {
+			opacity: 0;
+			visibility: hidden;
+		}
+	}
+}
+
+.effect-fade-in {
+	position: absolute;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	opacity: 0;
+	visibility: hidden;
+	transition: $transition-base;
+}
+
+.effect-fade-out {
+	opacity: 1;
+	visibility: visible;
+	transition: $transition-base;
+}
+
+
+// Theming
+@each $color, $value in $colors {
+	.effect-fade-#{$color} {
+		.effect-fade-in {
+			background-color: $value;
+			box-shadow: 0 4px 28px rgba($value, 0.5);
+		}
+	}
+}

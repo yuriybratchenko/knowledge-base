@@ -1,0 +1,27 @@
+// Base
+.effect-01 {
+	&:hover {
+		box-shadow: $box-shadow;
+	}
+}
+
+.effect-title {
+	transition: $transition-base;
+}
+
+
+// Theming
+@each $color, $value in $colors {
+	.effect-#{$color} {
+		&:hover {
+			.effect-title {
+				color: $jetbooking;
+			}
+		}
+	}
+}
+
+
+// Layouts
+@import 'effect-fade';
+@import 'effect-shadow';

@@ -1,0 +1,30 @@
+// Base
+.card-plugin-classic {
+	width: 176px;
+	height: 70px;
+	border-radius: $border-radius;
+	background: $gray-600;
+	transition: $transition-base;
+
+	&:hover {
+		background: $primary;
+		box-shadow: 0 4px 30px rgba( $primary, 0.5 );
+	}
+}
+
+.card-plugin-classic-link {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+
+// Theming
+@each $color, $value in $colors {
+	.card-plugin-classic-#{$color} {
+		&:hover {
+			box-shadow: 0 4px 30px rgba($value, 0.5);
+			background-color: $value;
+		}
+	}
+}

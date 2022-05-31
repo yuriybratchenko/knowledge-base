@@ -1,0 +1,26 @@
+// Collapse
+[data-collapse-target] {
+	cursor: pointer;
+}
+
+.collapse-overlay-text {
+	position: relative;
+
+	&::after {
+		position: absolute;
+		content: '';
+		right: 0;
+		bottom: 0;
+		left: 0;
+		height: $font_size-base * $line-height-base * 2;
+		background: linear-gradient(0deg, $white, rgba($white, .3));
+		transition: $transition-base;
+		pointer-events: none;
+	}
+
+	&.active {
+		&::after {
+			opacity: 0;
+		}
+	}
+}

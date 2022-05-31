@@ -1,0 +1,15 @@
+// Base
+@include media-breakpoint-up(xl) {
+	.box-navy-item {
+		margin-right: -45px;
+		margin-left: -45px;
+	}
+
+	.box-navy-230 {
+		width: 230px;
+	}
+
+	.box-navi-260 {
+		width: 260px;
+	}
+}

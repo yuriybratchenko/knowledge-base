@@ -1,0 +1,51 @@
+// Variables
+$tag-padding: 7px 11px;
+$tag-font-weight: $font-weight-normal;
+$tag-font-size: $font-size-sm;
+$tag-line-height: $line-height-sm;
+$tag-border-radius: $border-radius-sm*2;
+
+$tag-padding-sm: 3px 7px;
+$tag-font-weight-sm: $font-weight-medium;
+$tag-font-size-sm: 12px;
+$tag-line-height-sm: 1.167;
+$tag-border-radius-sm: $border-radius-sm;
+
+$tag-border-width: $border-width;
+
+$tag-transition: $transition-base;
+
+
+// Base
+.tag {
+	display: inline-block;
+	text-align: center;
+	border: $tag-border-width solid $jetbooking;
+	border-radius: $tag-border-radius;
+	padding: $tag-padding;
+	font-weight: $tag-font-weight;
+	font-size: $tag-font-size;
+	line-height: $tag-line-height;
+	white-space: nowrap;
+	color: $gray-600;
+	background-color: transparent;
+	transition: $tag-transition;
+}
+
+a.tag {
+	&:hover {
+		border-color: $jetbooking;
+		background-color: $jetbooking;
+		color: color-yiq( $jetbooking );
+	}
+}
+
+
+// Modifying
+.tag-sm {
+	border-radius: $tag-border-radius-sm;
+	padding: $tag-padding-sm;
+	font-weight: $tag-font-weight-sm;
+	font-size: $tag-font-size-sm;
+	line-height: $tag-line-height-sm;
+}

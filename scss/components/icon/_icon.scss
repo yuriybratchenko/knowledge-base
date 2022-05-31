@@ -1,0 +1,190 @@
+// Base
+.icon {
+	&.elementor-widget-icon {
+		font-size: 0;
+		line-height: 0;
+	}
+
+	&.icon-custom {
+		display: inline-flex;
+		font-size: 24px;
+		color: inherit;
+	}
+
+	&.elementor-view-framed {
+		.elementor-icon {
+			padding: $icon-framed-padding;
+			color: inherit;
+			border: $icon-border-width solid currentColor;
+		}
+	}
+
+	&.elementor-view-stacked {
+		.elementor-icon {
+			padding: $icon-stacked-padding;
+			background-color: $body-color;
+
+			&, &:hover {
+				color: $white;
+			}
+		}
+	}
+
+	.elementor-icon {
+		font-size: 24px;
+
+		&, &:hover {
+			color: inherit;
+		}
+
+		svg {
+			path {
+				fill: currentColor;
+			}
+		}
+	}
+
+	a.elementor-icon {
+		transition: .25s ease;
+	}
+}
+
+.icon-icon {
+	width: 1em;
+	height: 1em;
+	color: currentColor;
+
+	path {
+		fill: currentColor;
+	}
+}
+
+.icon.icon-filled,
+.icon.icon-outline {
+	border: $icon-border-width solid;
+	border-radius: 50%;
+	padding: $icon-padding;
+}
+
+.icon.icon-filled {
+	border-color: $body-color;
+	color: $white;
+	background-color: $body-color;
+}
+
+.icon.icon-outline {
+	border-color: currentColor;
+	color: inherit;
+}
+
+
+// Sizes
+@each $size, $value, $frame in $icon-sizes {
+	.icon-#{$size} {
+		&.icon-custom,
+		.elementor-icon {
+			font-size: $value;
+		}
+
+		&.icon-filled,
+		&.icon-outline,
+		&.elementor-view-framed .elementor-icon {
+			padding: ( $frame - $value ) / 2 - $icon-border-width;
+		}
+
+		&.elementor-view-stacked .elementor-icon {
+			padding: ( $frame - $value ) / 2;
+		}
+	}
+}
+
+
+// Theming
+@each $color, $value, $hover in $colors {
+	.icon-#{$color} {
+		&.icon-custom {
+			color: $value;
+		}
+
+		&.icon-outline {
+			border-color: $value;
+		}
+
+		&.icon-link {
+			&:hover {
+				color: $gray-900;
+				border-color: $hover;
+			}
+		}
+
+		&.elementor-view-framed {
+			.elementor-icon {
+				color: $value;
+			}
+
+			a.elementor-icon {
+				&:hover {
+					color: $gray-900;
+					border-color: $hover;
+				}
+			}
+		}
+
+		.elementor-icon {
+			&, &:hover {
+				color: $value;
+			}
+		}
+	}
+
+	.icon-#{$color}-filled {
+		&.icon-filled {
+			color: color-yiq($value);
+			background-color: $value;
+			border-color: $value;
+		}
+
+		&.icon-link {
+			box-shadow: 0 0.125em 0.875em rgba($value, 0.5);
+
+			&:hover {
+				color: color-yiq($hover);
+				background-color: $hover;
+				border-color: $hover;
+				box-shadow: none;
+			}
+		}
+
+		&.elementor-view-stacked {
+			.elementor-icon {
+				background-color: $value;
+
+				&, &:hover {
+					color: color-yiq($value);
+				}
+			}
+
+			a.elementor-icon {
+				box-shadow: 0 0.125em 0.875em rgba($value, 0.5);
+
+				&:hover {
+					color: color-yiq($hover);
+					background-color: $hover;
+					box-shadow: none;
+				}
+			}
+		}
+	}
+}
+
+
+// Contexts
+.context-dark {
+	.icon {
+		&.icon-outline.icon-link {
+			&:hover {
+				color: $white;
+			}
+		}
+	}
+}

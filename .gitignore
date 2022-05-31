@@ -1,0 +1,7 @@
+*.log
+*.css.map
+node_modules
+.sass-cache
+.idea
+package-lock.json
+/phpcs.xml.dist

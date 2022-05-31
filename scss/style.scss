@@ -1,0 +1,57 @@
+/*!
+Theme Name: Knowledge Base
+Theme URI:
+Author:
+Author URI:
+Description: Child theme
+Template: kava
+Version: 1.0.1
+License: GNU General Public License v3 or later
+License URI: http://www.gnu.org/licenses/gpl-3.0.html
+Text Domain: knowledge-base
+*/
+
+@import "components/base/variables";
+@import "mixins/mixins-master";
+
+@import "components/base/base";
+@import "components/grid/grid";
+@import "components/image/image";
+@import "components/link/link";
+@import "components/icon/icon";
+@import "components/badge/badge";
+@import "components/button/button";
+@import "components/list/list";
+@import "components/input/input";
+@import "components/tag/tag";
+@import "components/section/section";
+
+@import "components/boxes/boxes";
+@import "components/effect/effect";
+@import "components/card/card";
+@import "components/footer/footer";
+
+@import "components/modal/modal";
+@import "components/popup/popup";
+@import "components/collapse/collapse";
+@import "components/slick/slick";
+@import "components/clipboard/clipboard";
+@import "components/tabs/tabs";
+
+.single-jetplugins .sidebar {
+  min-width: 240px;
+}
+
+.page-id-26624 {
+  background: #E5E5E5;
+}
+
+.plugins-list {
+  .jet-container {
+    padding: initial;
+  }
+  .logo {
+    min-height: 72px;
+    min-width: 112px;
+  }
+}

@@ -1,0 +1,21 @@
+// Functions
+
+// All Headings
+@function headings() {
+	@return unquote( 'h1, .h1, h2, .h2, h3, .h3, h4, .h4, h5, .h5, h6, .h6, h1.elementor-heading-title, h2.elementor-heading-title, h3.elementor-heading-title, h4.elementor-heading-title, h5.elementor-heading-title, h6.elementor-heading-title, .heading-large' );
+}
+
+// Color contrast
+@function color-yiq($color, $dark: $yiq-text-dark, $light: $yiq-text-light) {
+	$r: red($color);
+	$g: green($color);
+	$b: blue($color);
+
+	$yiq: (($r * 299) + ($g * 587) + ($b * 114)) / 1000;
+
+	@if ($yiq >= $yiq-contrasted-threshold) {
+		@return $dark;
+	} @else {
+		@return $light;
+	}
+}
