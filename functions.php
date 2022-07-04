@@ -18,6 +18,11 @@ function kb_styles_depends( $deps ) {
 		kava_theme()->version()
 	);
 
+    if ( ! is_admin() ) {
+        wp_register_style('google', 'https://fonts.googleapis.com/css2?family=Cabin:wght@400;500;700&display=swap', array(), null, 'all');
+        wp_enqueue_style('google');
+    }
+
 	$deps[] = $parent_handle;
 
 	return $deps;
@@ -87,7 +92,12 @@ function kb_structures( $structures_manager ) {
  */
 
 add_action( 'after_setup_theme', 'kb_includes' );
+add_action( 'after_setup_theme', 'kb_static' );
 
 function kb_includes() {
     require_once get_theme_file_path( 'includes/extras.php' );
+}
+
+function kb_static() {
+    require_once get_theme_file_path( 'includes/static.php' );
 }
