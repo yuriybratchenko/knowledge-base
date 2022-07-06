@@ -28,6 +28,28 @@ function kb_styles_depends( $deps ) {
 	return $deps;
 }
 
+add_filter( 'kava-theme/assets-depends/script', 'kb_scripts_depends' );
+
+/**
+ * Enqueue scripts.
+ */
+function kb_scripts_depends( $deps ) {
+
+    $parent_handle = 'kava-parent-theme-script';
+
+    wp_enqueue_script(
+        $parent_handle,
+        get_theme_file_uri( 'js/scripts.js' ),
+        array(),
+        kava_theme()->version(),
+        true
+    );
+
+    $deps[] = $parent_handle;
+
+    return $deps;
+}
+
 /**
  * Disable magic button for your clients
  *
