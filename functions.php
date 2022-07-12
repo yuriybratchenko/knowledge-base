@@ -123,3 +123,11 @@ function kb_includes() {
 function kb_static() {
     require_once get_theme_file_path( 'includes/static.php' );
 }
+
+/**
+ * API Access
+ */
+
+add_filter( 'croco-site-menu/rest/url', function() {
+    return 'https://crocoblock.com/wp-json/';
+} );

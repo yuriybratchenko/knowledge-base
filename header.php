@@ -27,9 +27,13 @@
 	<a class="skip-link screen-reader-text" href="#content"><?php esc_html_e( 'Skip to content', 'knowledge-base' ); ?></a>
 
 
-	<header id="mastheadwwewewe" <?php echo kava_get_container_classes( 'site-header' ); ?>>
-		<?php kava_theme()->do_location( 'header', 'template-parts/header' ); ?>
-	</header><!-- #masthead -->
+	<header id="masthead" <?php echo kava_get_container_classes( 'site-header' ); ?>>
+        <?php if ( wp_is_mobile() ) {
+            get_template_part( 'header-mobile' );
+        } else {
+            get_template_part( 'header-desktop' );
+        } ?>
+	</header>
     <?php do_action( 'kava-theme/site/breadcrumbs-area' ); ?>
 
     <?php
