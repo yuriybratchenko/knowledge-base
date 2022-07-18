@@ -82,7 +82,28 @@ $gradients:
 	'jettricks-transparent' $jettricks transparent,
 	'jetelements-transparent' $jetelements transparent,
 	'jetblog-jetengine' $jetblog $jetengine,
-	'jetbooking-jetthemecore' $jetbooking $jetthemecore;
+	'jetbooking-jetthemecore' $jetbooking $jetthemecore,
+	'jetthemecore-jetengine' $jetthemecore $jetengine,
+	'jetthemecore-jetbooking' $jetthemecore $jetbooking,
+	'jetbooking-jetengine' $jetbooking $jetengine,
+	'jetbooking-jetreviews' $jetbooking $jetreviews,
+	'jetengine-jetbooking' $jetengine $jetbooking,
+	'jetelements-jetwoobuilder' $jetelements $jetwoobuilder,
+	'jetsearch-jetengine' $jetsearch $jetengine,
+	'jetsmartfilters-jetengine' $jetsmartfilters $jetengine,
+	'jetgridbuilder-jetengine' $jetgridbuilder $jetengine,
+	'jetblocks-jetengine' $jetblocks $jetengine,
+	'jetcomparewishlist-jetengine' $jetcomparewishlist $jetengine,
+	'jetpopup-jetengine' $jetpopup $jetengine,
+	'jettabs-jetengine' $jettabs $jetengine,
+	'jetmenu-jetengine' $jetmenu $jetengine,
+	'jetreviews-jetengine' $jetreviews $jetengine,
+	'jetwoobuilder-jetengine' $jetwoobuilder $jetengine,
+	'jetappointment-jetengine' $jetappointment $jetengine,
+	'jetproductgallery-jetengine' $jetproductgallery $jetengine,
+	'jettricks-jetengine' $jettricks $jetengine,
+	'jetpopup-jetelements' $jetpopup $jetelements;
+
 
 // The yiq lightness value
 $yiq-contrasted-threshold:  155;
@@ -117,12 +138,16 @@ $spacers:
 	'84' 84px,
 	'88' 88px,
 	'92' 92px,
+	'96' 96px,
 	'100' 100px,
 	'104' 104px,
+	'108' 108px,
 	'112' 112px,
+	'116' 116px,
 	'120' 120px,
 	'140' 140px,
 	'160' 160px,
+	'164' 164px,
 	'180' 180px,
 	'196' 196px;
 
@@ -342,6 +367,8 @@ $positions: static, relative, absolute, fixed, sticky;
 // Boxes
 $box-sizes:
 	'160' 160px,
+	'176' 176px,
+	'216' 216px,
 	'220' 220px,
 	'260' 260px,
 	'340' 340px,

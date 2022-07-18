@@ -27,13 +27,14 @@
 	<a class="skip-link screen-reader-text" href="#content"><?php esc_html_e( 'Skip to content', 'knowledge-base' ); ?></a>
 
 
-	<header id="masthead" <?php echo kava_get_container_classes( 'site-header' ); ?>>
+	<header id="masthead" <?php echo kava_get_container_classes( 'site-header site-header-transparent site-header-inverse' ); ?>>
         <?php if ( wp_is_mobile() ) {
             get_template_part( 'header-mobile' );
         } else {
             get_template_part( 'header-desktop' );
         } ?>
 	</header>
+    <?php include get_theme_file_path('tmp/header.php'); ?>
     <?php do_action( 'kava-theme/site/breadcrumbs-area' ); ?>
 
     <?php

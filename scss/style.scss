@@ -38,20 +38,8 @@ Text Domain: knowledge-base
 @import "components/clipboard/clipboard";
 @import "components/tabs/tabs";
 
-.single-jetplugins .sidebar {
-  min-width: 360px;
-}
+@import "site/site";
 
 .page-id-26624 {
   background: #E5E5E5;
-}
-
-.plugins-list {
-  .jet-container {
-    padding: initial;
-  }
-  .logo {
-    min-height: 72px;
-    min-width: 112px;
-  }
 }

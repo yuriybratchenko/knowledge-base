@@ -1,5 +1,4 @@
-@import "functions";
-
+@import "../bootstrap/scss/functions";
 @import "../bootstrap/scss/mixins/breakpoints";
 @import "../bootstrap/scss/utilities/borders";
 @import "../bootstrap/scss/utilities/clearfix";
@@ -14,6 +13,7 @@
 @import "../bootstrap/scss/utilities/sizing";
 @import "../bootstrap/scss/utilities/text";
 
+@import "functions";
 @import "reboot";
 @import "mixins";
 @import "type";

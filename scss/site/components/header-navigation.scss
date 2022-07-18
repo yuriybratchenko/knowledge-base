@@ -1,0 +1,39 @@
+.custom-navigation {
+  position: relative;
+  z-index: 1;
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: -100vw;
+    bottom: 0;
+    left: -100vw;
+    background-color: rgba($white, .1);
+    pointer-events: none;
+  }
+
+  .custom-navigation-link {
+    position: relative;
+    color: $white;
+    &::before {
+      content: '';
+      position: absolute;
+      z-index: -1;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      opacity: 0;
+      visibility: hidden;
+      transition: $transition-base;
+    }
+    &:hover,
+    &.active {
+      &::before {
+        background-color: $jetpopup;
+        opacity: 1;
+        visibility: visible;
+      }
+    }
+  }
+}
