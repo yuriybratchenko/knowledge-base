@@ -1,0 +1,12 @@
+.jet-ajax-search {
+  &-block {
+    min-width: 500px;
+  }
+  &__results-slide {
+    display: flex;
+    flex-direction: column;
+  }
+  &__item.video {
+    order: -1;
+  }
+}

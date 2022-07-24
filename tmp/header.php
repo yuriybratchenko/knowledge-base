@@ -15,9 +15,9 @@
             <ul class="list d-flex flex-wrap m-0 custom-navigation">
                 <li><a class="d-block text-font-sec font-weight-bold py-12 py-md-24 px-12 px-md-16 custom-navigation-link active" href="#">Knowledge Base</a></li>
                 <li><a class="d-block text-font-sec font-weight-bold py-12 py-md-24 px-12 px-md-16 custom-navigation-link" href="#">Troubleshoot</a></li>
-                <li><a class="d-block text-font-sec font-weight-bold py-12 py-md-24 px-12 px-md-16 custom-navigation-link" href="#">Support</a></li>
+                <li><a class="d-block text-font-sec font-weight-bold py-12 py-md-24 px-12 px-md-16 custom-navigation-link" href="https://crocoblock.com/?page_id=71433&preview=true">Support</a></li>
                 <li><a class="d-block text-font-sec font-weight-bold py-12 py-md-24 px-12 px-md-16 custom-navigation-link" href="#">Guides</a></li>
-                <li><a class="d-block text-font-sec font-weight-bold py-12 py-md-24 px-12 px-md-16 custom-navigation-link" href="#">Blog</a></li>
+                <li><a class="d-block text-font-sec font-weight-bold py-12 py-md-24 px-12 px-md-16 custom-navigation-link" href="https://crocoblock.com/blog/">Blog</a></li>
             </ul>
             <?php reblex_display_block(26750) ?>
         </div>

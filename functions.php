@@ -114,14 +114,11 @@ function kb_structures( $structures_manager ) {
  */
 
 add_action( 'after_setup_theme', 'kb_includes' );
-add_action( 'after_setup_theme', 'kb_static' );
 
 function kb_includes() {
     require_once get_theme_file_path( 'includes/extras.php' );
-}
-
-function kb_static() {
     require_once get_theme_file_path( 'includes/static.php' );
+    require_once get_theme_file_path( 'includes/classes/svg-icons.php' );
 }
 
 /**
