@@ -23,3 +23,11 @@
         </div>
     </div>
 </section>
+<?php if ( ! is_front_page() ) {
+    ?><section class="p-32">
+        <div class="container">
+            <?php echo do_shortcode('[breadcrumbs]'); ?>
+        </div>
+    </section>
+    <?php
+} ?>
