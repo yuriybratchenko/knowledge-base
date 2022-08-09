@@ -86,6 +86,7 @@ function kb_breadcrumbs( $rules, $post ) {
 
     $front = '';
     $slug = '';
+    $res = '';
 
     $home = home_url();
 
@@ -97,7 +98,6 @@ function kb_breadcrumbs( $rules, $post ) {
 
     $rel = jet_engine()->relations->get_active_relations( CROCO_KB_POSTS_REL );
     $parents = $rel->get_parents( $post_id, 'ids' );
-    $parent_post = get_post( $parents[0] );
 
     if ( is_singular('article') && ! empty( $parents ) ) {
         $res = sprintf('<a class="text-jetpopup font-weight-medium" href="%1$s/plugins/">Plugins</a> %2$s <a href="%1$s/plugins/%3$s/">%4$s</a> %2$s', $home, $arrow, $parent_post->post_name, $parent_post->post_title );
