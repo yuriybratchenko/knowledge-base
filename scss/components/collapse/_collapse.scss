@@ -24,3 +24,7 @@
 		}
 	}
 }
+
+[data-collapse-target].active svg {
+	transform: rotateX(-180deg);
+}

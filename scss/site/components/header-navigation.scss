@@ -1,6 +1,7 @@
 .custom-navigation {
   position: relative;
   z-index: 1;
+  will-change: transform;
   &::before {
     content: '';
     position: absolute;
@@ -30,10 +31,25 @@
     &:hover,
     &.active {
       &::before {
-        background-color: $jetpopup;
+        background-color: $primary;
         opacity: 1;
         visibility: visible;
       }
+    }
+  }
+}
+
+@each $color, $value in $colors {
+  .custom-navigation-#{$color} {
+    .custom-navigation-link {
+      &:hover,
+      &.active {
+        &::before {
+          background-color: $value;
+          opacity: 1;
+          visibility: visible;
+        }
+     }
     }
   }
 }

@@ -1,0 +1,18 @@
+// Custom jet listing
+.custom-jet-listing {
+  .jet-listing-dynamic-link__link {
+    color: $gray-500;
+    &:hover {
+      color: $jetpopup;
+    }
+  }
+  
+  .jet-listing-dynamic-link__label {
+    display: flex;
+    align-items: flex-start;
+    svg {
+      flex-shrink: 0;
+      margin-right: 12px;
+    }
+  }
+}

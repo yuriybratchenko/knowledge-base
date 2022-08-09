@@ -1,0 +1,22 @@
+//Shadow Hover
+.shadow-hover {
+  box-shadow: 0 4px 25px rgba(100, 116, 139, 0.1);
+  transition: $transition-base;
+  &:hover {
+    box-shadow: 0 4px 32px rgba(71, 85, 105, 0.16);
+  }
+  &:active, &:focus {
+    box-shadow: none;
+  }
+}
+
+.shadow-hover-v2 {
+  box-shadow: 0 4px 25px rgba(100, 116, 139, 0.1);
+  transition: $transition-base;
+  &:hover {
+    box-shadow: 0 10px 25px rgba(100, 116, 139, 0.4)
+  }
+  &:active, &:focus {
+    box-shadow: none;
+  }
+}

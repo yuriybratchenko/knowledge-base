@@ -1,7 +1,4 @@
 .jet-ajax-search {
-  &-block {
-    min-width: 500px;
-  }
   &__results-slide {
     display: flex;
     flex-direction: column;
@@ -9,4 +6,85 @@
   &__item.video {
     order: -1;
   }
+}
+
+//Main search
+.main-search.jet-ajax-search-block {
+  min-width: 560px;
+  .jet-ajax-search__field[type=search] {
+    font-size: $font-size-base;
+    line-height: $line-height-base;
+    color: $gray-500;
+    padding: 12px 16px;
+    background-color: $gray-100;
+    border: none;
+    border-radius: 8px;
+    transition: $transition-base;
+  }
+  .jet-ajax-search__field-icon {
+    width: 24px;
+  }
+  .jet-ajax-search-icon svg {
+    width: 24px;
+    height: 24px;
+    fill: $gray-900;
+    transition: $transition-base;
+  }
+  .jet-ajax-search__form--focus {
+    .jet-ajax-search__field[type=search] {
+      color: $gray-700;
+      background-color: $white;
+    }
+    .jet-ajax-search-icon svg {
+      fill: $gray-400;
+    }
+  }
+  .jet-ajax-search__results-area {
+    z-index: 10;
+    margin-top: 8px;
+    padding: 12px 0;
+    border-radius: 8px;
+    box-shadow: 0 3px 30px rgba(15, 23, 42, 0.2);
+  }
+  .jet-ajax-search__item {
+    padding: 8px 16px;
+  }
+  .jet-ajax-search__link {
+    color: $gray-500;
+    &:hover {
+      color: $jetpopup;
+    }
+  }
+  .jet-ajax-search__results-footer {
+    padding: 12px 16px 12px 52px;
+    .jet-ajax-search__full-results {
+      position: relative;
+      font-family: $font-family-sec;
+      color: $jetpopup;
+      &::before {
+        content: url("data:image/svg+xml,%3Csvg width='24' height='24' viewBox='0 0 24 24' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M9.99984 6L8.58984 7.41L13.1698 12L8.58984 16.59L9.99984 18L15.9998 12L9.99984 6Z' fill='%234272F9'/%3E%3C/svg%3E%0A");
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        right: -32px;
+        font-size: 0;
+        transition: $btn-transition;
+      }
+      &:hover {
+        color: $jetpopup;
+        &::before {
+          transform: translate(4px, -50%);
+        }
+      }
+    }
+  }
+  .jet-ajax-search__message {
+    color: $gray-500;
+    padding: 8px 16px 20px 52px;
+  }
+}
+
+//Main search icon gap
+body:not(.rtl) .main-search.jet-ajax-search-block .jet-ajax-search__field-icon+.jet-ajax-search__field {
+  padding-left: 52px;
 }

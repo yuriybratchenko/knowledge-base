@@ -7,6 +7,18 @@
 	font-family: $font-family-sec;
 }
 
+.text-custom-font-base {
+	.jet-listing-dynamic-field__content {
+		font-family: $font-family-base;
+	}
+}
+
+.text-custom-font-sec {
+	.jet-listing-dynamic-field__content {
+		font-family: $font-family-sec;
+	}
+}
+
 .text-size-null {
 	font-size: 0;
 	line-height: 0;
@@ -24,6 +36,7 @@
 .text-middle { vertical-align: middle; }
 
 .text-transform-none { text-transform: none; }
+.text-transform-custom-none a { text-transform: none; }
 .text-through { text-decoration: line-through; }
 
 // Text color

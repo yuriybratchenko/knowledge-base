@@ -1,15 +1,14 @@
 
-<div id="content" <?php echo kava_get_container_classes( 'container d-flex' ); ?>>
+<div id="content" <?php echo kava_get_container_classes( 'container d-flex pb-60' ); ?>>
 <nav class="sidebar mr-40">
-    <p>Browse knowledge base</p>
     <ul class="bg-100 list border border-200 rounded m-0">
-        <li class="d-flex justify-content-between" data-collapse-target="collapse-item-01">
-            <span>Plugin Usage</span>
+        <li class="d-flex justify-content-between py-12 px-20" data-collapse-target="collapse-item-01">
+            <span class="text-font-sec font-weight-bold text-900">Plugin Usage</span>
             <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <path d="M7.41 15.41L12 10.83L16.59 15.41L18 14L12 8L6 14L7.41 15.41Z" fill="#0F172A"/>
             </svg>
         </li>
-        <ul class="flex-column bg-white list m-0 pl-16" id="collapse-item-01">
+        <ul class="flex-column bg-white list m-0 list-collapse py-8" id="collapse-item-01">
         <?php $query_args = array(
             'post_type' => 'jetplugins',
         );
@@ -23,10 +22,35 @@
         } else {
             return;
         } ?></ul>
-        <li><a href="#">Account Overview</a></li>
-        <li><a href="#">Quick Start</a></li>
-        <li><a href="#">Tips & Tricks</a></li>
-        <li><a href="#">Guides</a></li>
-        <li><a href="#">Glossary</a></li>
+        <li class="d-flex justify-content-between py-12 px-20" data-collapse-target="collapse-item-02">
+            <span class="text-font-sec font-weight-bold text-900">Account Overview</span>
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M7.41 15.41L12 10.83L16.59 15.41L18 14L12 8L6 14L7.41 15.41Z" fill="#0F172A"/>
+            </svg>
+        </li>
+        <li class="d-flex justify-content-between py-12 px-20" data-collapse-target="collapse-item-03">
+            <span class="text-font-sec font-weight-bold text-900">Quick Start</span>
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M7.41 15.41L12 10.83L16.59 15.41L18 14L12 8L6 14L7.41 15.41Z" fill="#0F172A"/>
+            </svg>
+        </li>
+        <li class="d-flex justify-content-between py-12 px-20" data-collapse-target="collapse-item-04">
+            <span class="text-font-sec font-weight-bold text-900">Tips & Tricks</span>
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M7.41 15.41L12 10.83L16.59 15.41L18 14L12 8L6 14L7.41 15.41Z" fill="#0F172A"/>
+            </svg>
+        </li>
+        <li class="d-flex justify-content-between py-12 px-20" data-collapse-target="collapse-item-05">
+            <span class="text-font-sec font-weight-bold text-900">Guides</span>
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M7.41 15.41L12 10.83L16.59 15.41L18 14L12 8L6 14L7.41 15.41Z" fill="#0F172A"/>
+            </svg>
+        </li>
+        <li class="d-flex justify-content-between py-12 px-20" data-collapse-target="collapse-item-06">
+            <span class="text-font-sec font-weight-bold text-900">Glossary</span>
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M7.41 15.41L12 10.83L16.59 15.41L18 14L12 8L6 14L7.41 15.41Z" fill="#0F172A"/>
+            </svg>
+        </li>
     </ul>
 </nav>

@@ -50,6 +50,7 @@ $jetwoobuilder:      #D652EB; // violet     hover #BD34DF
 $jetelements:        #F648BF; // hotpink    hover #EA2CA0
 $jetsearch:          #F94D84; // blush      hover #F02E5D
 $jetblog:            #FA4C6A; // maroon     hover #F32E48
+$jetformbuilder:     #4272F9;
 
 $colors:
 	'primary' $primary $primary-hover,
@@ -71,7 +72,9 @@ $colors:
 	'jetwoobuilder' $jetwoobuilder adjust-color($jetwoobuilder, $hue: -4deg, $saturation: -6%, $lightness: -8%),
 	'jetelements' $jetelements adjust-color($jetelements, $hue: 4deg, $saturation: -9%, $lightness: -7%),
 	'jetsearch' $jetsearch adjust-color($jetsearch, $hue: 4deg, $saturation: -6%, $lightness: -8%),
-	'jetblog' $jetblog adjust-color($jetblog, $hue: 2deg, $saturation: -6%, $lightness: -7%);
+	'jetblog' $jetblog adjust-color($jetblog, $hue: 2deg, $saturation: -6%, $lightness: -7%),
+	'jetformbuilder' $jetpopup adjust-color($jetpopup, $hue: 6deg, $saturation: -4%, $lightness: -5%);
+
 
 $gradients:
 	'primary-jetcomparewishlist' $primary $jetcomparewishlist,
@@ -221,6 +224,7 @@ $border-radius-sm: 4px;
 $box-shadow-sm:    0 .125rem .25rem rgba($black, .075);
 $box-shadow:       0 16px 28px rgba($gray-900, .1);
 $box-shadow-lg:    0 1rem 3rem rgba($black, .175);
+$box-shadow-xl:    0px 4px 25px rgba(100, 116, 139, 0.1);
 
 $transition-base:  .2s ease-in-out;
 
@@ -242,10 +246,12 @@ $embed-responsive-aspect-ratios: join(
 $font-family-base: 'Roboto', sans-serif;
 $font-family-sec:  'Cabin', sans-serif;
 
+$font-size-xs:   12px;
 $font-size-sm:   14px;
 $font-size-base: 16px;
 $font-size-lg:   20px;
 
+$line-height-xs:   1;
 $line-height-sm:   1.429;
 $line-height-base: 1.5;
 $line-height-lg:   1.4;

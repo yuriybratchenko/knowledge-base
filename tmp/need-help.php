@@ -1,6 +1,6 @@
 <section class="py-60 bg-100">
     <div class="container">
-        <h2 class="text-center">Need help?</h2>
+        <h3 class="text-center m-0">Need help?</h3>
         <div class="row row-40 justify-content-center justify-content-md-start mt-40">
             <div class="col-sm-10 col-md-6 col-xl-4">
                 <div class="d-flex p-20 rounded bg-white shadow">

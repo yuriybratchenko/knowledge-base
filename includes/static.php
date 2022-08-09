@@ -22,3 +22,13 @@ function kb_use_croco() {
     return ob_get_clean();
 
 }
+
+add_shortcode( 'learn_multivendor', 'kb_learn_multivendor' );
+
+function kb_learn_multivendor() {
+
+    ob_start();
+        include get_theme_file_path('tmp/learn-multivendor.php');
+    return ob_get_clean();
+
+}

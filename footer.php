@@ -8,10 +8,16 @@
  *
  * @package Kava
  */
-
 ?>
 
 	</div>
+
+    <?php
+    $cp = is_singular('jetplugins');
+    if ( $cp ) {
+        include get_theme_file_path('tmp/need-help.php');
+    }
+    ?>
 
 	<footer id="colophon">
 		<?php kava_theme()->do_location( 'footer', 'template-parts/footer' ); ?>
