@@ -15,4 +15,25 @@
       margin-right: 12px;
     }
   }
+  &.style-creative {
+    .jet-listing-dynamic-link__link {
+      color: $gray-900;
+      &:hover {
+        color: $link-hover-color;
+      }
+      .svg-icon {
+        width: 28px;
+        height: 28px;
+        margin-right: 20px;
+      }
+    }
+  }
+}
+
+.jet-listing-dynamic-terms {
+  color: $gray-400;
+}
+.jet-listing-dynamic-terms__delimiter {
+  margin: 0 5px;
+  color: $gray-500;
 }

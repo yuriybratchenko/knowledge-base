@@ -3,20 +3,23 @@
  * Custom functions that act independently of the theme templates.
  */
 
-add_shortcode( 'icon_post', 'kb_post_format_checker' );
+add_shortcode( 'post_title', 'kb_post_title' );
 
 function kb_post_format_checker() {
 
     $standart     = kb_get_icon_svg( 'article' );
     $video        = kb_get_icon_svg( 'youtube' );
     $tips_tricks  = kb_get_icon_svg( 'article-tips' );
+    $troubleshoot = kb_get_icon_svg( 'article-troubleshoot' );
 
-    ob_start();
-
+    $post_id = get_the_ID();
+    $post_type = get_post_type( $post_id );
     $format = get_post_format();
 
-    if ( is_singular('tips-and-tricks') ) {
+    if ( $post_type === 'tips-and-tricks' ) {
         echo $tips_tricks;
+    } elseif ( $post_type === 'troubleshooting' ) {
+        echo $troubleshoot;
     } elseif ( $format === false ) {
         echo $standart;
     }
@@ -24,6 +27,24 @@ function kb_post_format_checker() {
     if ( $format === 'video' ) {
         echo $video;
     }
+
+}
+
+function kb_post_title() {
+
+    $post_id = get_the_ID();
+    $title = get_post_field( 'post_title', $post_id );
+    $label = get_post_meta( $post_id, 'post-label', true );
+
+    ob_start();
+
+    if ( ! empty( $label ) ) {
+        $post_title = $label;
+    } else {
+        $post_title = $title;
+    }
+
+    echo $res = sprintf('%1$s%2$s', kb_post_format_checker(), $post_title );
 
     return ob_get_clean();
 

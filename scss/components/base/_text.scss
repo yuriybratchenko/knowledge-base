@@ -78,20 +78,6 @@
 	}
 }
 
-
-.font-weight-normal {
-	&.elementor-widget-heading .elementor-heading-title {
-		font-weight: $font-weight-normal;
-	}
-}
-
-.font-weight-bold {
-	&.elementor-widget-heading .elementor-heading-title {
-		font-weight: $font-weight-bold;
-	}
-}
-
-
 // Contexts
 .context-dark {
 	.text-body-style {
