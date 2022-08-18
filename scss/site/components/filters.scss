@@ -1,0 +1,32 @@
+.jet-radio-list {
+  .jet-radio-list__decorator {
+    display: none;
+  }
+  .jet-radio-list__item,
+  .jet-radio-list__button {
+    width: 100%;
+  }
+  .jet-radio-list__row {
+    margin-bottom: 0;
+    margin-top: 0;
+    padding: 0;
+  }
+  .jet-radio-list__button {
+    padding: 8px 16px;
+    border-bottom-left-radius: $border-radius;
+    border-top-left-radius: $border-radius;
+    transition: $transition-base;
+    font-size: $font-size-sm;
+    line-height: 20px;
+
+    &:hover {
+      background-color: $gray-100;
+    }
+  }
+}
+
+
+.jet-radio-list__input:checked + .jet-radio-list__button {
+  background-color: $gray-500;
+  color: $white;
+}

@@ -22,3 +22,11 @@ button {
 	color: inherit;
 	background-color: transparent;
 }
+
+body {
+	overflow-x: hidden;
+}
+
+#page {
+	overflow: visible;
+}

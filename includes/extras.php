@@ -78,6 +78,9 @@ function kb_custom_fields( $item, $data, $post ) {
     if ( $post_type === 'tips-and-tricks' ) {
         $icon = kb_get_icon_svg( 'article-tips' );
         $class = $post_type;
+    } elseif ( $post_type === 'troubleshooting' ) {
+        $icon = kb_get_icon_svg( 'article-troubleshoot' );
+        $class = $post_type;
     } elseif ( $format === false ) {
         $icon = kb_get_icon_svg( 'article' );
     }
