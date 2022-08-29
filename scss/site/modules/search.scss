@@ -10,7 +10,7 @@
 
 //Main search
 .main-search.jet-ajax-search-block {
-  min-width: 560px;
+
   .jet-ajax-search__field[type=search] {
     font-size: $font-size-base;
     line-height: $line-height-base;
@@ -40,7 +40,7 @@
     }
   }
   .jet-ajax-search__results-area {
-    z-index: 10;
+    z-index: 11;
     margin-top: 8px;
     padding: 12px 0;
     border-radius: 8px;
@@ -87,4 +87,15 @@
 //Main search icon gap
 body:not(.rtl) .main-search.jet-ajax-search-block .jet-ajax-search__field-icon+.jet-ajax-search__field {
   padding-left: 52px;
+}
+
+//Media
+@media (min-width: 1207px) {
+
+}
+
+@include media-breakpoint-up(md) {
+  .main-search.jet-ajax-search-block {
+    min-width: 560px;
+  }
 }

@@ -32,3 +32,13 @@ function kb_learn_multivendor() {
     return ob_get_clean();
 
 }
+
+add_shortcode( 'suggest-your-tip', 'kb_suggest_your_tip' );
+
+function kb_suggest_your_tip() {
+
+    ob_start();
+    include get_theme_file_path('tmp/suggest-your-tip.php');
+    return ob_get_clean();
+
+}

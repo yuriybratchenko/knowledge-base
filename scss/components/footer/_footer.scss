@@ -1,0 +1,18 @@
+footer.site-footer {
+  padding: 80px 0;
+  .widget_text a {
+    text-decoration: none;
+    font-size: 16px;
+    line-height: 27px;
+  }
+  .crocoblock_copyright a {
+    color: inherit!important;
+  }
+}
+
+//Media
+@include media-breakpoint-up(xl) {
+  footer.site-footer {
+    padding: 108px 0 70px;
+  }
+}

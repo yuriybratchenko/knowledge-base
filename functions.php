@@ -119,6 +119,7 @@ function kb_includes() {
     require_once get_theme_file_path( 'includes/extras.php' );
     require_once get_theme_file_path( 'includes/static.php' );
     require_once get_theme_file_path( 'includes/classes/svg-icons.php' );
+    require_once get_theme_file_path( 'includes/template-tags.php' );
 }
 
 /**
@@ -128,3 +129,4 @@ function kb_includes() {
 add_filter( 'croco-site-menu/rest/url', function() {
     return 'https://crocoblock.com/wp-json/';
 } );
+

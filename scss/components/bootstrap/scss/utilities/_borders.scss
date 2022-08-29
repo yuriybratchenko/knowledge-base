@@ -85,3 +85,7 @@
 .rounded-0 {
   border-radius: 0 !important
 }
+
+@include media-breakpoint-up(md) {
+  .border-md-right { border-right: $border-width solid $border-color !important }
+}

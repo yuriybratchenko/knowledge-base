@@ -1,0 +1,40 @@
+// Subscribe
+.jfb-subscribe {
+  position: relative;
+  .jet-form-builder__field-wrap {
+    margin-top: 0;
+  }
+  .jet-form-builder__field {
+    padding: $input-padding-y-sm 70px $input-padding-y-sm $input-padding-x-sm;
+    font-size: $input-font-size-sm;
+    line-height: $input-line-height-sm;
+    background-color: $input-bg;
+    border: $input-border-width solid $input-border-color;
+    border-radius: $subscribe-form-input-border-radius;
+    // Placeholder
+    &::placeholder {
+      color: $input-placeholder-color;
+      opacity: 1;
+    }
+    &:focus {
+      border-color: $input-focus-border-color;
+      box-shadow: $input-focus-box-shadow;
+    }
+  }
+  .jet-form-builder__action-button {
+    position: absolute;
+    top: 11px;
+    right: 6px;
+  }
+  & + .jet-form-builder-messages-wrap {
+    .jet-form-builder-message {
+      margin: 0;
+      padding: 0;
+      border: none;
+      font-size: 13px;
+    }
+    .jet-form-builder-message--success {
+      color: $primary;
+    }
+  }
+}
