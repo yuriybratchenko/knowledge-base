@@ -116,6 +116,10 @@ function kb_breadcrumbs( $rules, $post ) {
 
     ob_start();
 
+    if ( is_search() ) {
+        return;
+    }
+
     if ( ! is_front_page() ) {
         $front = sprintf('<a class="smaller text-jetpopup font-weight-medium" href="%1$s">Knowledge base</a> %2$s', $home, $arrow );
     }

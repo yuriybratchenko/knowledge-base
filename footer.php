@@ -94,6 +94,7 @@ if ( $cp ) {
     </div>
 </footer>
 </div>
+<?php if ( is_single() && ! $cp ) { echo '</div>'; } ?>
 <?php wp_footer(); ?>
 </body>
 
