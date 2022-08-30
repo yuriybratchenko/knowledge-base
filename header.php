@@ -45,4 +45,8 @@
         } else {
             echo '<div id="content" class="site-content">';
         }
+
+        if ( is_single() && ! $cp ) {
+            kb_share_buttons();
+        }
     ?>

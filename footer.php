@@ -86,9 +86,9 @@ if ( $cp ) {
         </div>
         <div class="site-info row row-20 justify-content-between align-items-center mt-36">
             <?php
-            crocoblock_footer_copyright();
-            crocoblock_footer_made_in();
-            crocoblock_footer_social();
+            kb_footer_copyright();
+            kb_footer_made_in();
+            kb_footer_social();
             ?>
         </div>
     </div>

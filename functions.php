@@ -118,6 +118,7 @@ add_action( 'after_setup_theme', 'kb_includes' );
 function kb_includes() {
     require_once get_theme_file_path( 'includes/extras.php' );
     require_once get_theme_file_path( 'includes/static.php' );
+    require_once get_theme_file_path( 'includes/share.php' );
     require_once get_theme_file_path( 'includes/classes/svg-icons.php' );
     require_once get_theme_file_path( 'includes/template-tags.php' );
 }

@@ -11,3 +11,55 @@
     }
   }
 }
+
+// Table of Contents
+
+.table-of-contents-wrapper {
+  ol {
+    list-style: none;
+    margin: 10px 0;
+  }
+  li {
+    padding: 0 0 0 40px;
+    position: relative;
+  }
+  li::before {
+    display: inline-block;
+    position: absolute;
+    left: 0;
+  }
+
+  /* 1 */
+  ol {
+    counter-reset: num;
+  }
+  ol > li {
+    counter-increment: num;
+  }
+  ol > li::before {
+    content: counter(num) '.';
+  }
+
+  /* 2 */
+  ol ol {
+    counter-reset: num2;
+    margin: 0;
+  }
+  ol ol > li {
+    counter-increment: num2;
+  }
+  ol ol > li::before {
+    content: counter(num) '.' counter(num2);
+  }
+
+  /* 3 */
+  ol ol ol {
+    counter-reset: num3;
+  }
+  ol ol ol > li {
+    counter-increment: num3;
+  }
+  ol ol ol > li::before {
+    content: counter(num) '.' counter(num2) '.' counter(num3);
+  }
+}
