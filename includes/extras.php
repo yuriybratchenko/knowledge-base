@@ -107,6 +107,9 @@ function kb_breadcrumbs( $rules, $post ) {
     $post_id = get_the_ID();
     $title = get_post_field( 'post_title', $post_id );
     $arrow = '<svg class="mx-4" width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M4.99992 3L4.29492 3.705L6.58492 6L4.29492 8.295L4.99992 9L7.99992 6L4.99992 3Z" fill="#64748B"/></svg>';
+    $post_type = get_post_type();
+    $post_type_queried = get_queried_object();
+    $post_type_object = get_post_type_object( get_post_type() );
 
     $front = '';
     $slug = '';
@@ -137,7 +140,15 @@ function kb_breadcrumbs( $rules, $post ) {
         $res = sprintf('<a class="text-jetpopup font-weight-medium" href="%1$s/plugins/">Plugins</a> %2$s', $home, $arrow );
     }
 
-    echo sprintf('<div class="kb-breadcrumbs d-flex smaller">%1$s %2$s %3$s</div>', $front, $res, $title );
+    if ( is_post_type_archive('tips-and-tricks') || is_post_type_archive('troubleshooting') ) {
+        echo sprintf('<div class="kb-breadcrumbs d-flex smaller">%1$s %2$s</div>', $front, $post_type_queried->labels->singular_name );
+    } elseif ( is_singular('tips-and-tricks') || is_singular('troubleshooting') ) {
+        $res = sprintf('<a class="text-jetpopup font-weight-medium" href="%1$s/%2$s/">%3$s</a> %4$s', $home, $post_type, $post_type_object->labels->singular_name, $arrow );
+        echo sprintf('<div class="kb-breadcrumbs d-flex smaller">%1$s %2$s %3$s</div>', $front, $res, $title );
+    } else {
+        echo sprintf('<div class="kb-breadcrumbs d-flex smaller">%1$s %2$s %3$s</div>', $front, $res, $title );
+    }
+
     return ob_get_clean();
 
 }
