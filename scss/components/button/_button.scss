@@ -20,6 +20,7 @@
 		box-shadow: $btn-shadow;
 		transition: $btn-transition;
 		cursor: pointer;
+		text-transform: none;
 
 		&:hover {
 			color: color-yiq( $btn-hover-color );

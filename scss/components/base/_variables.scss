@@ -75,6 +75,11 @@ $colors:
 	'jetblog' $jetblog adjust-color($jetblog, $hue: 2deg, $saturation: -6%, $lightness: -7%),
 	'jetformbuilder' $jetpopup adjust-color($jetpopup, $hue: 6deg, $saturation: -4%, $lightness: -5%);
 
+$facebook:  #3b5998;
+$twitter:   #1da1f2;
+$linkedin:  #0077b5;
+$pinterest: #bd081c;
+
 
 $gradients:
 	'primary-jetcomparewishlist' $primary $jetcomparewishlist,
@@ -195,7 +200,8 @@ $grid-breakpoints: (
 	sm: 576px,
 	md: 768px,
 	lg: 1025px,
-	xl: 1200px
+	xl: 1200px,
+	xxl: 1400px
 );
 
 

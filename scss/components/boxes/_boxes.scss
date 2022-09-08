@@ -1,7 +1,7 @@
 // Modifying
 .box-center {
-	margin-right: auto;
-	margin-left: auto;
+	margin-right: auto!important;
+	margin-left: auto!important;
 }
 
 .box-right {
@@ -12,7 +12,7 @@
 // Sizes
 @each $size, $value in $box-sizes {
 	.box-#{$size} {
-		max-width: $value;
+		max-width: $value!important;
 	}
 }
 

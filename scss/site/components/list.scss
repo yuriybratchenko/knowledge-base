@@ -15,18 +15,62 @@
 // Table of Contents
 
 .table-of-contents-wrapper {
+  .simpletoc-title {
+    font-size: $h5-font-size;
+    line-height: $line-height-lg;
+    margin: 0;
+    padding: 16px 20px;
+    background-color: $gray-200;
+  }
   ol {
+    margin: 0;
+    padding: 14px 20px;
     list-style: none;
-    margin: 10px 0;
+    li > ol {
+      margin: 0;
+      padding: 0;
+    }
   }
   li {
-    padding: 0 0 0 40px;
+    padding: 0 0 0 32px;
     position: relative;
+    > ol {
+      li {
+        padding: 0 0 0 40px;
+      }
+    }
+    a {
+      position: relative;
+      display: flex;
+      padding: 8px 0;
+      transition: $transition-base;
+      &::before {
+        content: '';
+        position: absolute;
+        z-index: -1;
+        top: 0;
+        left: -64%;
+        width: 180%;
+        height: 100%;
+        background-color: $gray-100;
+        opacity: 0;
+        visibility: hidden;
+        transition: opacity 0.2s ease;
+      }
+    }
+    a:hover {
+      &::before {
+        opacity: 1;
+        visibility: visible;
+      }
+      color: $gray-500;
+    }
   }
   li::before {
     display: inline-block;
     position: absolute;
     left: 0;
+    font-weight: 700;
   }
 
   /* 1 */
@@ -38,6 +82,7 @@
   }
   ol > li::before {
     content: counter(num) '.';
+    padding: 8px 0;
   }
 
   /* 2 */
@@ -49,7 +94,7 @@
     counter-increment: num2;
   }
   ol ol > li::before {
-    content: counter(num) '.' counter(num2);
+    content: counter(num) '.' counter(num2) '.';
   }
 
   /* 3 */
