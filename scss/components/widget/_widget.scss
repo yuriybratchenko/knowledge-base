@@ -1,11 +1,11 @@
 .widget-area .widget:last-child {
   position: sticky;
-  top: 0;
+  top: 24px;
   z-index: 10;
 }
 
 aside.widget + aside.widget {
   margin-top: 0;
-  padding-top: 40px;
+  padding: 0 0 40px;
   border: none;
 }

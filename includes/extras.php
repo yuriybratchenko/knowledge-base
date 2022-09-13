@@ -152,3 +152,72 @@ function kb_breadcrumbs( $rules, $post ) {
     return ob_get_clean();
 
 }
+
+add_shortcode( 'related_materials', 'kb_related_materials' );
+
+function kb_related_materials() {
+
+    ob_start();
+
+    global $post;
+
+    $post_id = get_the_ID();
+    $ids = get_post_meta( $post_id, 'related-materials', true );
+
+    $posts = get_posts(
+        array(
+            'post_type' => array('tips-and-tricks', 'troubleshooting', 'article'),
+            'orderby'        => 'ID',
+            'order'          => 'ASC',
+            'posts_per_page' => -1,
+            'post__in' => $ids,
+        )
+    );
+
+    ?><h2 class="h5 mb-4">Related materials</h2><?php
+    ?><div class="jet-listing-grid__items">
+        <?php
+            foreach( $posts as $post ){
+                setup_postdata( $post );
+                ?><div class="jet-listing-grid__item">
+                    <div class="jet-listing-dynamic-link custom-jet-listing">
+                        <a href="<?php the_permalink() ?>" class="jet-listing-dynamic-link__link">
+                            <span class="jet-listing-dynamic-link__label"><?php echo do_shortcode('[post_title]'); ?></span>
+                        </a>
+                    </div>
+                </div><?php
+            } wp_reset_postdata();
+            ?></div><?php
+
+    return ob_get_clean();
+
+}
+
+add_shortcode( 'video_box', 'kb_video_box' );
+
+function kb_video_box() {
+
+    $post_id = get_the_ID();
+
+    $url = get_post_meta( $post_id, 'youtube-url', true );
+    $desc = get_post_meta( $post_id, 'video-description', true );
+
+    ob_start();
+
+    if ( get_post_meta( $post_id, 'youtube-url', true ) !== '' ) {
+        ?><div class="overflow-hidden border border-200 rounded mb-60 d-none d-md-block">
+        <iframe width="360" height="202" src="https://www.youtube.com/embed/<?php echo $url ?>" title="<?php echo $desc; ?>" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        <div class="p-20">
+        <p class="small mb-8"><?php echo $desc; ?></p>
+        <a href="https://youtu.be/<?php echo $url ?>" target="_blank" rel="nofollow" class="btn btn-custom btn-without-fill btn-sm btn-color-inverse btn-jetpopup btn-effect-1">
+            <span>Watch video</span>
+            <svg class="btn-icon ml-12" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M9.99997 6L8.58997 7.41L13.17 12L8.58997 16.59L9.99997 18L16 12L9.99997 6Z" fill="#0F172A"></path>
+            </svg>
+        </a></div>
+        </div><?php
+    }
+
+    return ob_get_clean();
+
+}

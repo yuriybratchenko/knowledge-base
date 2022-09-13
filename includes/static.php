@@ -13,6 +13,16 @@ function kb_need_help() {
 
 }
 
+add_shortcode( 'need_help_cl', 'kb_need_help_cl' );
+
+function kb_need_help_cl() {
+
+    ob_start();
+    include get_theme_file_path('tmp/need-help-cl.php');
+    return ob_get_clean();
+
+}
+
 add_shortcode( 'use_croco', 'kb_use_croco' );
 
 function kb_use_croco() {
