@@ -1,17 +1,45 @@
 @import "troubleshoot";
 
-$gap: 12px;
+$gap: 24px;
+$gap-lg: 40px;
 
 body.single {
-  #jet-theme-core-single {
+  .jet-theme-core-location--single-location {
     padding-left: $grid-gutter-width/2;
     padding-right: $grid-gutter-width/2;
+    img:not(.gitlab-logo) {
+      margin: 0  0 $gap 0;
+    }
   }
+
+  .jet-listing-dynamic-field__content {
+    counter-reset: num;
+    h2 {
+      counter-increment: num;
+      &:before {
+        content: counter(num) ". ";
+      }
+    }
+
+    .wp-block-group {
+      counter-reset: num2;
+      h3 {
+        counter-increment: num2;
+        &:before {
+          content: counter(num) "." counter(num2) ". ";
+        }
+      }
+    }
+  }
+
   h2 {
     font-size: $h3-font-size;
   }
+  h3 {
+    font-size: $h4-font-size;
+  }
   h2,h3,h4 {
-    margin-bottom: 40px;
+    margin: $gap-lg 0;
   }
   code {
     border: none;
@@ -19,8 +47,13 @@ body.single {
   p {
     margin-bottom: $gap;
   }
-  .wp-block-image {
-    margin: $gap*2 0;
+  .wp-block-group {
+    margin-bottom: $gap-lg;
+    .wp-block-group__inner-container {
+      img:last-child, p:last-child, .gitlab-embed-snippets:last-child {
+        margin-bottom: 0;
+      }
+    }
   }
   .gitlab-embed-snippets {
     margin: 0 0 $gap 0;

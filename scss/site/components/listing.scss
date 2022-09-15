@@ -1,9 +1,21 @@
+.grid-col-desk-1 {
+  .jet-listing-grid__item {
+    padding-top: 8px;
+    padding-bottom: 8px;
+  }
+}
+
 // Custom jet listing
 .custom-jet-listing {
   .jet-listing-dynamic-link__link {
+    transition: $transition-base;
     color: $gray-500;
+    g { transition: $transition-base; }
     &:hover {
       color: $jetpopup;
+      g {
+        opacity: 1;
+      }
     }
   }
   
