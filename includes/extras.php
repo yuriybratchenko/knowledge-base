@@ -164,6 +164,10 @@ function kb_related_materials() {
     $post_id = get_the_ID();
     $ids = get_post_meta( $post_id, 'related-materials', true );
 
+    if ( empty( $ids ) ) {
+        return;
+    }
+
     $posts = get_posts(
         array(
             'post_type' => array('tips-and-tricks', 'troubleshooting', 'article'),
