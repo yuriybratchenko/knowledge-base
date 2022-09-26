@@ -157,43 +157,88 @@ add_shortcode( 'related_materials', 'kb_related_materials' );
 
 function kb_related_materials() {
 
-    ob_start();
+	$post_id   = get_the_ID();
+	$post_type = get_post_type( $post_id );
+	$rel_type  = jet_engine()->relations->types_helper->type_name_by_parts( 'posts', $post_type );
 
-    global $post;
+	$active_relations = jet_engine()->relations->get_active_relations();
 
-    $post_id = get_the_ID();
-    $ids = get_post_meta( $post_id, 'related-materials', true );
+	$relations = array_filter( $active_relations, function( $relation ) use ( $rel_type ) {
 
-    if ( empty( $ids ) ) {
-        return;
-    }
+		if ( $rel_type === $relation->get_args( 'parent_object' ) ) {
+			return true;
+		}
 
-    $posts = get_posts(
-        array(
-            'post_type' => array('tips-and-tricks', 'troubleshooting', 'article'),
-            'orderby'        => 'ID',
-            'order'          => 'ASC',
-            'posts_per_page' => -1,
-            'post__in' => $ids,
-        )
-    );
+		if ( $rel_type === $relation->get_args( 'child_object' ) ) {
+			return true;
+		}
 
-    ?><h2 class="h5 mb-8">Related materials</h2><?php
-    ?><div class="jet-listing-grid__items grid-col-desk-1">
-        <?php
-            foreach( $posts as $post ){
-                setup_postdata( $post );
-                ?><div class="jet-listing-grid__item">
-                    <div class="jet-listing-dynamic-link custom-jet-listing">
-                        <a href="<?php the_permalink() ?>" class="jet-listing-dynamic-link__link">
-                            <span class="jet-listing-dynamic-link__label"><?php echo do_shortcode('[post_title]'); ?></span>
-                        </a>
-                    </div>
-                </div><?php
-            } wp_reset_postdata();
-            ?></div><?php
+		return false;
+	} );
 
-    return ob_get_clean();
+	if ( empty( $relations ) ) {
+		return null;
+	}
+
+	$rel_items = array();
+
+	foreach ( $relations as $rel_id => $relation ) {
+
+		$is_parent = $rel_type === $relation->get_args( 'parent_object' );
+
+		if ( $is_parent ) {
+			$rel_ids = $relation->get_children( $post_id, 'ids' );
+		} else {
+			$rel_ids = $relation->get_parents( $post_id, 'ids' );
+		}
+
+		foreach ( $rel_ids as $rel_id ) {
+
+			if ( $is_parent ) {
+				$order = $relation->get_meta( $post_id, $rel_id, 'order' );
+			} else {
+				$order = $relation->get_meta( $rel_id, $post_id, 'order' );
+			}
+
+			if ( false === $order ) {
+				$order = 9999;
+			}
+
+			$rel_items[ $rel_id ] = intval( $order );
+		}
+	}
+
+	asort( $rel_items, SORT_NUMERIC );
+
+	ob_start();
+
+	global $post;
+
+	$posts = get_posts(
+		array(
+			'post_type'      => array( 'tips-and-tricks', 'troubleshooting', 'article' ),
+			'orderby'        => 'post__in',
+			'posts_per_page' => - 1,
+			'post__in'       => array_keys( $rel_items ),
+		)
+	);
+
+	?><h2 class="h5 mb-8">Related materials</h2><?php
+	?><div class="jet-listing-grid__items grid-col-desk-1">
+	<?php
+	foreach( $posts as $post ){
+		setup_postdata( $post );
+		?><div class="jet-listing-grid__item">
+		<div class="jet-listing-dynamic-link custom-jet-listing">
+			<a href="<?php the_permalink() ?>" class="jet-listing-dynamic-link__link">
+				<span class="jet-listing-dynamic-link__label"><?php echo do_shortcode('[post_title]'); ?></span>
+			</a>
+		</div>
+		</div><?php
+	} wp_reset_postdata();
+	?></div><?php
+
+	return ob_get_clean();
 
 }
 
