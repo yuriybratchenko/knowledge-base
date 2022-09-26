@@ -270,3 +270,32 @@ function kb_video_box() {
     return ob_get_clean();
 
 }
+
+add_shortcode('note', 'kb_note_banner');
+
+function kb_note_banner( $atts ) {
+
+    $default = array(
+        'type' => 'info',
+        'text' => '',
+    );
+
+    $info_svg = '<svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M9 21C9 21.5 9.4 22 10 22H14C14.6 22 15 21.5 15 21V20H9V21ZM12 2C8.1 2 5 5.1 5 9C5 11.4 6.2 13.5 8 14.7V17C8 17.5 8.4 18 9 18H15C15.6 18 16 17.5 16 17V14.7C17.8 13.4 19 11.3 19 9C19 5.1 15.9 2 12 2Z" fill="#F2D23C"/></svg>';
+    $warning_svg = '<svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M1 21H23L12 2L1 21ZM13 18H11V16H13V18ZM13 14H11V10H13V14Z" fill="#FA5450"/></svg>';
+
+    $res = shortcode_atts( $default, $atts );
+
+    if ( $res['type'] === 'info' ) {
+        $svg = $info_svg;
+        $border_color = 'jetthemecore';
+        $title = 'Things to know';
+    } else {
+        $svg = $warning_svg;
+        $border_color = 'jetsmartfilters';
+        $title = 'Warning';
+    }
+
+    $html = sprintf('<div class="note-banner d-flex border-bold border-%1$s rounded overflow-hidden p-20"><div class="mr-12">%2$s</div><div class="d-flex flex-column"><div class="text-900 mb-12">%3$s</div><p class="m-0">%4$s</p></div></div>', $border_color, $svg, $title, $res['text'] );
+
+    return $html;
+}

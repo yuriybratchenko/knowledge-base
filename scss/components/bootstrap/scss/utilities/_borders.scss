@@ -5,6 +5,7 @@
 //
 
 .border         { border: $border-width solid $border-color !important }
+.border-bold    { border: $border-bold-width solid $border-color !important }
 .border-top     { border-top: $border-width solid $border-color !important }
 .border-right   { border-right: $border-width solid $border-color !important }
 .border-bottom  { border-bottom: $border-width solid $border-color !important }
