@@ -157,6 +157,10 @@ add_shortcode( 'related_materials', 'kb_related_materials' );
 
 function kb_related_materials() {
 
+    if( is_admin() ){
+       return;
+    }
+
     ob_start();
 
     global $post;
@@ -253,4 +257,25 @@ function kb_note_banner( $atts ) {
     $html = sprintf('<div class="note-banner d-flex border-bold border-%1$s rounded overflow-hidden p-20"><div class="mr-12">%2$s</div><div class="d-flex flex-column"><div class="text-900 mb-12">%3$s</div><p class="m-0">%4$s</p></div></div>', $border_color, $svg, $title, $res['text'] );
 
     return $html;
+}
+
+function jet_engine_custom_cb_date_mod( $post_id = 0, $field = '', $format = '' ) {
+    return the_modified_date( $format );
+}
+
+add_filter( 'jet-engine/post-type/predifined-columns-cb-for-js', 'kb_get_allowed_admin_columns_cb' );
+
+function kb_get_allowed_admin_columns_cb( $link ) {
+    return array(
+        'jet_engine_custom_cb_date_mod' => array(
+            'description' => __( 'Format date (from timestamp)', 'jet-engine' ),
+            'args'        => array(
+                'format' => array(
+                    'label'       => __( 'Set format', 'jet-engine' ),
+                    'description' => '<a href="https://wordpress.org/support/article/formatting-date-and-time/">' . __( 'Documentation on date and time formatting', 'jet-engine' ) . '</a>',
+                    'value'       => get_option( 'date_format' ),
+                ),
+            ),
+        ),
+    ) ;
 }
