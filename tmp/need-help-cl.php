@@ -1,3 +1,4 @@
+<?php include get_theme_file_path('tmp/give-feedback.php'); ?>
 <?php do_action( 'kb-theme/site/need-help-start' ); ?>
 <section class="py-60 bg-100">
     <div class="container">
