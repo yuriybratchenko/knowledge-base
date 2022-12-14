@@ -1,9 +1,10 @@
-<section class="py-60 bg-100">
-    <div class="container">
-        <h3 class="text-center m-0">Need help?</h3>
+<?php do_action( 'kb-theme/site/need-help-start' ); ?>
+<section class="p-32 py-60 bg-100 rounded">
+    <div class="container px-0">
+        <h2 class="text-center m-0">Need help?</h2>
         <div class="row row-40 justify-content-center justify-content-md-start mt-40">
             <div class="col-sm-10 col-md-6">
-                <div class="d-flex p-20 rounded bg-white shadow">
+                <div class="d-flex p-20 pb-32 rounded bg-white shadow">
                     <div class="text-size-null mr-12">
                         <svg width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <rect width="48" height="48" rx="24" fill="#2588F3" />
@@ -11,13 +12,13 @@
                         </svg>
                     </div>
                     <div>
-                        <h5 class="mt-8 mb-0">Ask Facebook community</h5>
-                        <p class="mt-8">Get answers from 15K Crocoblock Community experts from all over the world.</p>
+                        <h5 class="my-8">Ask Facebook community</h5>
+                        <p class="mb-0">Get answers from 15K Crocoblock Community experts from all over the world.</p>
                     </div>
                 </div>
             </div>
             <div class="col-sm-10 col-md-6">
-                <div class="d-flex pt-20 px-20 pb-20 pb-xl-44 rounded bg-white shadow">
+                <div class="d-flex pt-20 px-20 pb-32 rounded bg-white shadow">
                     <div class="text-size-null mr-12">
                         <svg width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <rect width="48" height="48" rx="24" fill="#0DC167"/>
@@ -25,8 +26,8 @@
                         </svg>
                     </div>
                     <div>
-                        <h5 class="mt-8 mb-0">Start a live chat</h5>
-                        <p class="mt-8">Ask question to support agent and share its details via chat messages.</p>
+                        <h5 class="my-8">Start a live chat</h5>
+                        <p class="mb-0">Ask question to support agent and share its details via chat messages.</p>
                     </div>
                 </div>
             </div>

@@ -16,6 +16,7 @@
         background-size: cover;
         background-image: url("data:image/svg+xml;charset=utf8,%3Csvg width='48' height='48' viewBox='0 0 48 48' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Crect width='48' height='48' rx='24' fill='%230DC167'/%3E%3Cpath d='M21 28.17L16.83 24L15.41 25.41L21 31L33 19L31.59 17.59L21 28.17Z' fill='white'/%3E%3C/svg%3E");
       }
+      a { text-decoration: $link-decoration; }
     }
   }
 }
