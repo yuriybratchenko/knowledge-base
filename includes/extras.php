@@ -279,3 +279,17 @@ function kb_get_allowed_admin_columns_cb( $link ) {
         ),
     ) ;
 }
+
+function kb_search_title() {
+
+    global $wp_query;
+
+    ob_start();
+
+    ?><h2 class="text-center px-20"><?php printf( esc_html__( '%2$s results matching ‘%1$s’', 'crocoblock' ),  get_search_query(), $wp_query->found_posts ); ?></h2><?php
+
+    return ob_get_clean();
+
+}
+
+add_shortcode('search_title', 'kb_search_title');

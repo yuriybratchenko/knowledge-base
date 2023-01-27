@@ -47,6 +47,21 @@
   }
 }
 
+.custom-navigation-jetpopup .custom-navigation-link.active-ts:before,
+.custom-navigation-jetpopup .custom-navigation-link.ts:hover:before {
+  background-color: $jetappointment;
+  opacity: 1;
+  visibility: visible;
+}
+
+.custom-navigation-jetpopup .custom-navigation-link.support:hover:before {
+  background-color: $primary;
+}
+
+.custom-navigation-jetpopup .custom-navigation-link.blog:hover:before {
+  background-color: $jetblog;
+}
+
 //Media
 @include media-breakpoint-up(md) {
   .custom-navigation {

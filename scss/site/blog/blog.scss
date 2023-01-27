@@ -1,16 +1,45 @@
 @import "articles";
 @import "troubleshoot";
 @import "tips-and-tricks";
+@import "features";
 
 $gap: 24px;
 $gap-lg: 40px;
 
-body.single {
+body.single:not(.single-jetplugins) {
   .jet-theme-core-location--single-location {
     padding-left: $grid-gutter-width/2;
     padding-right: $grid-gutter-width/2;
     img:not(.gitlab-logo) {
       margin: 0  0 $gap 0;
+    }
+
+    h2 {
+      font-size: $h3-font-size;
+    }
+    h3 {
+      font-size: $h4-font-size;
+    }
+    h2,h3,h4 {
+      margin: $gap-lg 0;
+    }
+    code {
+      border: none;
+    }
+    p {
+      margin-bottom: $gap;
+    }
+    .wp-block-group {
+      margin-bottom: $gap-lg;
+      .wp-block-group__inner-container {
+        img:last-child, p:last-child, .gitlab-embed-snippets:last-child {
+          margin-bottom: 0;
+        }
+      }
+    }
+    .gitlab-embed-snippets, .note-banner,
+    .gist .gist-file {
+      margin: 0 0 $gap 0;
     }
   }
 
@@ -32,32 +61,5 @@ body.single {
         }
       }
     }
-  }
-
-  h2 {
-    font-size: $h3-font-size;
-  }
-  h3 {
-    font-size: $h4-font-size;
-  }
-  h2,h3,h4 {
-    margin: $gap-lg 0;
-  }
-  code {
-    border: none;
-  }
-  p {
-    margin-bottom: $gap;
-  }
-  .wp-block-group {
-    margin-bottom: $gap-lg;
-    .wp-block-group__inner-container {
-      img:last-child, p:last-child, .gitlab-embed-snippets:last-child {
-        margin-bottom: 0;
-      }
-    }
-  }
-  .gitlab-embed-snippets, .note-banner {
-    margin: 0 0 $gap 0;
   }
 }

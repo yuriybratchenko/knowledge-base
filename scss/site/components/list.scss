@@ -37,6 +37,11 @@
     > ol {
       li {
         padding: 0 0 0 40px;
+        > ol {
+          li {
+            padding: 0 0 0 54px;
+          }
+        }
       }
     }
     a {
@@ -49,8 +54,8 @@
         position: absolute;
         z-index: -1;
         top: 0;
-        left: -64%;
-        width: 180%;
+        left: -80%;
+        width: 200%;
         height: 100%;
         background-color: $gray-100;
         opacity: 0;
