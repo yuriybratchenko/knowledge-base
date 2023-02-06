@@ -56,10 +56,14 @@
 
 .custom-navigation-jetpopup .custom-navigation-link.support:hover:before {
   background-color: $primary;
+  opacity: 1;
+  visibility: visible;
 }
 
 .custom-navigation-jetpopup .custom-navigation-link.blog:hover:before {
   background-color: $jetblog;
+  opacity: 1;
+  visibility: visible;
 }
 
 //Media

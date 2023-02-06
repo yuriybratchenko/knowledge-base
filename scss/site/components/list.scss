@@ -5,7 +5,7 @@
   }
   a {
     color: $gray-700;
-    &:hover {
+    &:hover, &.active {
       color: $jetpopup;
       background-color: rgba($jetpopup, .2);
     }

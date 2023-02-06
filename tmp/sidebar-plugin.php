@@ -9,8 +9,11 @@
             </svg>
         </li>
         <ul class="flex-column bg-white list m-0 list-collapse py-8" id="collapse-item-01">
-        <?php $query_args = array(
+        <?php global $post;
+        $slug=$post->post_name;
+        $query_args = array(
             'post_type' => 'jetplugins',
+            'posts_per_page' => -1,
         );
         $the_query = new WP_Query( $query_args );
         if ( $the_query->have_posts() ) {

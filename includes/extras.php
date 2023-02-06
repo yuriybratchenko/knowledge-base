@@ -213,7 +213,7 @@ function kb_video_box() {
     ob_start();
 
     if ( get_post_meta( $post_id, 'youtube-url', true ) !== '' ) {
-        ?><div class="overflow-hidden border border-200 rounded d-none d-md-block">
+        ?><div class="overflow-hidden border border-200 rounded d-none d-md-block mb-40">
         <iframe width="360" height="202" src="https://www.youtube.com/embed/<?php echo $url ?>" title="<?php echo $desc; ?>" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
         <div class="p-20">
         <p class="small mb-8"><?php echo $desc; ?></p>
