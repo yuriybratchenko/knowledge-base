@@ -2,9 +2,6 @@
   position: relative;
   z-index: 1;
   will-change: transform;
-  &::before {
-
-  }
 
   .custom-navigation-link {
     position: relative;
@@ -64,20 +61,4 @@
   background-color: $jetblog;
   opacity: 1;
   visibility: visible;
-}
-
-//Media
-@include media-breakpoint-up(md) {
-  .custom-navigation {
-    &::before {
-      content: '';
-      position: absolute;
-      top: 0;
-      right: -100vw;
-      bottom: 0;
-      left: -100vw;
-      background-color: rgba($white, .1);
-      pointer-events: none;
-    }
-  }
 }

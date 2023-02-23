@@ -51,6 +51,12 @@
   }
   .jet-ajax-search__link {
     color: $gray-500;
+    mark {
+      font-style: normal;
+      border-bottom: none;
+      background-color: $jetthemecore;
+      color: $gray-900;
+    }
     &:hover {
       color: $jetpopup;
     }

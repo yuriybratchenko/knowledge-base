@@ -51,4 +51,24 @@
 		})
 	}
 
+    // document.addEventListener("DOMContentLoaded", function() {
+    //     let observer = new IntersectionObserver(entries => {
+    //         let navSticky = document.querySelector( ".nav-sticky" );
+	//
+    //         if ( navSticky ) {
+    //             if ( !entries[0].isIntersecting ) {
+    //                 navSticky.classList.add("show");
+    //             } else {
+    //                 navSticky.classList.remove("show");
+    //             }
+    //         }
+    //     });
+	//
+    //     let panelAnchor = document.querySelector( "#panel-anchor" );
+	//
+    //     if ( panelAnchor !== null ) {
+    //         observer.observe(panelAnchor);
+    //     }
+    // });
+
 })( jQuery );

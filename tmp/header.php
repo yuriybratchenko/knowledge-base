@@ -23,8 +23,13 @@ if ( is_post_type_archive('troubleshooting') || is_singular('troubleshooting') )
 
     <section class="bg-900 bg-gradient-section-<?php echo $bg;?> context-dark pt-120 pb-20 pb-md-0">
         <div class="container">
-            <h1 class="m-0 text-center text-md-left">Help Center</h1>
-            <div class="d-flex flex-column flex-xl-row-reverse align-items-center justify-content-between mt-40 mt-xl-20">
+            <h1 class="m-0 pb-40 pb-xl-20 text-center text-md-left">Help Center</h1>
+        </div>
+    </section>
+
+    <section class="bg-700 context-dark sticky-top">
+        <div class="container">
+            <div class="d-flex flex-column flex-xl-row-reverse align-items-center justify-content-between">
                 <?php reblex_display_block(26750) ?>
                 <ul class="list d-flex flex-wrap justify-content-center justify-content-md-start m-0 custom-navigation custom-navigation-jetpopup mt-32 mt-md-20 mt-xl-0">
                     <li><a class="d-block text-font-sec font-weight-bold py-12 py-md-24 px-12 px-md-16 custom-navigation-link <?php echo $class;?>" href="<?php echo home_url( '/' )?>">Knowledge Base</a></li>
@@ -35,6 +40,7 @@ if ( is_post_type_archive('troubleshooting') || is_singular('troubleshooting') )
             </div>
         </div>
     </section>
+
 <?php if ( ! is_front_page() ) {
     ?><section class="pt-20 pb-40">
     <div class="container">

@@ -136,6 +136,14 @@ function kb_breadcrumbs( $rules, $post ) {
 
     if ( is_singular('article') && ! empty( $parents ) ) {
         $res = sprintf('<a class="text-jetpopup font-weight-medium" href="%1$s/plugins/">Plugins</a> %2$s <a href="%1$s/plugins/%3$s/">%4$s</a> %2$s', $home, $arrow, $parent_post->post_name, $parent_post->post_title );
+    } elseif ( is_singular('features') ) {
+        $rel = jet_engine()->relations->get_active_relations( 35 );
+//        $rel = jet_engine()->relations->get_active_relations( 61 );
+        $parents = $rel->get_parents( $post_id, 'ids' );
+        if ( ! empty( $parents ) ) {
+            $parent_post = get_post( $parents[0] );
+        }
+        $res = sprintf('<a class="text-jetpopup font-weight-medium" href="%1$s/plugins/">Plugins</a> %2$s <a href="%1$s/plugins/%3$s/">%4$s</a> %2$s <a href="%1$s/%3$s/%3$s-overview/">Feature Overview</a> %2$s', $home, $arrow, $parent_post->post_name, $parent_post->post_title );
     } elseif ( is_singular('jetplugins') ) {
         $res = sprintf('<a class="text-jetpopup font-weight-medium" href="%1$s/plugins/">Plugins</a> %2$s', $home, $arrow );
     }
@@ -148,6 +156,12 @@ function kb_breadcrumbs( $rules, $post ) {
     } else {
         echo sprintf('<div class="kb-breadcrumbs d-flex smaller">%1$s %2$s %3$s</div>', $front, $res, $title );
     }
+
+//    $category = get_the_terms($post->ID, 'catig');
+//    foreach ( $category as $cat ) {
+//        echo $cat->name;
+//        echo $cat->slug;
+//    }
 
     return ob_get_clean();
 
