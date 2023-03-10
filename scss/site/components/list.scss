@@ -22,6 +22,12 @@
     padding: 16px 20px;
     background-color: $gray-200;
   }
+  .simpletoc-list {
+    max-height: 296px;
+    overflow-y: auto;
+    overflow-x: hidden;
+  }
+
   ol {
     margin: 0;
     padding: 14px 20px;
@@ -54,7 +60,7 @@
         position: absolute;
         z-index: -1;
         top: 0;
-        left: -80%;
+        left: -83%;
         width: 200%;
         height: 100%;
         background-color: $gray-100;

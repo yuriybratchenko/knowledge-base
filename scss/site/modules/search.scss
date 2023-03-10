@@ -6,11 +6,13 @@
   &__item.video {
     order: -1;
   }
+  &__item.features {
+    order: -2;
+  }
 }
 
 //Main search
 .main-search.jet-ajax-search-block {
-
   .jet-ajax-search__field[type=search] {
     font-size: $font-size-base;
     line-height: $line-height-base;

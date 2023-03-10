@@ -11,6 +11,7 @@ function kb_post_format_checker() {
     $video        = kb_get_icon_svg( 'youtube' );
     $tips_tricks  = kb_get_icon_svg( 'article-tips' );
     $troubleshoot = kb_get_icon_svg( 'article-troubleshoot' );
+    $feature      = kb_get_icon_svg( 'feature' );
 
     $post_id = get_the_ID();
     $post_type = get_post_type( $post_id );
@@ -20,11 +21,13 @@ function kb_post_format_checker() {
         echo $tips_tricks;
     } elseif ( $post_type === 'troubleshooting' ) {
         echo $troubleshoot;
+    } elseif ( $post_type === 'features' ) {
+        echo $feature;
     } elseif ( $format === false ) {
         echo $standart;
     }
 
-    if ( $format === 'video' ) {
+    if ( $format === 'video' && $post_type !== 'features' ) {
         echo $video;
     }
 
@@ -78,6 +81,9 @@ function kb_custom_fields( $item, $data, $post ) {
     if ( $post_type === 'tips-and-tricks' ) {
         $icon = kb_get_icon_svg( 'article-tips' );
         $class = $post_type;
+    } elseif ( $post_type === 'features' ) {
+        $icon = kb_get_icon_svg( 'feature' );
+        $class = $post_type;
     } elseif ( $post_type === 'troubleshooting' ) {
         $icon = kb_get_icon_svg( 'article-troubleshoot' );
         $class = $post_type;
@@ -85,7 +91,7 @@ function kb_custom_fields( $item, $data, $post ) {
         $icon = kb_get_icon_svg( 'article' );
     }
 
-    if ( $format === 'video' ) {
+    if ( $format === 'video' && $post_type !== 'features' ) {
         $icon = kb_get_icon_svg( 'youtube' );
         $class = 'video';
     }
@@ -160,8 +166,11 @@ function kb_breadcrumbs( $rules, $post ) {
 //    $category = get_the_terms($post->ID, 'catig');
 //    foreach ( $category as $cat ) {
 //        echo $cat->name;
+//        echo '...';
 //        echo $cat->slug;
 //    }
+//
+//    var_dump($category);
 
     return ob_get_clean();
 
@@ -273,26 +282,26 @@ function kb_note_banner( $atts ) {
     return $html;
 }
 
-function jet_engine_custom_cb_date_mod( $post_id = 0, $field = '', $format = '' ) {
+function kb_custom_cb_date_mod( $post_id = 0, $field = '', $format = 'F j, Y | G:i' ) {
     return the_modified_date( $format );
 }
 
-add_filter( 'jet-engine/post-type/predifined-columns-cb-for-js', 'kb_get_allowed_admin_columns_cb' );
+//add_filter( 'jet-engine/post-type/predifined-columns-cb-for-js', 'kb_get_allowed_admin_columns_cb' );
 
-function kb_get_allowed_admin_columns_cb( $link ) {
-    return array(
-        'jet_engine_custom_cb_date_mod' => array(
-            'description' => __( 'Format date (from timestamp)', 'jet-engine' ),
-            'args'        => array(
-                'format' => array(
-                    'label'       => __( 'Set format', 'jet-engine' ),
-                    'description' => '<a href="https://wordpress.org/support/article/formatting-date-and-time/">' . __( 'Documentation on date and time formatting', 'jet-engine' ) . '</a>',
-                    'value'       => get_option( 'date_format' ),
-                ),
-            ),
-        ),
-    ) ;
-}
+//function kb_get_allowed_admin_columns_cb( $link ) {
+//    return array(
+//        'jet_engine_custom_cb_date_mod' => array(
+//            'description' => __( 'Format date (from timestamp)', 'jet-engine' ),
+//            'args'        => array(
+//                'format' => array(
+//                    'label'       => __( 'Set format', 'jet-engine' ),
+//                    'description' => '<a href="https://wordpress.org/support/article/formatting-date-and-time/">' . __( 'Documentation on date and time formatting', 'jet-engine' ) . '</a>',
+//                    'value'       => get_option( 'date_format' ),
+//                ),
+//            ),
+//        ),
+//    ) ;
+//}
 
 function kb_search_title() {
 
@@ -307,3 +316,29 @@ function kb_search_title() {
 }
 
 add_shortcode('search_title', 'kb_search_title');
+
+function kb_ajax_search_count() {
+
+    ob_start();
+
+    ?><span class="jet-ajax-search__results-count font-weight-bold"><span></span></span><?php
+
+    return ob_get_clean();
+
+}
+
+add_shortcode('ajax_search_count', 'kb_ajax_search_count');
+
+
+function kb_post_excerpt() {
+
+    $post_id = get_the_ID();
+    $overview_post = get_post_meta( $post_id, '_overview-post', true );
+
+    ob_start();
+    echo get_the_excerpt( $overview_post );
+    return ob_get_clean();
+
+}
+
+add_shortcode('post_excerpt', 'kb_post_excerpt');

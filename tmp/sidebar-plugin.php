@@ -1,6 +1,6 @@
 
 <div id="content" <?php echo kava_get_container_classes( 'container d-flex pb-60' ); ?>>
-<nav class="sidebar mr-40">
+<nav class="sidebar mr-32">
     <ul class="bg-100 list border border-200 rounded m-0">
         <li class="d-flex justify-content-between py-12 px-20" data-collapse-target="collapse-item-01">
             <span class="text-font-sec font-weight-bold text-900">Plugin Usage</span>
@@ -47,11 +47,5 @@
                 <span class="text-font-sec font-weight-bold text-900">Tips & Tricks</span>
             </a>
         </li>
-<!--        <li class="d-flex justify-content-between py-12 px-20" data-collapse-target="collapse-item-06">-->
-<!--            <span class="text-font-sec font-weight-bold text-900">Glossary</span>-->
-<!--            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">-->
-<!--                <path d="M7.41 15.41L12 10.83L16.59 15.41L18 14L12 8L6 14L7.41 15.41Z" fill="#0F172A"/>-->
-<!--            </svg>-->
-<!--        </li>-->
     </ul>
 </nav>

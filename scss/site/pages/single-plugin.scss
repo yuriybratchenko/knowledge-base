@@ -1,7 +1,10 @@
 .single-jetplugins {
   background-color: $gray-50;
+  .listing-block-wrap {
+    margin: 0 10px 12px;
+  }
 }
 
 .single-jetplugins .sidebar {
-  min-width: 360px;
+  min-width: 260px;
 }
