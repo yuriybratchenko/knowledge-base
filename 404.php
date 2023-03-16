@@ -29,19 +29,11 @@ get_header();
 
 					<main id="main" class="site-main">
 
-						<section class="error-404 not-found">
-							<header class="page-header">
-								<h1 class="page-title"><?php esc_html_e( 'Oops! That page can&rsquo;t be found.', 'kava' ); ?></h1>
-							</header><!-- .page-header -->
-
-							<div class="page-content">
-								<p><?php esc_html_e( 'It looks like nothing was found at this location. Maybe try one of the links below or a search?', 'kava' ); ?></p>
-
-								<?php
-									get_search_form();
-								?>
-							</div><!-- .page-content -->
-						</section><!-- .error-404 -->
+						<section class="error-404 not-found px-56 mb-56">
+                            <h1 class="page-title h3"><?php esc_html_e( 'Oops... page not found', 'knowledge-base' ); ?></h1>
+                            <p class="mt-8 mb-36"><?php esc_html_e( 'We are sorry but it might have moved. But the good news is we get a notification about this problem and will try to fix it as soon as possible.', 'kava' ); ?></p>
+                            <a class="btn btn-custom btn-outline btn-sm btn-color-inverse btn-jetpopup" href="<?php echo esc_url( home_url( '/' ) ); ?>"><?php esc_html_e( 'Go to Help Center', 'knowledge-base' ); ?></a>
+                        </section>
 
 					</main><!-- #main -->
 

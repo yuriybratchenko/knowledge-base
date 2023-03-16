@@ -12,7 +12,7 @@
 </div>
 <?php
 $cp = is_singular('jetplugins');
-if ( $cp ) {
+if ( ! is_single() || $cp ) {
     include get_theme_file_path('tmp/need-help.php');
 }
 ?>
