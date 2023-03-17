@@ -125,7 +125,7 @@ function kb_breadcrumbs( $rules, $post ) {
 
     ob_start();
 
-    if ( is_search() ) {
+    if ( is_search() || is_404() ) {
         return;
     }
 
@@ -309,7 +309,14 @@ function kb_search_title() {
 
     ob_start();
 
-    ?><h2 class="text-center px-20"><?php printf( esc_html__( '%2$s results matching ‘%1$s’', 'crocoblock' ),  get_search_query(), $wp_query->found_posts ); ?></h2><?php
+    if ( $wp_query->found_posts != 0 ) {
+        ?><h2 class="h3 text-center px-20 pb-8"><?php printf( esc_html__( '%2$s results matching ‘%1$s’', 'knowledge-base' ),  get_search_query(), $wp_query->found_posts ); ?></h2><?php
+    } else {
+        ?><h2 class="h3 text-center px-20 pb-8"><?php printf( esc_html__( 'No results matching ‘%s’', 'knowledge-base' ), get_search_query() ); ?></h2>
+        <p class="text-center px-20 m-0">Please, check the spelling or use alternative keywords.</p><?php
+        include get_theme_file_path('tmp/browse-cat.php');
+
+    }
 
     return ob_get_clean();
 
@@ -328,6 +335,24 @@ function kb_ajax_search_count() {
 }
 
 add_shortcode('ajax_search_count', 'kb_ajax_search_count');
+
+function kb_custom_offset() {
+
+    global $wp_query;
+
+    ob_start();
+
+    if ( $wp_query->found_posts != 0  ) {
+        echo 'pb-80';
+    } else {
+        echo 'pb-32';
+    }
+
+    return ob_get_clean();
+
+}
+
+add_shortcode('custom_offset', 'kb_custom_offset');
 
 
 function kb_post_excerpt() {

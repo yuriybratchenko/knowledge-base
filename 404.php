@@ -29,9 +29,9 @@ get_header();
 
 					<main id="main" class="site-main">
 
-						<section class="error-404 not-found px-56 mb-56">
+						<section class="error-404 not-found px-0 px-lg-56 mb-56">
                             <h1 class="page-title h3"><?php esc_html_e( 'Oops... page not found', 'knowledge-base' ); ?></h1>
-                            <p class="mt-8 mb-36"><?php esc_html_e( 'We are sorry but it might have moved. But the good news is we get a notification about this problem and will try to fix it as soon as possible.', 'kava' ); ?></p>
+                            <p class="mt-8 mb-28 px-0 px-lg-48"><?php esc_html_e( 'We are sorry but it might have moved. But the good news is we get a notification about this problem and will try to fix it as soon as possible.', 'kava' ); ?></p>
                             <a class="btn btn-custom btn-outline btn-sm btn-color-inverse btn-jetpopup" href="<?php echo esc_url( home_url( '/' ) ); ?>"><?php esc_html_e( 'Go to Help Center', 'knowledge-base' ); ?></a>
                         </section>
 
