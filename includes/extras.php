@@ -342,3 +342,19 @@ function kb_post_excerpt() {
 }
 
 add_shortcode('post_excerpt', 'kb_post_excerpt');
+
+function kb_table_of_contents_title () {
+
+    ob_start();
+
+    if ( is_singular('features') ) {
+        echo 'Settings & Options';
+    } else {
+        echo 'Table of contents';
+    }
+
+    return ob_get_clean();
+
+}
+
+add_shortcode('table_of_contents_title', 'kb_table_of_contents_title');
