@@ -230,14 +230,21 @@ function kb_video_box() {
 
     $post_id = get_the_ID();
 
-    $url = get_post_meta( $post_id, 'youtube-url', true );
-    $desc = get_post_meta( $post_id, 'video-description', true );
+    if ( is_post_type_archive('tips-and-tricks') ) {
+        $url = 'https://www.youtube.com/watch?v=0w0Gx4o94cY&list=PL26jaHWVtLFw9-oWmbiY-YYgO2AsfX9IC';
+        $desc = 'Simple and easy-to-follow tutorials aimed at delivering point solutions.';
+        $height = 146;
+    } else {
+        $url = get_post_meta( $post_id, 'youtube-url', true );
+        $desc = get_post_meta( $post_id, 'video-description', true );
+        $height = 202;
+    }
 
     ob_start();
 
     if ( get_post_meta( $post_id, 'youtube-url', true ) !== '' ) {
         ?><div class="overflow-hidden border border-200 rounded d-none d-md-block mb-40">
-        <iframe width="360" height="202" src="https://www.youtube.com/embed/<?php echo $url ?>" title="<?php echo $desc; ?>" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        <iframe width="360" height="<?php echo $height; ?>" src="https://www.youtube.com/embed/<?php echo $url ?>" title="<?php echo $desc; ?>" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
         <div class="p-20">
         <p class="small mb-8"><?php echo $desc; ?></p>
         <a href="https://youtu.be/<?php echo $url ?>" target="_blank" rel="nofollow" class="btn btn-custom btn-without-fill btn-sm btn-color-inverse btn-jetpopup btn-effect-1">
@@ -383,3 +390,29 @@ function kb_table_of_contents_title () {
 }
 
 add_shortcode('table_of_contents_title', 'kb_table_of_contents_title');
+
+add_filter( 'posts_orderby', function ( $order, $query ) {
+
+    if ( ! $query->get( 'jet_ajax_search' ) ) {
+        return $order;
+    }
+
+    $post_types = $query->get( 'post_type' );
+
+    if ( ! is_array( $post_types ) ) {
+        $post_types = array( $post_types );
+    }
+
+    $primary_post_types = array( 'features', 'article', 'tips-and-tricks', 'troubleshooting' );
+
+    $post_types = array_merge( $primary_post_types, $post_types );
+    $post_types = array_unique( $post_types );
+
+    global $wpdb;
+
+    $post_types_string = "'" . implode( "','", $post_types ) . "'";
+
+    $order = "FIELD( {$wpdb->posts}.post_type, " . $post_types_string . " ), " . $order;
+
+    return $order;
+}, 10, 2 );

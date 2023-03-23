@@ -1,15 +1,24 @@
-.jet-ajax-search {
-  &__results-slide {
-    display: flex;
-    flex-direction: column;
-  }
-  &__item.video {
-    order: -1;
-  }
-  &__item.features {
-    order: -2;
-  }
-}
+//.jet-ajax-search {
+//  &__results-slide {
+//    display: flex;
+//    flex-direction: column;
+//  }
+//  &__item.features {
+//    order: -2;
+//  }
+//  &__item.video {
+//    order: -1;
+//  }
+//  &__item {
+//    order: 0;
+//  }
+//  &__item.tips-and-tricks {
+//    order: 1;
+//  }
+//  &__item.troubleshooting {
+//    order: 2;
+//  }
+//}
 
 //Main search
 .main-search.jet-ajax-search-block {
