@@ -7,6 +7,12 @@ $gap: 24px;
 $gap-lg: 40px;
 
 body.single:not(.single-jetplugins) {
+  .wp-block-embed iframe {
+    max-height: 420px;
+    @media (max-width: 600px) {
+      max-height: 220px;
+    }
+  }
   .jet-theme-core-location--single-location {
     padding-left: $grid-gutter-width/2;
     padding-right: $grid-gutter-width/2;
