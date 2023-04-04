@@ -41,7 +41,9 @@
         $cp = is_singular('jetplugins');
 
         if ( $cp ) {
-            include get_theme_file_path('tmp/sidebar-plugin.php');
+            if ( ! wp_is_mobile() ) {
+                include get_theme_file_path('tmp/sidebar-plugin.php');
+            }
         } elseif ( is_single() && ! $cp ) {
             include get_theme_file_path('tmp/sidebar.php');
         } else {
