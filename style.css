@@ -49164,6 +49164,30 @@ body:not(.page-template-fullwidth-content) div.site-content {
   z-index: 1;
 }
 
+@media (max-width: 767.98px) {
+  .custom-scroll-snap .jet-radio-list-wrapper {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-scroll-snap-type: x mandatory;
+        scroll-snap-type: x mandatory;
+    scroll-behavior: smooth;
+    overflow-x: auto;
+    padding-bottom: 20px;
+  }
+  .custom-scroll-snap .jet-radio-list__row {
+    scroll-snap-align: center;
+    -ms-flex-negative: 0;
+        flex-shrink: 0;
+    -webkit-transition: -webkit-transform 0.5s;
+    transition: -webkit-transform 0.5s;
+    transition: transform 0.5s;
+    transition: transform 0.5s, -webkit-transform 0.5s;
+    -webkit-transform-origin: center center;
+            transform-origin: center center;
+  }
+}
+
 .single-jetplugins {
   background-color: #f7fafc;
 }

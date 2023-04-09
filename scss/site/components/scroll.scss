@@ -1,0 +1,22 @@
+//custom scroll snap
+.custom-scroll-snap {
+	@include media-breakpoint-down(sm) {
+		.jet-radio-list-wrapper {
+			display: flex;
+			scroll-snap-type: x mandatory;
+			scroll-behavior: smooth;
+			overflow-x: auto;
+			padding-bottom: 20px;
+		}
+		.jet-radio-list__row {
+			scroll-snap-align: center;
+			flex-shrink: 0;
+			transition: transform .5s;
+			transform-origin: center center;
+		}
+	}
+}
+
+
+
+
