@@ -49160,6 +49160,24 @@ body:not(.page-template-fullwidth-content) div.site-content {
 .custom-jet-listing-block:hover .jet-listing-dynamic-link__link .svg-icon g {
   opacity: 1;
 }
+.custom-jet-listing-block.tips-and-tricks:hover {
+  border-color: #0CB6B3;
+}
+.custom-jet-listing-block.tips-and-tricks:hover .jet-listing-dynamic-link__link {
+  color: #0CB6B3;
+}
+.custom-jet-listing-block.features:hover {
+  border-color: #0DC167;
+}
+.custom-jet-listing-block.features:hover .jet-listing-dynamic-link__link {
+  color: #0DC167;
+}
+.custom-jet-listing-block.article:hover {
+  border-color: #64748B;
+}
+.custom-jet-listing-block.article:hover .jet-listing-dynamic-link__link {
+  color: #64748B;
+}
 
 .jet-radio-list .jet-radio-list__decorator {
   display: none;

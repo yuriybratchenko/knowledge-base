@@ -83,4 +83,34 @@
       }
     }
   }
+
+  &.tips-and-tricks {
+    &:hover {
+      border-color: $jetproductgallery;
+
+      .jet-listing-dynamic-link__link {
+        color: $jetproductgallery;
+      }
+    }
+  }
+
+  &.features {
+    &:hover {
+      border-color: $primary;
+
+      .jet-listing-dynamic-link__link {
+        color: $primary;
+      }
+    }
+  }
+
+  &.article {
+    &:hover {
+      border-color: $gray-500;
+
+      .jet-listing-dynamic-link__link {
+        color: $gray-500;
+      }
+    }
+  }
 }
