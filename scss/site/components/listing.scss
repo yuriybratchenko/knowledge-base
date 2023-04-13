@@ -49,3 +49,68 @@
   margin: 0 5px;
   color: $gray-500;
 }
+
+
+// Custom jet listing block
+.custom-jet-listing-block {
+  border: 2px solid transparent;
+  border-radius: 10px;
+  transition: 0.2s ease-in-out;
+
+  .jet-listing-dynamic-link__link {
+    transition: 0.2s ease-in-out;
+  }
+
+  .svg-icon {
+    flex-shrink: 0;
+    width: 28px;
+    height: 28px;
+    margin-right: 20px;
+
+    g {
+      transition: 0.2s ease-in-out;
+    }
+  }
+
+  &:hover {
+    border-color: $jetpopup;
+
+    .jet-listing-dynamic-link__link {
+      color: $jetpopup;
+
+      .svg-icon g {
+        opacity: 1;
+      }
+    }
+  }
+
+  &.tips-and-tricks {
+    &:hover {
+      border-color: $jetproductgallery;
+
+      .jet-listing-dynamic-link__link {
+        color: $jetproductgallery;
+      }
+    }
+  }
+
+  &.features {
+    &:hover {
+      border-color: $primary;
+
+      .jet-listing-dynamic-link__link {
+        color: $primary;
+      }
+    }
+  }
+
+  &.article {
+    &:hover {
+      border-color: $gray-500;
+
+      .jet-listing-dynamic-link__link {
+        color: $gray-500;
+      }
+    }
+  }
+}

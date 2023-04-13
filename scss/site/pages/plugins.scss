@@ -7,4 +7,10 @@
     min-height: 72px;
     min-width: 112px;
   }
+  .jet-listing-dynamic-field {
+    display: block;
+    &__inline-wrap {
+      display: block;
+    }
+  }
 }
