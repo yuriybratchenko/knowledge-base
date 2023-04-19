@@ -49528,7 +49528,7 @@ body.single:not(.single-jetplugins) .jet-theme-core-location--single-location h3
   font-size: 24px;
 }
 body.single:not(.single-jetplugins) .jet-theme-core-location--single-location h2, body.single:not(.single-jetplugins) .jet-theme-core-location--single-location h3, body.single:not(.single-jetplugins) .jet-theme-core-location--single-location h4 {
-  padding: 40px 0;
+  margin: 40px 0;
 }
 body.single:not(.single-jetplugins) .jet-theme-core-location--single-location code {
   border: none;
