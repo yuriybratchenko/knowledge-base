@@ -391,6 +391,18 @@ function kb_table_of_contents_title () {
 
 add_shortcode('table_of_contents_title', 'kb_table_of_contents_title');
 
+function kb_cpt_classes () {
+
+    ob_start();
+
+    echo get_post_type();
+
+    return ob_get_clean();
+
+}
+
+add_shortcode('cpt_classes', 'kb_cpt_classes');
+
 add_filter( 'posts_orderby', function ( $order, $query ) {
 
     if ( ! $query->get( 'jet_ajax_search' ) ) {
