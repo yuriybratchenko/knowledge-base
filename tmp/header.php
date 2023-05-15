@@ -34,7 +34,7 @@ if ( is_post_type_archive('troubleshooting') || is_singular('troubleshooting') )
                 <ul class="list d-flex flex-wrap justify-content-center justify-content-md-start m-0 custom-navigation custom-navigation-jetpopup mt-32 mt-md-20 mt-xl-0">
                     <li><a class="d-block text-font-sec font-weight-bold py-12 py-md-24 px-12 px-md-16 custom-navigation-link <?php echo $class;?>" href="<?php echo home_url( '/' )?>">Knowledge Base</a></li>
                     <li><a class="d-block text-font-sec font-weight-bold py-12 py-md-24 px-12 px-md-16 custom-navigation-link ts <?php echo $ts_class;?>" href="<?php echo home_url( '/troubleshooting/' )?>">Troubleshooting</a></li>
-                    <li><a class="d-block text-font-sec font-weight-bold py-12 py-md-24 px-12 px-md-16 custom-navigation-link support" href="https://crocoblock.com/?page_id=71433&preview=true">Support</a></li>
+                    <li><a class="d-block text-font-sec font-weight-bold py-12 py-md-24 px-12 px-md-16 custom-navigation-link support" href="https://crocoblock.com/help-center/">Support</a></li>
                     <li><a class="d-block text-font-sec font-weight-bold py-12 py-md-24 px-12 px-md-16 custom-navigation-link blog" href="https://crocoblock.com/blog/">Blog</a></li>
                 </ul>
             </div>

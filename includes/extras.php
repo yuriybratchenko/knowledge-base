@@ -242,7 +242,7 @@ function kb_video_box() {
 
     ob_start();
 
-    if ( get_post_meta( $post_id, 'youtube-url', true ) !== '' ) {
+    if ( get_post_meta( $post_id, 'youtube-url', true ) !== '' || is_post_type_archive('tips-and-tricks' )  ) {
         ?><div class="overflow-hidden border border-200 rounded d-none d-md-block mb-40">
         <iframe width="360" height="<?php echo $height; ?>" src="https://www.youtube.com/embed/<?php echo $url ?>" title="<?php echo $desc; ?>" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
         <div class="p-20">
