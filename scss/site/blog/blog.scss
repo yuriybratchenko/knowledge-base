@@ -6,6 +6,12 @@
 $gap: 24px;
 $gap-lg: 40px;
 
+body.blog {
+  .site {
+    overflow: hidden;
+  }
+}
+
 body.single:not(.single-jetplugins) {
   .wp-block-embed iframe {
     max-height: 420px;

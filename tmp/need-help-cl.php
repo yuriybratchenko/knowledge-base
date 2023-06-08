@@ -6,7 +6,7 @@
             <div class="col-sm-10 col-md-6">
                 <?php include get_theme_file_path('tmp/need-help/fb.php'); ?>
             </div>
-            <div class="col-sm-10 col-md-6">
+            <div class="col-sm-10 col-md-6 d-none d-md-inline-flex">
                 <?php include get_theme_file_path('tmp/need-help/chat.php'); ?>
             </div>
         </div>

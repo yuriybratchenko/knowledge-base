@@ -114,3 +114,15 @@
     }
   }
 }
+
+//Listing Grid Custom Two Columns
+.custom-two-columns .jet-listing-grid__item:last-child {
+  left: calc(51.2% - 0px)!important;
+}
+
+//Listing Grid Effect Underline
+.effect-underline {
+  a:hover {
+    text-decoration: underline;
+  }
+}

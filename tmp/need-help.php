@@ -5,7 +5,7 @@
             <div class="col-sm-10 col-md-6 col-xl-4">
                 <?php include get_theme_file_path('tmp/need-help/fb.php'); ?>
             </div>
-            <div class="col-sm-10 col-md-6 col-xl-4">
+            <div class="col-sm-10 col-md-6 col-xl-4 d-none d-md-inline-flex">
                 <?php include get_theme_file_path('tmp/need-help/chat.php'); ?>
             </div>
             <div class="col-sm-10 col-md-6 col-xl-4">
