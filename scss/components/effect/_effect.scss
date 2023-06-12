@@ -21,6 +21,12 @@
 	}
 }
 
+//Listing Grid Effect Underline
+.effect-underline {
+	a:hover {
+		text-decoration: underline;
+	}
+}
 
 // Layouts
 @import 'effect-fade';

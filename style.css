@@ -46073,6 +46073,10 @@ aside.widget + aside.widget {
   color: #506EF8;
 }
 
+.effect-underline a:hover {
+  text-decoration: underline;
+}
+
 .effect-fade {
   position: relative;
 }
@@ -49177,14 +49181,6 @@ body:not(.page-template-fullwidth-content) div.site-content {
 }
 .custom-jet-listing-block.article:hover .jet-listing-dynamic-link__link {
   color: #64748B;
-}
-
-.custom-two-columns .jet-listing-grid__item:last-child {
-  left: calc(51.2% - 0px) !important;
-}
-
-.effect-underline a:hover {
-  text-decoration: underline;
 }
 
 .jet-radio-list .jet-radio-list__decorator {
