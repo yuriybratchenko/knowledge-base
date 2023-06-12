@@ -25,8 +25,7 @@
 <?php kava_get_page_preloader(); ?>
 <div id="page" class="site">
 	<a class="skip-link screen-reader-text" href="#content"><?php esc_html_e( 'Skip to content', 'knowledge-base' ); ?></a>
-
-
+    <?php do_action( 'crocoblock-site/header/render-before' ); ?>
 	<header id="masthead" <?php echo kava_get_container_classes( 'site-header site-header-transparent site-header-inverse' ); ?>>
         <?php if ( wp_is_mobile() ) {
             get_template_part( 'header-mobile' );

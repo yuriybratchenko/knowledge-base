@@ -428,3 +428,19 @@ add_filter( 'posts_orderby', function ( $order, $query ) {
 
     return $order;
 }, 10, 2 );
+
+
+function kb_modify_logo() {
+
+    $custom_logo_id = get_theme_mod( 'custom_logo' );
+    $html = sprintf( '<a href="https://crocoblock.com" class="custom-logo-link" rel="home" itemprop="url">%1$s</a>',
+        wp_get_attachment_image( $custom_logo_id, 'full', false, array(
+            'class'    => 'custom-logo',
+            'itemprop' => 'logo'
+        ) )
+    );
+
+    return $html;
+}
+
+add_filter( 'get_custom_logo', 'kb_modify_logo' );

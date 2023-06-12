@@ -28,22 +28,22 @@
 
 
         <li class="d-flex justify-content-between py-12 px-20" data-collapse-target="collapse-item-04">
-            <a href="https://devcroco.com/account-overview/">
+            <a href="https://crocoblock.com/knowledge-base/account-overview/">
                 <span class="text-font-sec font-weight-bold text-900">Account Overview</span>
             </a>
         </li>
         <li class="d-flex justify-content-between py-12 px-20" data-collapse-target="collapse-item-04">
-            <a href="https://devcroco.com/quick-start/">
+            <a href="https://crocoblock.com/knowledge-base/quick-start/">
                 <span class="text-font-sec font-weight-bold text-900">Quick Start</span>
             </a>
         </li>
         <li class="d-flex justify-content-between py-12 px-20" data-collapse-target="collapse-item-04">
-            <a href="https://devcroco.com/troubleshooting/">
+            <a href="https://crocoblock.com/knowledge-base/troubleshooting/">
                 <span class="text-font-sec font-weight-bold text-900">Troubleshooting</span>
             </a>
         </li>
         <li class="d-flex justify-content-between py-12 px-20" data-collapse-target="collapse-item-05">
-            <a href="https://devcroco.com/tips-and-tricks/">
+            <a href="https://crocoblock.com/knowledge-base/tips-and-tricks/">
                 <span class="text-font-sec font-weight-bold text-900">Tips & Tricks</span>
             </a>
         </li>
