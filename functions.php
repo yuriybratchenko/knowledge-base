@@ -159,3 +159,9 @@ function fix_svg_mime_type($data, $file, $filename, $mimes, $real_mime = '')
 
     return $data;
 }
+
+/**
+ * Enqueue custom script for listing grid offset.
+ */
+
+wp_enqueue_script('custom-listing-grid', get_theme_file_uri( 'js/custom-offset-listing-grid.js' ) , array(), false, true);
