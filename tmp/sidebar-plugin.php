@@ -27,23 +27,23 @@
         } ?></ul>
 
 
-        <li class="d-flex justify-content-between py-12 px-20" data-collapse-target="collapse-item-04">
-            <a href="https://crocoblock.com/knowledge-base/account-overview/">
+        <li data-collapse-target="collapse-item-04">
+            <a href="https://crocoblock.com/knowledge-base/account-overview/" class="d-flex justify-content-between py-12 px-20" >
                 <span class="text-font-sec font-weight-bold text-900">Account Overview</span>
             </a>
         </li>
-        <li class="d-flex justify-content-between py-12 px-20" data-collapse-target="collapse-item-04">
-            <a href="https://crocoblock.com/knowledge-base/quick-start/">
+        <li data-collapse-target="collapse-item-04">
+            <a href="https://crocoblock.com/knowledge-base/quick-start/" class="d-flex justify-content-between py-12 px-20">
                 <span class="text-font-sec font-weight-bold text-900">Quick Start</span>
             </a>
         </li>
-        <li class="d-flex justify-content-between py-12 px-20" data-collapse-target="collapse-item-04">
-            <a href="https://crocoblock.com/knowledge-base/troubleshooting/">
+        <li data-collapse-target="collapse-item-04">
+            <a href="https://crocoblock.com/knowledge-base/troubleshooting/" class="d-flex justify-content-between py-12 px-20">
                 <span class="text-font-sec font-weight-bold text-900">Troubleshooting</span>
             </a>
         </li>
-        <li class="d-flex justify-content-between py-12 px-20" data-collapse-target="collapse-item-05">
-            <a href="https://crocoblock.com/knowledge-base/tips-and-tricks/">
+        <li data-collapse-target="collapse-item-05">
+            <a href="https://crocoblock.com/knowledge-base/tips-and-tricks/" class="d-flex justify-content-between py-12 px-20">
                 <span class="text-font-sec font-weight-bold text-900">Tips & Tricks</span>
             </a>
         </li>

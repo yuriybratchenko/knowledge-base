@@ -5,7 +5,7 @@ Author:
 Author URI:
 Description: Child theme
 Template: kava
-Version: 1.0.1
+Version: 1.0.3
 License: GNU General Public License v3 or later
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 Text Domain: knowledge-base
@@ -45,3 +45,17 @@ Text Domain: knowledge-base
 @import "components/tabs/tabs";
 
 @import "site/site";
+
+.link-wrap-block {
+
+  [data-is-block|="jet-engine/dynamic-link"] {
+    height: 100%;
+    position: absolute;
+  }
+
+  a {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+  }
+}

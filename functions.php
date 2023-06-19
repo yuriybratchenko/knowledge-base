@@ -45,6 +45,14 @@ function kb_scripts_depends( $deps ) {
         true
     );
 
+    /**
+     * Enqueue custom script for listing grid offset.
+     */
+
+    if ( is_singular('jetplugins') ) {
+        wp_enqueue_script('custom-listing-grid', get_theme_file_uri( 'js/custom-offset-listing-grid.js' ) , array(), false, true);
+    }
+
     $deps[] = $parent_handle;
 
     return $deps;
@@ -116,52 +124,10 @@ function kb_structures( $structures_manager ) {
 add_action( 'after_setup_theme', 'kb_includes' );
 
 function kb_includes() {
+    require_once get_theme_file_path( 'includes/compatibility.php' );
     require_once get_theme_file_path( 'includes/extras.php' );
     require_once get_theme_file_path( 'includes/static.php' );
     require_once get_theme_file_path( 'includes/share.php' );
     require_once get_theme_file_path( 'includes/classes/svg-icons.php' );
     require_once get_theme_file_path( 'includes/template-tags.php' );
 }
-
-/**
- * API Access
- */
-
-add_filter( 'croco-site-menu/rest/url', function() {
-    return 'https://crocoblock.com/wp-json/';
-} );
-
-
-
-add_filter('upload_mimes', 'svg_upload_allow');
-function svg_upload_allow($mimes)
-{
-    $mimes['svg']  = 'image/svg+xml';
-    return $mimes;
-}
-
-add_filter('wp_check_filetype_and_ext', 'fix_svg_mime_type', 10, 5);
-function fix_svg_mime_type($data, $file, $filename, $mimes, $real_mime = '')
-{
-    if (version_compare($GLOBALS['wp_version'], '5.1.0', '>='))
-        $dosvg = in_array($real_mime, ['image/svg', 'image/svg+xml']);
-    else
-        $dosvg = ('.svg' === strtolower(substr($filename, -4)));
-
-    if ($dosvg) {
-        if (current_user_can('manage_options')) {
-            $data['ext']  = 'svg';
-            $data['type'] = 'image/svg+xml';
-        } else {
-            $data['ext'] = $type_and_ext['type'] = false;
-        }
-    }
-
-    return $data;
-}
-
-/**
- * Enqueue custom script for listing grid offset.
- */
-
-wp_enqueue_script('custom-listing-grid', get_theme_file_uri( 'js/custom-offset-listing-grid.js' ) , array(), false, true);
