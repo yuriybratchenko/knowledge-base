@@ -42,7 +42,7 @@ if ( is_post_type_archive('troubleshooting') || is_singular('troubleshooting') )
     </section>
 
 <?php if ( ! is_front_page() ) {
-    ?><section class="pt-20 pb-40">
+    ?><section class="pt-20 pb-28">
     <div class="container">
         <?php echo do_shortcode('[breadcrumbs]'); ?>
     </div>

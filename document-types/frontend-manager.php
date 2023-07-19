@@ -311,7 +311,7 @@ class Frontend_Manager {
 			return false;
 		}
 
-		if ( is_singular('article') || is_singular('troubleshooting') || is_singular('tips-and-tricks') || is_singular('features') ) {
+		if ( is_singular('article') || is_singular('troubleshooting') || is_singular('tips-and-tricks') || is_singular('features') || is_singular('glossary') ) {
 		    $columns = 'col-sm-12 col-md-7 col-lg-8';
         }
 

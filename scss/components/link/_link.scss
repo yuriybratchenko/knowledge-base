@@ -20,39 +20,4 @@
 			text-decoration: $link-decoration;
 		}
 	}
-
-	a.elementor-button {
-		border-radius: 0;
-		font-weight: $font-weight-normal;
-	}
-
-	a.elementor-button {
-		text-decoration: $link-decoration;
-		color: $link-color;
-		transition: $link-transition;
-
-		&, &:hover {
-			background-color: transparent;
-			box-shadow: none;
-		}
-
-		&:hover {
-			text-decoration: $link-hover-decoration;
-		}
-	}
-
-	a.elementor-button {
-		&.elementor-size-md {
-			padding: 0;
-			font-size: $font-size-base;
-			line-height: $line-height-base;
-		}
-
-		&.elementor-size-lg {
-			padding: 0;
-			font-size: $font-size-lg;
-			line-height: $line-height-lg;
-		}
-	}
-
 }

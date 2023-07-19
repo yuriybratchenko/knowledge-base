@@ -40,6 +40,7 @@
         $cp = is_singular('jetplugins');
 
         if ( $cp ) {
+            ?><div id="content" <?php echo kava_get_container_classes( 'container d-flex pb-60 px-0 px-lg-20' ); ?>><?php
             if ( ! wp_is_mobile() ) {
                 include get_theme_file_path('tmp/sidebar-plugin.php');
             }

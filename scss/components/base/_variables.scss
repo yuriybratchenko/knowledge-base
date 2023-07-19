@@ -188,7 +188,7 @@ $body-bg:    $white;
 
 
 // Links
-$link-color:            #4A72F8;
+$link-color: $jetpopup; // #4A72F8;
 $link-decoration:       underline;
 $link-hover-color:      darken($link-color, 10%);
 $link-hover-decoration: none;

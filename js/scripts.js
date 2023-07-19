@@ -51,6 +51,21 @@
 		})
 	}
 
+    // Breadcrumbs
+
+    document.addEventListener('DOMContentLoaded', function() {
+
+        let kbBreadcrumbs = document.querySelector('.kb-breadcrumbs'),
+            kbTarget = document.querySelector('.kb-target');
+
+        if ( kbBreadcrumbs ) {
+            if ( kbBreadcrumbs.offsetHeight > 36 ) {
+                kbTarget.classList.add('kb-mod');
+            }
+        }
+
+    });
+
     // document.addEventListener("DOMContentLoaded", function() {
     //     let observer = new IntersectionObserver(entries => {
     //         let navSticky = document.querySelector( ".nav-sticky" );

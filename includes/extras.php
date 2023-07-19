@@ -117,6 +117,15 @@ function kb_breadcrumbs( $rules, $post ) {
     $post_type_queried = get_queried_object();
     $post_type_object = get_post_type_object( get_post_type() );
 
+    // title mod for mobile
+//    if ( wp_is_mobile() && is_single() ) {
+//        $array = explode(' ', $title );
+//        $array = array_slice( $array, 0, 5 );
+//        $title_mod = implode(' ', $array );
+//        $title = $title_mod . ' ...';
+//    }
+    // title mod end
+
     $front = '';
     $slug = '';
     $res = '';
@@ -130,7 +139,7 @@ function kb_breadcrumbs( $rules, $post ) {
     }
 
     if ( ! is_front_page() ) {
-        $front = sprintf('<a class="smaller text-jetpopup font-weight-medium" href="%1$s">Knowledge base</a> %2$s', $home, $arrow );
+        $front = sprintf('<div class="d-inline-flex mb-12"><a href="%1$s" class="smaller text-jetpopup font-weight-medium link link-inherit">Knowledge base</a> %2$s</div>', $home, $arrow );
     }
 
     $rel = jet_engine()->relations->get_active_relations( CROCO_KB_POSTS_REL );
@@ -141,26 +150,26 @@ function kb_breadcrumbs( $rules, $post ) {
     }
 
     if ( is_singular('article') && ! empty( $parents ) ) {
-        $res = sprintf('<a class="text-jetpopup font-weight-medium" href="%1$s/plugins/">Plugins</a> %2$s <a href="%1$s/plugins/%3$s/">%4$s</a> %2$s', $home, $arrow, $parent_post->post_name, $parent_post->post_title );
+        $res = sprintf('<div class="d-inline-flex"><a href="%1$s/plugins/" class="text-jetpopup font-weight-medium link link-inherit">Plugins</a> %2$s</div><div class="d-inline-flex"><a href="%1$s/plugins/%3$s/" class="text-jetpopup font-weight-medium link link-inherit">%4$s</a> %2$s</div>', $home, $arrow, $parent_post->post_name, $parent_post->post_title );
     } elseif ( is_singular('features') ) {
-        $rel = jet_engine()->relations->get_active_relations( 35 );
-//        $rel = jet_engine()->relations->get_active_relations( 61 );
+//        $rel = jet_engine()->relations->get_active_relations( 35 );
+        $rel = jet_engine()->relations->get_active_relations( 61 );
         $parents = $rel->get_parents( $post_id, 'ids' );
         if ( ! empty( $parents ) ) {
             $parent_post = get_post( $parents[0] );
         }
-        $res = sprintf('<a class="text-jetpopup font-weight-medium" href="%1$s/plugins/">Plugins</a> %2$s <a href="%1$s/plugins/%3$s/">%4$s</a> %2$s <a href="%1$s/%3$s/%3$s-overview/">Feature Overview</a> %2$s', $home, $arrow, $parent_post->post_name, $parent_post->post_title );
+        $res = sprintf('<div class="d-inline-flex"><a href="%1$s/plugins/" class="text-jetpopup font-weight-medium link link-inherit">Plugins</a> %2$s</div><div class="d-inline-flex"><a href="%1$s/plugins/%3$s/" class="text-jetpopup font-weight-medium link link-inherit">%4$s</a> %2$s</div><div class="d-inline-flex"><a href="%1$s/%3$s/%3$s-overview/" class="text-jetpopup font-weight-medium link link-inherit">Feature Overview</a> %2$s</div>', $home, $arrow, $parent_post->post_name, $parent_post->post_title );
     } elseif ( is_singular('jetplugins') ) {
-        $res = sprintf('<a class="text-jetpopup font-weight-medium" href="%1$s/plugins/">Plugins</a> %2$s', $home, $arrow );
+        $res = sprintf('<div class="d-inline-flex"><a href="%1$s/plugins/" class="text-jetpopup font-weight-medium link link-inherit">Plugins</a> %2$s</div>', $home, $arrow );
     }
 
     if ( is_post_type_archive('tips-and-tricks') || is_post_type_archive('troubleshooting') ) {
-        echo sprintf('<div class="kb-breadcrumbs d-flex smaller">%1$s %2$s</div>', $front, $post_type_queried->labels->singular_name );
+        echo sprintf('<div class="kb-breadcrumbs d-flex flex-wrap smaller">%1$s %2$s</div>', $front, $post_type_queried->labels->singular_name );
     } elseif ( is_singular('tips-and-tricks') || is_singular('troubleshooting') ) {
-        $res = sprintf('<a class="text-jetpopup font-weight-medium" href="%1$s/%2$s/">%3$s</a> %4$s', $home, $post_type, $post_type_object->labels->singular_name, $arrow );
-        echo sprintf('<div class="kb-breadcrumbs d-flex smaller">%1$s %2$s %3$s</div>', $front, $res, $title );
+        $res = sprintf('<div class="d-inline-flex"><a href="%1$s/%2$s/" class="text-jetpopup font-weight-medium link link-inherit">%3$s</a> %4$s</div>', $home, $post_type, $post_type_object->labels->singular_name, $arrow );
+        echo sprintf('<div class="kb-breadcrumbs d-flex flex-wrap smaller">%1$s %2$s <div class="kb-target">%3$s</div></div>', $front, $res, $title );
     } else {
-        echo sprintf('<div class="kb-breadcrumbs d-flex smaller">%1$s %2$s %3$s</div>', $front, $res, $title );
+        echo sprintf('<div class="kb-breadcrumbs d-flex flex-wrap smaller">%1$s %2$s <div class="kb-target">%3$s</div></div>', $front, $res, $title );
     }
 
 //    $category = get_the_terms($post->ID, 'catig');

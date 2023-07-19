@@ -11,6 +11,11 @@ img {
 	object-fit: cover;
 }
 
+.wp-block-image {
+	.simplelightbox {
+		cursor: zoom-in;
+	}
+}
 
 // Layouts
 @import 'image-tooltip';

@@ -42,18 +42,10 @@
 // Text color
 .text-white {
 	color: $white !important;
-
-	&.elementor-widget-heading .elementor-heading-title {
-		color: $white;
-	}
 }
 
 .text-primary {
 	color: $primary !important;
-
-	&.elementor-widget-heading .elementor-heading-title {
-		color: $primary;
-	}
 }
 
 
@@ -61,20 +53,12 @@
 @each $color, $value in $grays {
 	.text-#{$color} {
 		color: $value !important;
-
-		&.elementor-widget-heading .elementor-heading-title {
-			color: $value;
-		}
 	}
 }
 
 @each $color, $value in $colors {
 	.text-#{$color} {
 		color: $value !important;
-
-		&.elementor-widget-heading .elementor-heading-title {
-			color: $value;
-		}
 	}
 }
 

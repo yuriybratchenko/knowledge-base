@@ -43,6 +43,7 @@ Text Domain: knowledge-base
 @import "components/slick/slick";
 @import "components/clipboard/clipboard";
 @import "components/tabs/tabs";
+@import "components/breadcrumbs/breadcrumbs";
 
 @import "site/site";
 
@@ -51,6 +52,8 @@ Text Domain: knowledge-base
   [data-is-block|="jet-engine/dynamic-link"] {
     height: 100%;
     position: absolute;
+    top: 0;
+    left: 0;
   }
 
   a {

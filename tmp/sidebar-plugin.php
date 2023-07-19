@@ -1,5 +1,4 @@
 
-<div id="content" <?php echo kava_get_container_classes( 'container d-flex pb-60' ); ?>>
 <nav class="sidebar mr-32">
     <ul class="bg-100 list border border-200 rounded m-0">
         <li class="d-flex justify-content-between py-12 px-20" data-collapse-target="collapse-item-01">
