@@ -131,3 +131,16 @@ function kb_includes() {
     require_once get_theme_file_path( 'includes/classes/svg-icons.php' );
     require_once get_theme_file_path( 'includes/template-tags.php' );
 }
+
+function kb_block_render( $block_content, $block ) {
+
+    if ( $block['blockName'] === 'core/image' ) {
+        return str_replace('figure', 'div', $block_content);
+    }
+
+    // For any other block, just return normal block output.
+    return $block_content;
+
+}
+
+add_filter( 'render_block', 'kb_block_render', 10, 2 );

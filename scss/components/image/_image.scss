@@ -11,10 +11,8 @@ img {
 	object-fit: cover;
 }
 
-.wp-block-image {
-	.simplelightbox {
-		cursor: zoom-in;
-	}
+.sl-image img {
+	filter: contrast(1);
 }
 
 // Layouts
