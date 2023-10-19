@@ -14,29 +14,10 @@
       fill: $gray-300;
       transition: $btn-transition;
     }
-    &.facebook:hover {
+    &:hover {
       svg path {
-        fill: $facebook;
-      }
-    }
-    &.twitter:hover {
-      svg path {
-        fill: $twitter;
-      }
-    }
-    &.linkedin:hover {
-      svg path {
-        fill: $linkedin;
-      }
-    }
-    &.pinterest:hover {
-      svg path {
-        fill: $pinterest;
+        fill: $btn-hover-color;
       }
     }
   }
-}
-
-@media (min-width: 1400px) {
-
 }

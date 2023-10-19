@@ -29,7 +29,7 @@ $grays:
 '900' $gray-900;
 
 $primary: #0DC167;
-$primary-hover: adjust-color( $primary, $hue: 5deg, $saturation: 0%, $lightness: -5% ); // hover #0CA64B
+$primary-hover: adjust-color( $gray-500, $hue: 7deg, $saturation: 31%, $lightness: -36% ); // #0F172A
 
 $jetsmartfilters:    #FA5450; // tomato     hover #F23434
 $jetblocks:          #F66A21; // mango      hover #EB4716
@@ -74,11 +74,6 @@ $colors:
 	'jetsearch' $jetsearch adjust-color($jetsearch, $hue: 4deg, $saturation: -6%, $lightness: -8%),
 	'jetblog' $jetblog adjust-color($jetblog, $hue: 2deg, $saturation: -6%, $lightness: -7%),
 	'jetformbuilder' $jetpopup adjust-color($jetpopup, $hue: 6deg, $saturation: -4%, $lightness: -5%);
-
-$facebook:  #3b5998;
-$twitter:   #1da1f2;
-$linkedin:  #0077b5;
-$pinterest: #bd081c;
 
 
 $gradients:
