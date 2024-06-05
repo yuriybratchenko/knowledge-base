@@ -23,7 +23,11 @@ if ( is_post_type_archive('troubleshooting') || is_singular('troubleshooting') )
 
     <section class="bg-900 bg-gradient-section-<?php echo $bg;?> context-dark pt-120 pb-20 pb-md-0">
         <div class="container">
-            <h1 class="m-0 pb-40 pb-xl-20 text-center text-md-left">Help Center</h1>
+            <?php if ( is_front_page() ) {
+                printf('<h1 class="m-0 pb-40 pb-xl-20 text-center text-md-left">Help Center</h1>');
+            } else {
+                printf('<div class="h1 m-0 pb-40 pb-xl-20 text-center text-md-left">Help Center</div>');
+            } ?>
         </div>
     </section>
 
