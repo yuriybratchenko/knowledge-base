@@ -36,3 +36,16 @@ function fix_svg_mime_type($data, $file, $filename, $mimes, $real_mime = '') {
 
     return $data;
 }
+
+// Wpseo compatibility
+function kb_wpseo_robots( $robotsstr ) {
+    if ( is_search() ) {
+        return 'noindex, nofollow';
+    }
+    if ( isset( $_GET['utm_source'] ) || isset( $_GET['ref'] ) ) {
+        return 'noindex, nofollow';
+    }
+    return $robotsstr;
+}
+
+add_filter( 'wpseo_robots', 'kb_wpseo_robots' );
