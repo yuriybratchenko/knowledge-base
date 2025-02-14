@@ -52,3 +52,7 @@ function kb_suggest_your_tip() {
     return ob_get_clean();
 
 }
+
+function fb_community_members() {
+    echo '30';
+}
