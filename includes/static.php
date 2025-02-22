@@ -54,5 +54,5 @@ function kb_suggest_your_tip() {
 }
 
 function fb_community_members() {
-    echo '30';
+    echo '30K+';
 }

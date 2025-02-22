@@ -8,7 +8,7 @@
     </div>
     <div>
         <h5 class="mt-8 mb-0">Ask Facebook community</h5>
-        <p class="mt-8">Get answers from <?php echo fb_community_members();?>K+ Crocoblock Community experts from all over the world.</p>
+        <p class="mt-8">Get answers from <?php echo fb_community_members();?> Crocoblock Community experts from all over the world.</p>
     </div>
     <a href="https://www.facebook.com/groups/1803120176446062" class="position-absolute t-0 b-0 l-0 r-0" rel="nofollow" target="_blank"></a>
 </div>
