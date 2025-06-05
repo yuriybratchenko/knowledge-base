@@ -4,13 +4,14 @@
       margin-bottom: 8px;
     }
     a { text-decoration: $link-decoration; }
+    p{display: block}
     &:before {
       content: '';
       background-image: url("data:image/svg+xml;charset=utf8,%3Csvg width='24' height='24' viewBox='0 0 24 24' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cg clip-path='url(%23clip0_2199_554)'%3E%3Cpath d='M23 12L20.56 9.22004L20.9 5.54004L17.29 4.72004L15.4 1.54004L12 3.00004L8.6 1.54004L6.71 4.72004L3.1 5.53004L3.44 9.21004L1 12L3.44 14.78L3.1 18.47L6.71 19.29L8.6 22.47L12 21L15.4 22.46L17.29 19.28L20.9 18.46L20.56 14.78L23 12ZM13 17H11V15H13V17ZM13 13H11V7.00004H13V13Z' fill='%230CB6B3'/%3E%3C/g%3E%3Cdefs%3E%3CclipPath id='clip0_2199_554'%3E%3Crect width='24' height='24' fill='white'/%3E%3C/clipPath%3E%3C/defs%3E%3C/svg%3E");
       background-repeat: no-repeat;
       margin-right: 12px;
-      width: 24px;
-      height: 24px;
+      width: 36px;
+      height: 36px;
     }
   }
 }

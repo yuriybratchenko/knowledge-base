@@ -114,3 +114,11 @@
     }
   }
 }
+
+
+.jet-listing-grid__item .jet-listing-grid__item {
+  padding: 0!important;
+}
+.jet-listing-grid__item .jet-listing-grid__item .jet-listing-dynamic-link.custom-jet-listing {
+  padding: 8px 10px!important;
+}

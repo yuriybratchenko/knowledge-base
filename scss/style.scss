@@ -61,4 +61,17 @@ Text Domain: knowledge-base
     height: 100%;
     width: 100%;
   }
+
+  .rounded a {
+    border-radius: 10px!important;
+  }
+
+  .shadow-hover-v2 a {
+    box-shadow: 0px 4px 25px 0px rgba(100, 116, 139, 0.10);
+    transition: .2s ease-in-out;
+  }
+
+  .shadow-hover-v2 a:hover {
+    box-shadow: 0px 8px 25px 0px rgba(100, 116, 139, 0.35);
+  }
 }
